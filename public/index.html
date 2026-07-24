@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARK STORE — Dashboard de Performance Executiva</title>
+  <meta name="description" content="Painel executivo de indicadores da Dark Store Porto Alegre — Resultado Líquido, Metas, Projeção e Canais">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+</head>
+<body>
+
+  <!-- Overlay de Carregamento -->
+  <div class="loading-overlay" id="loading">
+    <div class="loading-spinner"></div>
+    <div class="loading-text">Carregando indicadores da Dark Store...</div>
+  </div>
+
+  <div class="app-wrapper">
+
+    <!-- ====== HEADER EXECUTIVO COM FILTRO DE DATA E CALENDÁRIO ====== -->
+    <header class="header" id="header">
+      <div class="header-left">
+        <div class="header-logo">DS</div>
+        <div class="header-title">
+          <h1>DARK STORE — Porto Alegre</h1>
+          <p>Painel de Performance Executiva & Atingimento de Metas</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <!-- Seletor de Mês -->
+        <div class="selector-box">
+          <label for="monthSelect">📅 Mês</label>
+          <select id="monthSelect" onchange="App.changeMonth(this.value)">
+            <option value="">Carregando...</option>
+          </select>
+        </div>
+
+        <!-- Seletor de Calendário (Escolha a Data Exata) -->
+        <div class="selector-box highlight">
+          <label for="datePicker">📆 Calendário (Corte Exato)</label>
+          <input type="date" id="datePicker" onchange="App.onDatePickerChange(this.value)">
+        </div>
+
+        <!-- Seletor Rápido de Dia de Corte (D-1 por Padrão) -->
+        <div class="selector-box highlight">
+          <label for="daySelect">✂️ Dia de Corte</label>
+          <select id="daySelect" onchange="App.changeCutoffDay(this.value)">
+            <option value="">D-1 (Ontem)</option>
+          </select>
+        </div>
+
+        <div class="status-badge demo" id="statusBadge">
+          <span class="status-dot"></span>
+          <span id="statusText">Conectando...</span>
+        </div>
+        <div class="last-update" id="lastUpdate"></div>
+      </div>
+    </header>
+
+    <!-- Banner de Alerta para Modo Demo -->
+    <div class="demo-banner hidden" id="demoBanner">
+      <span class="icon">⚠️</span>
+      <span>Modo demonstração ativado. Configure as credenciais no .env para dados em tempo real.</span>
+    </div>
+
+    <!-- Badge Informativo de Filtro Ativo -->
+    <div class="filter-info-bar">
+      <span class="info-icon">📌</span>
+      <span id="filterInfoText">Exibindo dados consolidados até D-1 (Ontem)</span>
+    </div>
+
+    <!-- Barra de Filtros Interativos de Categoria (Grupo, Linha, Subgrupo) -->
+    <div class="filter-toolbar">
+      <div class="filter-group">
+        <label for="filterGrupo">📦 Grupo</label>
+        <select id="filterGrupo" onchange="App.onFilterCategoryChange()">
+          <option value="TODOS">📦 Todos os Grupos</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterLinha">🏷️ Linha de Produto</label>
+        <select id="filterLinha" onchange="App.onFilterCategoryChange()">
+          <option value="TODOS">🏷️ Todas as Linhas</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filterSubgrupo">📁 Subgrupo</label>
+        <select id="filterSubgrupo" onchange="App.onFilterCategoryChange()">
+          <option value="TODOS">📁 Todos os Subgrupos</option>
+        </select>
+      </div>
+
+      <button class="btn-clear-filters" id="btnClearCategoryFilters" onclick="App.clearCategoryFilters()">
+        ❌ Limpar Filtros
+      </button>
+    </div>
+
+    <!-- ====== BLOCO 1: VISÃO GERAL DE PERFORMANCE ====== -->
+    <section class="dashboard-block" id="kpiBlock">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">📊</span>
+          <h2>Visão Geral de Performance & Metas</h2>
+        </div>
+        <span class="block-badge" id="mesLabel">—</span>
+      </div>
+
+      <!-- KPI Grid Principal -->
+      <div class="kpi-grid">
+        <!-- Card 1: Resultado Líquido -->
+        <div class="kpi-card blue animate-in">
+          <div class="kpi-label">Resultado Líquido</div>
+          <div class="kpi-value" id="kpiRLValue">—</div>
+          <div class="kpi-sub" id="kpiRLSub">Acumulado no período de corte</div>
+        </div>
+
+        <!-- Card 2: Meta Orçada -->
+        <div class="kpi-card green animate-in">
+          <div class="kpi-label">Meta Orçada Acumulada</div>
+          <div class="kpi-value" id="kpiMetaOrcValue">—</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Atingimento Orçado</span>
+              <span id="pctOrcLabel">—</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill success" id="pctOrcBar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <!-- Card 3: Meta Desafio -->
+        <div class="kpi-card orange animate-in">
+          <div class="kpi-label">Meta Desafio Acumulada</div>
+          <div class="kpi-value" id="kpiMetaDesValue">—</div>
+          <div class="progress-container">
+            <div class="progress-label">
+              <span>Atingimento Desafio</span>
+              <span id="pctDesLabel">—</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill warning" id="pctDesBar" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <!-- Card 4: Projeção de Fechamento -->
+        <div class="kpi-card cyan animate-in">
+          <div class="kpi-label">Projeção de Fechamento</div>
+          <div class="kpi-value" id="kpiProjecaoValue">—</div>
+          <div class="kpi-sub" id="kpiProjecaoSub">Com base na média diária</div>
+        </div>
+
+        <!-- Card 5: Média Diária -->
+        <div class="kpi-card purple animate-in">
+          <div class="kpi-label">Média Diária de Vendas</div>
+          <div class="kpi-value" id="kpiMediaDia">—</div>
+          <div class="kpi-sub" id="kpiMediaDiaSub">R$ / dia trabalhado</div>
+        </div>
+      </div>
+
+      <!-- ====== COMPARATIVO COMPLETO MOM (MESMO MÊS ANTERIOR - MESMOS DIAS) ====== -->
+      <div class="growth-container" style="margin-top: 24px;">
+        <div class="block-subtitle">🔄 Comparativo MoM — Mês Atual vs. Mês Anterior (Mesmos Dias Decorridos 01 a D-1)</div>
+        
+        <!-- Cards Rápidos de Variação MoM -->
+        <div class="growth-grid" id="growthGrid">
+          <!-- Preenchido via JS -->
+        </div>
+
+        <!-- Tabela Detalhada do Comparativo M-1 -->
+        <div class="mom-table-container">
+          <table class="mom-table">
+            <thead>
+              <tr>
+                <th>Métrica de Performance & Clientes</th>
+                <th class="right" id="thMesAtual">Mês Atual (01 a D-1)</th>
+                <th class="right" id="thMesAnterior">Mês Anterior (Mesmo Período)</th>
+                <th class="right">Diferença Absoluta</th>
+                <th class="right">Variação % (MoM)</th>
+              </tr>
+            </thead>
+            <tbody id="momTableBody">
+              <!-- Preenchido via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 2: EFICIÊNCIA OPERACIONAL & COMPORTAMENTO DO CLIENTE ====== -->
+    <section class="dashboard-block">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">👤</span>
+          <h2>Eficiência Operacional & Perfil do Cliente</h2>
+        </div>
+        <span class="block-badge" style="background:rgba(34,211,238,0.12);color:var(--accent-cyan);border-color:rgba(34,211,238,0.25)">Métricas por Cliente & Carrinho (Comparativo M-1)</span>
+      </div>
+
+      <!-- Cards de Perfil e Eficiência do Cliente -->
+      <div class="kpi-grid secondary-kpis">
+        <div class="kpi-card compact blue animate-in">
+          <div class="kpi-label">Clientes Únicos</div>
+          <div class="kpi-value" id="kpiClientes">—</div>
+          <div class="kpi-sub" id="kpiClientesSub">Compradores ativos</div>
+        </div>
+        <div class="kpi-card compact green animate-in">
+          <div class="kpi-label">Gasto Médio / Cliente</div>
+          <div class="kpi-value" id="kpiGastoCliente">—</div>
+          <div class="kpi-sub" id="kpiGastoClienteSub">Resultado Líquido / Cliente</div>
+        </div>
+        <div class="kpi-card compact orange animate-in">
+          <div class="kpi-label">Ticket Médio (TKM)</div>
+          <div class="kpi-value" id="kpiTKM">—</div>
+          <div class="kpi-sub" id="kpiTKMSub">Resultado Líquido / Cupom</div>
+        </div>
+        <div class="kpi-card compact cyan animate-in">
+          <div class="kpi-label">Itens por Nota (IPN)</div>
+          <div class="kpi-value" id="kpiIPN">—</div>
+          <div class="kpi-sub" id="kpiIPNSub">Peças / Cupom</div>
+        </div>
+        <div class="kpi-card compact purple animate-in">
+          <div class="kpi-label">Itens por Cliente (IPC)</div>
+          <div class="kpi-value" id="kpiIPC">—</div>
+          <div class="kpi-sub" id="kpiIPCSub">Peças / Cliente</div>
+        </div>
+        <div class="kpi-card compact pink animate-in">
+          <div class="kpi-label">Frequência de Compra</div>
+          <div class="kpi-value" id="kpiFreq">—</div>
+          <div class="kpi-sub" id="kpiFreqSub">Cupons / Cliente</div>
+        </div>
+      </div>
+
+      <!-- Gráficos Duplos de Tendência de Eficiência -->
+      <div class="chart-grid-2col" style="margin-top: 20px;">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Evolução da Eficiência da Nota</h3>
+            <p>Ticket Médio em R$ (Barras) vs. Média de Itens por Nota (Linha)</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartEficienciaNota"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Evolução do Valor & Frequência do Cliente</h3>
+            <p>Gasto por Cliente em R$ (Barras) vs. Cupons por Cliente (Linha)</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartValorCliente"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 3: DESEMPENHO DIÁRIO & ACUMULADO ====== -->
+    <section class="dashboard-block">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">📈</span>
+          <h2>Evolução Diária & Curva de Meta</h2>
+        </div>
+        <span class="block-badge">Comparativo Diário vs Metas</span>
+      </div>
+
+      <div class="chart-grid-2col">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Resultado Líquido Diário (Datas do Mês)</h3>
+            <p>Faturamento real por dia vs. Meta Orçada e Meta Desafio</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartDaily"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Curva de Atingimento Acumulado</h3>
+            <p>Trajetória do faturamento acumulado vs. metas do mês</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartAcumulado"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 4: CANAIS DE VENDA ====== -->
+    <section class="dashboard-block">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">📱</span>
+          <h2>Desempenho por Canal de Venda</h2>
+        </div>
+        <span class="block-badge" style="background:rgba(16,185,129,0.12);color:var(--accent-green);border-color:rgba(16,185,129,0.25)">Omnichannel</span>
+      </div>
+
+      <div class="block-content-stack">
+        <div class="chart-card bar-card" style="margin-bottom: 24px;">
+          <div class="chart-card-header">
+            <h3>Participação por Canal de Venda (%) — Comparativo de Share (Mês Atual vs. Mês Anterior)</h3>
+            <p>Representatividade percentual (% Part.) de cada canal no mês atual vs. mesmo período do mês anterior, com variação em pontos percentuais (p.p.)</p>
+          </div>
+          <div class="chart-wrapper" style="height: 320px;">
+            <canvas id="chartChannelBar"></canvas>
+          </div>
+        </div>
+
+        <div class="table-container full-width-table">
+          <div class="chart-card-header">
+            <h3>Detalhamento por Canal (Comparativo M-1 — Mesmo Período Decorrido)</h3>
+            <p id="channelTableSubtitle">Métricas consolidadas de faturamento, cupons, clientes, ticket médio e evolução de share comparadas com o mesmo período do mês anterior</p>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table channel-mom-table">
+              <thead>
+                <tr>
+                  <th rowspan="2" class="sticky-col">Canal</th>
+                  <th colspan="3" class="center header-group">Resultado Líquido (R$)</th>
+                  <th colspan="2" class="center header-group">Cupons Emitidos</th>
+                  <th colspan="2" class="center header-group">Clientes Únicos</th>
+                  <th colspan="2" class="center header-group">Ticket Médio (TKM)</th>
+                  <th colspan="3" class="center header-group">% Participação (Share)</th>
+                </tr>
+                <tr>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="center">Var MoM</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="center">Var (p.p.)</th>
+                </tr>
+              </thead>
+              <tbody id="tableChannelsBody">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 5: PICOS DE DEMANDA POR DIA DA SEMANA ====== -->
+    <section class="dashboard-block">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">📅</span>
+          <h2>Picos de Demanda por Dia da Semana</h2>
+        </div>
+        <span class="block-badge">Padrão Semanal</span>
+      </div>
+
+      <div class="chart-grid-2col">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Faturamento por Dia da Semana</h3>
+            <p>Resultado Líquido acumulado por dia (Domingo a Sábado)</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartWeekdayRL"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <h3>Volume Operacional por Dia da Semana</h3>
+            <p>Total de Cupons emitidos vs. Clientes Únicos atendidos</p>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chartWeekdayOps"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 6: MIX DE VENDAS & CATEGORIAS ====== -->
+    <section class="dashboard-block">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">📦</span>
+          <h2>Mix de Vendas por Categoria & Produto</h2>
+        </div>
+        <span class="block-badge" style="background:rgba(236,72,153,0.12);color:var(--accent-pink);border-color:rgba(236,72,153,0.25)">Ranking Top 15</span>
+      </div>
+
+      <!-- Abas de Navegação -->
+      <div class="tabs-container">
+        <button class="tab-btn active" id="tabBtnGroups" onclick="App.switchCategoryTab('groups')">Grupos de Categoria</button>
+        <button class="tab-btn" id="tabBtnLines" onclick="App.switchCategoryTab('lines')">Linhas de Produto</button>
+        <button class="tab-btn" id="tabBtnSubgroups" onclick="App.switchCategoryTab('subgroups')">Subgrupos</button>
+      </div>
+
+      <!-- Conteúdo da Aba Grupos -->
+      <div class="tab-content" id="tabGroups" style="display: block;">
+        <div class="table-container full-width">
+          <div class="chart-card-header">
+            <h3>Detalhamento de Grupos de Categoria (Comparativo MoM — Mesmo Período)</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table channel-mom-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2" class="sticky-col">Grupo</th>
+                  <th colspan="3" class="center header-group">Resultado Líquido (R$)</th>
+                  <th colspan="2" class="center header-group">Cupons Emitidos</th>
+                  <th colspan="2" class="center header-group">Clientes Únicos</th>
+                  <th colspan="2" class="center header-group">Ticket Médio (TKM)</th>
+                  <th colspan="2" class="center header-group">Peças (Qtd)</th>
+                  <th rowspan="2" class="right">% Part.</th>
+                </tr>
+                <tr>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="center">Var MoM</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                </tr>
+              </thead>
+              <tbody id="tableGroupsBody">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo da Aba Linhas -->
+      <div class="tab-content" id="tabLines" style="display: none;">
+        <div class="table-container full-width">
+          <div class="chart-card-header">
+            <h3>Ranking de Linhas de Produto (Comparativo MoM — Mesmo Período)</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table channel-mom-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2" class="sticky-col">Linha de Produto</th>
+                  <th colspan="3" class="center header-group">Resultado Líquido (R$)</th>
+                  <th colspan="2" class="center header-group">Cupons Emitidos</th>
+                  <th colspan="2" class="center header-group">Clientes Únicos</th>
+                  <th colspan="2" class="center header-group">Ticket Médio (TKM)</th>
+                  <th colspan="2" class="center header-group">Peças (Qtd)</th>
+                  <th rowspan="2" class="right">% Part.</th>
+                </tr>
+                <tr>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="center">Var MoM</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                </tr>
+              </thead>
+              <tbody id="tableLinesBody">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo da Aba Subgrupos -->
+      <div class="tab-content" id="tabSubgroups" style="display: none;">
+        <div class="table-container full-width">
+          <div class="chart-card-header">
+            <h3>Ranking de Subgrupos (Comparativo MoM — Mesmo Período)</h3>
+          </div>
+          <div class="table-responsive">
+            <table class="data-table channel-mom-table">
+              <thead>
+                <tr>
+                  <th rowspan="2">#</th>
+                  <th rowspan="2" class="sticky-col">Subgrupo</th>
+                  <th colspan="3" class="center header-group">Resultado Líquido (R$)</th>
+                  <th colspan="2" class="center header-group">Cupons Emitidos</th>
+                  <th colspan="2" class="center header-group">Clientes Únicos</th>
+                  <th colspan="2" class="center header-group">Ticket Médio (TKM)</th>
+                  <th colspan="2" class="center header-group">Peças (Qtd)</th>
+                  <th rowspan="2" class="right">% Part.</th>
+                </tr>
+                <tr>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="center">Var MoM</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                  <th class="right">Mês Atual</th>
+                  <th class="right">Mês Ant.</th>
+                </tr>
+              </thead>
+              <tbody id="tableSubgroupsBody">
+                <!-- Preenchido via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="footer">
+      <p>DARK Store Porto Alegre — Sistema de Gestão Executiva & Business Intelligence</p>
+      <p>Dados integrados via Qlik Sense Engine API & Planilhas de Metas Corporativas</p>
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

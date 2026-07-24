@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+qlik_session_cookies.txt
+.DS_Store
+dist/
+build/
