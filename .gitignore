@@ -2,6 +2,13 @@ node_modules/
 .env
 *.log
 qlik_session_cookies.txt
+cookies.txt
+temp_cookies.txt
 .DS_Store
 dist/
 build/
+test-*.js
+test-*.ps1
+dump-*.js
+inspect-*.js
+verify_*.js

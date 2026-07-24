@@ -7,6 +7,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const fs = require('fs');
 const qlikClient = require('./qlikClient');
 const dataService = require('./dataService');
 const excelReader = require('./excelReader');
@@ -190,6 +191,7 @@ app.get('/api/dashboard', async (req, res) => {
       }
     }
 
+    let usingCachedRealData = false;
     if (!currentData) {
       // Tenta carregar os dados reais extraídos e persistidos do Qlik Sense
       const dumpPath = path.join(__dirname, 'cached_real_qlik_data.json');
@@ -198,6 +200,7 @@ app.get('/api/dashboard', async (req, res) => {
           const dump = JSON.parse(fs.readFileSync(dumpPath, 'utf8'));
           currentData = dump.currentData;
           previousData = dump.previousData;
+          usingCachedRealData = true;
           console.log('[Server] 📦 Dados REAIS persistidos do Qlik carregados com sucesso!');
         } catch (e) {
           console.error('[Server] ⚠️ Erro ao ler cached_real_qlik_data.json:', e.message);
@@ -212,9 +215,9 @@ app.get('/api/dashboard', async (req, res) => {
     }
 
     const response = dataService.buildDashboardResponse(currentData, previousData, mesAno, diaAte);
-    response.qlikConnected = qlikConnected || Boolean(currentData && currentData.daily && currentData.daily.length > 0);
-    response.qlikError = qlikConnected ? null : 'Render Cloud Sandbox (Servindo Dados Reais Auditados do Qlik)';
-    response.isDemo = false;
+    response.qlikConnected = qlikConnected || usingCachedRealData;
+    response.qlikError = qlikConnected ? null : (usingCachedRealData ? null : qlikError);
+    response.isDemo = !qlikConnected && !usingCachedRealData;
     response.filtrosAtivos = filters;
 
     res.json({ success: true, data: response });

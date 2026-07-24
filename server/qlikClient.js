@@ -11,6 +11,9 @@ const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
 
+// Cross-platform: use curl.exe on Windows, curl on Linux (Render)
+const CURL = process.platform === 'win32' ? 'curl.exe' : 'curl';
+
 const schema = require('enigma.js/schemas/12.612.0.json');
 
 const HOST = process.env.QLIK_HOST || 'sense.farmaciassaojoao.com.br';
@@ -55,18 +58,18 @@ async function getQlikSessionCookies(forceFresh = false) {
   console.log(`[QlikClient] 🔐 Autenticando com Qlik Sense (Form Auth como ${USER})...`);
 
   // Step 1: GET /hub/
-  const step1 = execSync(`curl.exe -k -s -i -c "${cookieFile}" "https://${HOST}/hub/"`, { encoding: 'utf8' });
+  const step1 = execSync(`${CURL} -k -s -i -c "${cookieFile}" "https://${HOST}/hub/"`, { encoding: 'utf8' });
   const locationLine = step1.split('\n').find(l => l.toLowerCase().startsWith('location:'));
   if (!locationLine) throw new Error('Falha ao redirecionar para formulário de login');
   const loginUrl = locationLine.split(' ')[1].trim();
 
   // Step 2: GET loginUrl to initialize form session
-  execSync(`curl.exe -k -s -i -b "${cookieFile}" -c "${cookieFile}" "${loginUrl}"`, { encoding: 'utf8' });
+  execSync(`${CURL} -k -s -i -b "${cookieFile}" -c "${cookieFile}" "${loginUrl}"`, { encoding: 'utf8' });
 
   // Step 3: POST credentials
   const postData = `username=${encodeURIComponent(USER)}&pwd=${encodeURIComponent(PASS)}`;
   const step3 = execSync(
-    `curl.exe -k -s -i -b "${cookieFile}" -c "${cookieFile}" -X POST "${loginUrl}" -H "Content-Type: application/x-www-form-urlencoded" -d "${postData}"`,
+    `${CURL} -k -s -i -b "${cookieFile}" -c "${cookieFile}" -X POST "${loginUrl}" -H "Content-Type: application/x-www-form-urlencoded" -d "${postData}"`,
     { encoding: 'utf8' }
   );
 
@@ -75,7 +78,7 @@ async function getQlikSessionCookies(forceFresh = false) {
   const ticketUrl = step3LocLine.split(' ')[1].trim();
 
   // Step 4: Redeem ticket following redirects
-  execSync(`curl.exe -k -s -i -L -b "${cookieFile}" -c "${cookieFile}" "${ticketUrl}"`, { encoding: 'utf8' });
+  execSync(`${CURL} -k -s -i -L -b "${cookieFile}" -c "${cookieFile}" "${ticketUrl}"`, { encoding: 'utf8' });
 
   cachedCookies = parseCookies(cookieFile);
   cachedCookiesTime = Date.now();
