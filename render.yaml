@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: dashboard-dark-store
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 8094
+      - key: QLIK_HOST
+        value: sense.farmaciassaojoao.com.br
+      - key: QLIK_APP_ID
+        value: 671fa4f4-eb7d-418f-b4c9-936e87d8011d
+      - key: QLIK_FILIAL_FILTER
+        value: Porto Alegre Dark Store
+      - key: QLIK_USER
+        value: FSJ\lucas.alves6
+      - key: QLIK_PASSWORD
+        sync: false
