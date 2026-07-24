@@ -1,3 +1,4 @@
+const fs = require('fs');
 /**
  * Dashboard DARK Store — Express Server
  * API endpoints para o dashboard de indicadores
