@@ -124,7 +124,21 @@ const App = {
 
   async init() {
     await this.loadData();
-    setInterval(() => this.loadData(this.currentMonth, this.currentCutoffDay), 15 * 60 * 1000);
+    // Verifica atualizações a cada 1 hora (sincronização diária agendada para 07:45 no servidor)
+    setInterval(() => this.loadData(this.currentMonth, this.currentCutoffDay), 60 * 60 * 1000);
+  },
+
+  async forceRefresh() {
+    const btn = document.getElementById('btnRefresh');
+    if (btn) btn.classList.add('spinning');
+    try {
+      await fetch('/api/refresh', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mes: this.currentMonth }) });
+      await this.loadData(this.currentMonth, this.currentCutoffDay);
+    } catch (e) {
+      console.error('Erro ao forçar atualização:', e);
+    } finally {
+      if (btn) btn.classList.remove('spinning');
+    }
   },
 
   async loadData(mes, diaAte) {
@@ -315,7 +329,7 @@ const App = {
 
     if (d.lastUpdate) {
       const dt = new Date(d.lastUpdate);
-      document.getElementById('lastUpdate').textContent = `Atualizado às ${dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}`;
+      document.getElementById('lastUpdate').textContent = `Atualizado às ${dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
     }
 
     document.getElementById('mesLabel').textContent = `${monthFormatted} · Corte Dia ${d.diaCorte} (Dia ${d.diaHoje} real)`;

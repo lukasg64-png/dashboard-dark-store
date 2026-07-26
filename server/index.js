@@ -7,7 +7,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const fs = require('fs');
+const cron = require('node-cron');
 const qlikClient = require('./qlikClient');
 const dataService = require('./dataService');
 const excelReader = require('./excelReader');
@@ -28,7 +28,7 @@ let qlikConnected = false;
 let qlikError = null;
 
 // =========================================================
-// Tenta carregar dados do Qlik na inicialização
+// Tenta carregar dados do Qlik na inicialização e em background
 // =========================================================
 async function loadQlikData(mesAno, diaCorte = null, filters = {}) {
   try {
@@ -45,6 +45,15 @@ async function loadQlikData(mesAno, diaCorte = null, filters = {}) {
       lastQlikData = currentData;
       lastQlikPrevData = previousData;
       dataService.updateCache(currentData, previousData, mesAno);
+
+      // Persiste em disco para acelerar respostas e garantir fallback atualizado
+      const dumpPath = path.join(__dirname, 'cached_real_qlik_data.json');
+      try {
+        fs.writeFileSync(dumpPath, JSON.stringify({ currentData, previousData, timestamp: new Date().toISOString() }, null, 2));
+        console.log('[Server] 💾 Cache persistido atualizado com sucesso em cached_real_qlik_data.json');
+      } catch (e) {
+        console.error('[Server] ⚠️ Erro ao salvar cached_real_qlik_data.json:', e.message);
+      }
     }
     qlikConnected = true;
     qlikError = null;
@@ -55,7 +64,7 @@ async function loadQlikData(mesAno, diaCorte = null, filters = {}) {
     qlikConnected = false;
     qlikError = err.message;
     console.error(`[Server] ❌ Erro ao conectar ao Qlik: ${err.message}`);
-    console.error(`[Server] ℹ️  Dashboard rodará com dados de demonstração. Configure a autenticação no .env`);
+    console.error(`[Server] ℹ️  Dashboard rodará com dados de demonstração ou cache local. Configure a autenticação no .env`);
     return null;
   }
 }
@@ -183,11 +192,18 @@ app.get('/api/dashboard', async (req, res) => {
 
     let currentData, previousData;
 
-    if (qlikConnected) {
+    // Se a conexão estive ativa ou o cache expirou, busca no Qlik
+    if (qlikConnected || !dataService.isCacheValid(mesAno)) {
       const result = await loadQlikData(mesAno, diaAte, filters);
       if (result) {
         currentData = result.currentData;
         previousData = result.previousData;
+      }
+    } else {
+      const cache = dataService.getCache();
+      if (cache.currentMonth && cache.previousMonth) {
+        currentData = cache.currentMonth;
+        previousData = cache.previousMonth;
       }
     }
 
@@ -252,7 +268,7 @@ app.get('/api/status', (req, res) => {
       appId: process.env.QLIK_APP_ID,
       lastUpdate: dataService.getCache().timestamp
         ? new Date(dataService.getCache().timestamp).toISOString()
-        : null,
+        : new Date().toISOString(),
     },
   });
 });
@@ -263,11 +279,20 @@ app.get('/api/status', (req, res) => {
 app.post('/api/refresh', async (req, res) => {
   try {
     const mesAno = req.body.mes || dataService.getCurrentMonth();
-    const success = await loadQlikData(mesAno);
-    res.json({ success, qlikConnected, qlikError });
+    const result = await loadQlikData(mesAno);
+    res.json({ success: !!result, qlikConnected, qlikError });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
+});
+
+// =========================================================
+// AGENDADOR AUTOMÁTICO DE SINCRONIZAÇÃO (CRON - DIARIAMENTE ÀS 07:45)
+// =========================================================
+cron.schedule('45 7 * * *', async () => {
+  console.log('\n[Cron] ⏰ Executando sincronização diária programada com Qlik Sense (07:45 da manhã)...');
+  const mesAno = dataService.getCurrentMonth();
+  await loadQlikData(mesAno);
 });
 
 // =========================================================
@@ -279,15 +304,16 @@ app.listen(PORT, '0.0.0.0', async () => {
   console.log(`🌐 URL: http://0.0.0.0:${PORT}`);
   console.log(`📊 Qlik Host: ${process.env.QLIK_HOST || 'N/A'}`);
   console.log(`📋 App ID: ${process.env.QLIK_APP_ID || 'N/A'}`);
+  console.log(`⏰ Auto-Sync Qlik: Agendado diariamente às 07:45 da manhã`);
   console.log(`${'═'.repeat(60)}\n`);
 
-  // Tenta conectar ao Qlik
+  // Tenta conectar ao Qlik na inicialização
   const mesAno = dataService.getCurrentMonth();
   await loadQlikData(mesAno);
 
   if (!qlikConnected) {
-    console.log(`\n⚠️  Rodando com DADOS DE DEMONSTRAÇÃO`);
-    console.log(`   Para conectar ao Qlik, configure a autenticação no .env`);
-    console.log(`   Opções: certificados, header auth, ou NTLM\n`);
+    console.log(`\n⚠️  Rodando com DADOS DE DEMONSTRAÇÃO ou CACHE PERSISTIDO`);
+    console.log(`   Próxima sincronização agendada para 07:45 da manhã.\n`);
   }
 });
+
