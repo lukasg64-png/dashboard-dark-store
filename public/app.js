@@ -213,38 +213,6 @@ const App = {
     this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay, this.currentDataInicio, this.currentDataFim);
   },
 
-  onPresetChange(preset) {
-    const today = new Date();
-    const todayStr = today.toISOString().split('T')[0];
-    let startStr, endStr;
-
-    if (preset === 'all') {
-      startStr = '2026-05-18'; // Início do histórico da Dark Store
-      endStr = todayStr;
-    } else if (preset === 'current_month') {
-      const year = today.getFullYear();
-      const month = String(today.getMonth() + 1).padStart(2, '0');
-      startStr = `${year}-${month}-01`;
-      endStr = todayStr;
-    } else if (preset === 'last_30') {
-      const d30 = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
-      startStr = d30.toISOString().split('T')[0];
-      endStr = todayStr;
-    } else if (preset === 'last_7') {
-      const d7 = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
-      startStr = d7.toISOString().split('T')[0];
-      endStr = todayStr;
-    }
-
-    if (startStr && endStr) {
-      const dateStartEl = document.getElementById('dateStart');
-      const dateEndEl = document.getElementById('dateEnd');
-      if (dateStartEl) dateStartEl.value = startStr;
-      if (dateEndEl) dateEndEl.value = endStr;
-      this.onDateRangeChange();
-    }
-  },
-
   onDateRangeChange() {
     const startStr = document.getElementById('dateStart')?.value;
     const endStr = document.getElementById('dateEnd')?.value;
@@ -301,15 +269,17 @@ const App = {
   // ============================================================
   renderHeader(d) {
     const monthSelect = document.getElementById('monthSelect');
-    const meses = d.mesesDisponiveis || [];
-    if (!meses.includes(d.mesAno)) meses.push(d.mesAno);
-    meses.sort();
+    if (monthSelect) {
+      const meses = d.mesesDisponiveis || [];
+      if (!meses.includes(d.mesAno)) meses.push(d.mesAno);
+      meses.sort();
 
-    monthSelect.innerHTML = meses.map(m => {
-      const [y, mo] = m.split('-');
-      const names = ['', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-      return `<option value="${m}" ${m === d.mesAno ? 'selected' : ''}>${names[parseInt(mo)]} ${y}</option>`;
-    }).join('');
+      monthSelect.innerHTML = meses.map(m => {
+        const [y, mo] = m.split('-');
+        const names = ['', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        return `<option value="${m}" ${m === d.mesAno ? 'selected' : ''}>${names[parseInt(mo)]} ${y}</option>`;
+      }).join('');
+    }
 
     const dateStart = document.getElementById('dateStart');
     const dateEnd = document.getElementById('dateEnd');
