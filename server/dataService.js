@@ -246,17 +246,85 @@ function rankear(data, labelField, topN = 10) {
 }
 
 /**
+ * Agrupa os dados diários combinados em blocos semanais
+ */
+function agruparPorSemana(dailyCombined, mesAno) {
+  const parts = (mesAno || getCurrentMonth()).split('-');
+  const year = parseInt(parts[0]) || new Date().getFullYear();
+  const month = parseInt(parts[1]) || (new Date().getMonth() + 1);
+  const monthStr = String(month).padStart(2, '0');
+
+  const semanasMap = new Map();
+
+  for (const d of dailyCombined) {
+    const dia = d.dia;
+    let semIdx = Math.floor((dia - 1) / 7) + 1;
+    if (semIdx > 5) semIdx = 5;
+
+    const startDay = String((semIdx - 1) * 7 + 1).padStart(2, '0');
+    const endDay = String(Math.min(semIdx * 7, 31)).padStart(2, '0');
+    const key = `Semana ${semIdx}`;
+    const labelCompleto = `Sem ${semIdx} (${startDay}/${monthStr} - ${endDay}/${monthStr})`;
+
+    if (!semanasMap.has(key)) {
+      semanasMap.set(key, {
+        semanaKey: key,
+        labelCompleto,
+        dia: semIdx,
+        resultadoLiquido: 0,
+        quantidade: 0,
+        cupons: 0,
+        clientes: 0,
+        metaOrcada: 0,
+        metaDesafio: 0,
+        acumReal: 0,
+        acumOrcada: 0,
+        acumDesafio: 0,
+        diasCount: 0,
+        temDados: false,
+      });
+    }
+
+    const sem = semanasMap.get(key);
+    sem.resultadoLiquido += d.resultadoLiquido || 0;
+    sem.quantidade += d.quantidade || 0;
+    sem.cupons += d.cupons || 0;
+    sem.clientes += d.clientes || 0;
+    sem.metaOrcada += d.metaOrcada || 0;
+    sem.metaDesafio += d.metaDesafio || 0;
+    sem.acumReal = d.acumReal; // snapshot final acumulado
+    sem.acumOrcada = d.acumOrcada;
+    sem.acumDesafio = d.acumDesafio;
+    sem.diasCount += 1;
+    if (d.temDados) sem.temDados = true;
+  }
+
+  return Array.from(semanasMap.values()).map(sem => {
+    const cupons = sem.cupons || 0;
+    const clientes = sem.clientes || 0;
+    return {
+      ...sem,
+      ticketMedio: cupons > 0 ? sem.resultadoLiquido / cupons : 0,
+      itensPorNota: cupons > 0 ? sem.quantidade / cupons : 0,
+      itensPorCliente: clientes > 0 ? sem.quantidade / clientes : 0,
+      cuponsPorCliente: clientes > 0 ? sem.cupons / clientes : 0,
+      ticketPorCliente: clientes > 0 ? sem.resultadoLiquido / clientes : 0,
+    };
+  });
+}
+
+/**
  * Monta resposta completa do dashboard
  */
-function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam = null) {
+function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam = null, diaDeParam = null) {
   const isCurrentMonth = mesAno === getCurrentMonth();
   const diaHoje = getDiaAtual();
   const diasNoMes = new Date(parseInt(mesAno.split('-')[0]), parseInt(mesAno.split('-')[1]), 0).getDate();
 
-  // Definição do dia de corte (default = D-1 se mês atual, senão dia 31/fim do mês)
+  let diaDe = diaDeParam != null && !isNaN(diaDeParam) ? Math.min(Math.max(1, diaDeParam), diasNoMes) : 1;
   let diaCorte;
   if (diaAteParam != null && !isNaN(diaAteParam)) {
-    diaCorte = Math.min(Math.max(1, diaAteParam), diasNoMes);
+    diaCorte = Math.min(Math.max(diaDe, diaAteParam), diasNoMes);
   } else if (isCurrentMonth) {
     // PADRÃO SOLICITADO: D-1 (Ontem)
     diaCorte = Math.max(1, diaHoje - 1);
@@ -266,25 +334,35 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
 
   const mesAnterior = getPreviousMonth(mesAno);
 
-  // Metas do Excel acumuladas até o diaCorte
+  // Metas do Excel no intervalo diaDe até diaCorte
   const metasAtual = excelReader.getMetasByMonth(mesAno);
-  const metasAcum = excelReader.getMetasAcumuladas(mesAno, diaCorte);
+  const metasAcum = excelReader.getMetasIntervalo(mesAno, diaDe, diaCorte);
 
-  // KPIs mês atual (filtrados até diaCorte)
+  // KPIs mês atual (filtrados no intervalo diaDe..diaCorte)
   const dailyAtual = currentData?.daily || [];
-  const dailyAtualAteDia = dailyAtual.filter(d => parseInt(d.Dia || d.dia || 0) <= diaCorte);
+  const dailyAtualAteDia = dailyAtual.filter(d => {
+    const dia = parseInt(d.Dia || d.dia || 0);
+    return dia >= diaDe && dia <= diaCorte;
+  });
   const kpisAtual = calcularKPIs(dailyAtualAteDia);
 
-  // KPIs mês anterior (mesmo período - até o mesmo diaCorte)
+  // KPIs mês anterior (mesmo período decorrido diaDe..diaCorte no mês anterior)
   const dailyAnterior = previousData?.daily || [];
-  const dailyAnteriorAteDia = dailyAnterior.filter(d => parseInt(d.Dia || d.dia || 0) <= diaCorte);
+  const dailyAnteriorAteDia = dailyAnterior.filter(d => {
+    const dia = parseInt(d.Dia || d.dia || 0);
+    return dia >= diaDe && dia <= diaCorte;
+  });
   const kpisAnterior = calcularKPIs(dailyAnteriorAteDia);
 
   // Crescimento MoM
   const crescimento = calcularCrescimento(kpisAtual, kpisAnterior);
 
-  // Combinar daily com metas (com formatação de data real)
-  const dailyCombined = combinarDailyComMetas(dailyAtual, metasAtual, mesAno);
+  // Combinar daily com metas no intervalo selecionado
+  const dailyCombinedFull = combinarDailyComMetas(dailyAtual, metasAtual, mesAno);
+  const dailyCombined = dailyCombinedFull.filter(d => d.dia >= diaDe && d.dia <= diaCorte);
+
+  // Agrupamento semanal para alternância Dia / Semana
+  const weekly = agruparPorSemana(dailyCombined, mesAno);
 
   // Projeção de fechamento do mês
   const projecao = calcularProjecao(kpisAtual, diasNoMes);
@@ -414,9 +492,10 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
   return {
     mesAno,
     mesAnterior,
+    diaDe,
     diaCorte,
     diaHoje,
-    isD1Default: isCurrentMonth && (diaCorte === Math.max(1, diaHoje - 1)),
+    isD1Default: isCurrentMonth && (diaCorte === Math.max(1, diaHoje - 1)) && diaDe === 1,
     diasNoMes,
     mesesDisponiveis,
     opcoesFiltros: {
@@ -431,10 +510,11 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
       pctOrcada,
       pctDesafio,
       projecao,
-      projecaoPctOrcada: metasAcum.totalOrcada > 0 ? (projecao / (metasAcum.totalOrcada / diaCorte * diasNoMes)) * 100 : null,
+      projecaoPctOrcada: metasAcum.totalOrcada > 0 ? (projecao / (metasAcum.totalOrcada / (diaCorte - diaDe + 1) * diasNoMes)) * 100 : null,
     },
     crescimento,
     daily: dailyCombined,
+    weekly,
     channels,
     groups,
     lines,
@@ -477,4 +557,6 @@ module.exports = {
   getCache,
   calcularKPIs,
   combinarDailyComMetas,
+  agruparPorSemana,
 };
+

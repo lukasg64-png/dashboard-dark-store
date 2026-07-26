@@ -182,6 +182,7 @@ app.get('/api/dashboard', async (req, res) => {
     const mesAno = req.query.mes || dataService.getCurrentMonth();
     const isCurrentMonth = mesAno === dataService.getCurrentMonth();
     const diaHoje = new Date().getDate();
+    const diaDe = req.query.diaDe ? parseInt(req.query.diaDe) : 1;
     const diaAte = req.query.diaAte ? parseInt(req.query.diaAte) : (isCurrentMonth ? Math.max(1, diaHoje - 1) : null);
     
     const filters = {
@@ -230,7 +231,7 @@ app.get('/api/dashboard', async (req, res) => {
       }
     }
 
-    const response = dataService.buildDashboardResponse(currentData, previousData, mesAno, diaAte);
+    const response = dataService.buildDashboardResponse(currentData, previousData, mesAno, diaAte, diaDe);
     response.qlikConnected = qlikConnected || usingCachedRealData;
     response.qlikError = qlikConnected ? null : (usingCachedRealData ? null : qlikError);
     response.isDemo = !qlikConnected && !usingCachedRealData;

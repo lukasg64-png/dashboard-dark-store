@@ -60,13 +60,20 @@ function getMetasByMonth(mesAno) {
  * Retorna metas acumuladas até um determinado dia do mês
  */
 function getMetasAcumuladas(mesAno, ateDia = 31) {
+  return getMetasIntervalo(mesAno, 1, ateDia);
+}
+
+/**
+ * Retorna metas em um intervalo de dias (deDia ate ateDia)
+ */
+function getMetasIntervalo(mesAno, deDia = 1, ateDia = 31) {
   const metas = getMetasByMonth(mesAno);
   let acumOrcada = 0;
   let acumDesafio = 0;
   const diario = [];
 
   for (const m of metas) {
-    if (m.dia <= ateDia) {
+    if (m.dia >= deDia && m.dia <= ateDia) {
       acumOrcada += m.metaOrcada;
       acumDesafio += m.metaDesafio;
     }
@@ -75,8 +82,8 @@ function getMetasAcumuladas(mesAno, ateDia = 31) {
       data: m.data,
       metaOrcada: m.metaOrcada,
       metaDesafio: m.metaDesafio,
-      metaOrcadaAcum: m.dia <= ateDia ? acumOrcada : null,
-      metaDesafioAcum: m.dia <= ateDia ? acumDesafio : null,
+      metaOrcadaAcum: (m.dia >= deDia && m.dia <= ateDia) ? acumOrcada : null,
+      metaDesafioAcum: (m.dia >= deDia && m.dia <= ateDia) ? acumDesafio : null,
     });
   }
 
@@ -106,5 +113,7 @@ module.exports = {
   readAllMetas,
   getMetasByMonth,
   getMetasAcumuladas,
+  getMetasIntervalo,
   getMesesDisponiveis,
 };
+

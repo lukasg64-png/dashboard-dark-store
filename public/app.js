@@ -117,15 +117,17 @@ function destroyChart(id) {
 const App = {
   data: null,
   currentMonth: null,
+  currentStartDay: 1,
   currentCutoffDay: null,
   selectedGrupo: 'TODOS',
   selectedLinha: 'TODOS',
   selectedSubgrupo: 'TODOS',
+  viewMode: 'dia', // 'dia' ou 'semana'
 
   async init() {
     await this.loadData();
     // Verifica atualizações a cada 1 hora (sincronização diária agendada para 07:45 no servidor)
-    setInterval(() => this.loadData(this.currentMonth, this.currentCutoffDay), 60 * 60 * 1000);
+    setInterval(() => this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay), 60 * 60 * 1000);
   },
 
   async forceRefresh() {
@@ -133,7 +135,7 @@ const App = {
     if (btn) btn.classList.add('spinning');
     try {
       await fetch('/api/refresh', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mes: this.currentMonth }) });
-      await this.loadData(this.currentMonth, this.currentCutoffDay);
+      await this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay);
     } catch (e) {
       console.error('Erro ao forçar atualização:', e);
     } finally {
@@ -141,12 +143,24 @@ const App = {
     }
   },
 
-  async loadData(mes, diaAte) {
+  toggleViewMode() {
+    this.viewMode = this.viewMode === 'dia' ? 'semana' : 'dia';
+    const optDia = document.getElementById('optDia');
+    const optSemana = document.getElementById('optSemana');
+    if (optDia && optSemana) {
+      optDia.classList.toggle('active', this.viewMode === 'dia');
+      optSemana.classList.toggle('active', this.viewMode === 'semana');
+    }
+    this.render();
+  },
+
+  async loadData(mes, diaAte, diaDe) {
     try {
       let url = '/api/dashboard';
       const params = [];
       if (mes) params.push(`mes=${mes}`);
       if (diaAte) params.push(`diaAte=${diaAte}`);
+      if (diaDe) params.push(`diaDe=${diaDe}`);
       if (this.selectedGrupo && this.selectedGrupo !== 'TODOS') params.push(`grupo=${encodeURIComponent(this.selectedGrupo)}`);
       if (this.selectedLinha && this.selectedLinha !== 'TODOS') params.push(`linha=${encodeURIComponent(this.selectedLinha)}`);
       if (this.selectedSubgrupo && this.selectedSubgrupo !== 'TODOS') params.push(`subgrupo=${encodeURIComponent(this.selectedSubgrupo)}`);
@@ -159,6 +173,7 @@ const App = {
 
       this.data = json.data;
       this.currentMonth = json.data.mesAno;
+      this.currentStartDay = json.data.diaDe || 1;
       this.currentCutoffDay = json.data.diaCorte;
       this.render();
     } catch (err) {
@@ -178,7 +193,7 @@ const App = {
     this.selectedSubgrupo = selSubgrupo;
 
     document.getElementById('loading').classList.remove('hidden');
-    this.loadData(this.currentMonth, this.currentCutoffDay);
+    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay);
   },
 
   clearCategoryFilters() {
@@ -191,32 +206,34 @@ const App = {
     if (document.getElementById('filterSubgrupo')) document.getElementById('filterSubgrupo').value = 'TODOS';
 
     document.getElementById('loading').classList.remove('hidden');
-    this.loadData(this.currentMonth, this.currentCutoffDay);
+    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay);
   },
 
   changeMonth(mes) {
     if (mes && mes !== this.currentMonth) {
       document.getElementById('loading').classList.remove('hidden');
       this.currentCutoffDay = null;
+      this.currentStartDay = 1;
       this.loadData(mes);
     }
   },
 
-  changeCutoffDay(dia) {
-    if (dia) {
-      document.getElementById('loading').classList.remove('hidden');
-      this.loadData(this.currentMonth, parseInt(dia));
-    }
-  },
+  onDateRangeChange() {
+    const startStr = document.getElementById('dateStart')?.value;
+    const endStr = document.getElementById('dateEnd')?.value;
 
-  onDatePickerChange(dateStr) {
-    if (!dateStr) return;
-    const parts = dateStr.split('-');
-    if (parts.length === 3) {
-      const yearMonth = `${parts[0]}-${parts[1]}`;
-      const day = parseInt(parts[2]);
+    if (!startStr || !endStr) return;
+
+    const startParts = startStr.split('-');
+    const endParts = endStr.split('-');
+
+    if (startParts.length === 3 && endParts.length === 3) {
+      const yearMonth = `${startParts[0]}-${startParts[1]}`;
+      const dayStart = parseInt(startParts[2]);
+      const dayEnd = parseInt(endParts[2]);
+
       document.getElementById('loading').classList.remove('hidden');
-      this.loadData(yearMonth, day);
+      this.loadData(yearMonth, dayEnd, dayStart);
     }
   },
 
@@ -267,27 +284,21 @@ const App = {
       return `<option value="${m}" ${m === d.mesAno ? 'selected' : ''}>${names[parseInt(mo)]} ${y}</option>`;
     }).join('');
 
-    const datePicker = document.getElementById('datePicker');
-    if (datePicker) {
-      const dayFormatted = String(d.diaCorte).padStart(2, '0');
-      datePicker.value = `${d.mesAno}-${dayFormatted}`;
+    const dateStart = document.getElementById('dateStart');
+    const dateEnd = document.getElementById('dateEnd');
+    if (dateStart && dateEnd) {
+      const startDayFormatted = String(d.diaDe || 1).padStart(2, '0');
+      const endDayFormatted = String(d.diaCorte).padStart(2, '0');
+      dateStart.value = `${d.mesAno}-${startDayFormatted}`;
+      dateEnd.value = `${d.mesAno}-${endDayFormatted}`;
     }
 
-    const daySelect = document.getElementById('daySelect');
-    let dayOptionsHtml = '';
-    const maxDay = d.diasNoMes;
-    const defaultD1 = Math.max(1, d.diaHoje - 1);
-
-    for (let day = 1; day <= maxDay; day++) {
-      const dayStr = String(day).padStart(2, '0');
-      let label = `Até dia ${dayStr}`;
-      if (day === defaultD1) label += ` (D-1 Ontem)`;
-      else if (day === d.diaHoje) label += ` (Hoje)`;
-
-      const selected = day === d.diaCorte ? 'selected' : '';
-      dayOptionsHtml += `<option value="${day}" ${selected}>${label}</option>`;
+    const optDia = document.getElementById('optDia');
+    const optSemana = document.getElementById('optSemana');
+    if (optDia && optSemana) {
+      optDia.classList.toggle('active', this.viewMode === 'dia');
+      optSemana.classList.toggle('active', this.viewMode === 'semana');
     }
-    daySelect.innerHTML = dayOptionsHtml;
 
     // Atualiza opções dos dropdowns de filtros de categoria
     this.updateCategoryFilterDropdowns(d);
@@ -295,9 +306,10 @@ const App = {
     const [y, mo] = d.mesAno.split('-');
     const monthNamesStr = ['', 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
     const monthFormatted = `${monthNamesStr[parseInt(mo)]}/${y}`;
+    const startDayFmt = String(d.diaDe || 1).padStart(2, '0');
     const dayCorteFormatted = String(d.diaCorte).padStart(2, '0');
     
-    let infoText = `Exibindo dados consolidados de 01/${monthFormatted} até ${dayCorteFormatted}/${monthFormatted}`;
+    let infoText = `Exibindo histórico de ${startDayFmt}/${monthFormatted} até ${dayCorteFormatted}/${monthFormatted} (${this.viewMode === 'semana' ? 'Visão Semanal' : 'Visão Diária'})`;
     if (d.isD1Default) {
       infoText += ` (Filtro padrão D-1 - Ontem)`;
     } else if (d.diaCorte === d.diaHoje) {
@@ -332,7 +344,7 @@ const App = {
       document.getElementById('lastUpdate').textContent = `Atualizado às ${dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
     }
 
-    document.getElementById('mesLabel').textContent = `${monthFormatted} · Corte Dia ${d.diaCorte} (Dia ${d.diaHoje} real)`;
+    document.getElementById('mesLabel').textContent = `${monthFormatted} · Intervalo ${startDayFmt} a ${dayCorteFormatted} (Dia ${d.diaHoje} real)`;
   },
 
   // ============================================================
@@ -411,8 +423,10 @@ const App = {
     document.getElementById('kpiIPCSub').innerHTML = getSubText('itensPorCliente', 'Peças / Cliente');
     document.getElementById('kpiFreqSub').innerHTML = getSubText('cuponsPorCliente', 'Cupons / Cliente');
 
-    const dailyFiltered = d.daily.filter(x => x.dia <= d.diaCorte && x.temDados);
-    const labels = dailyFiltered.map(x => x.labelCompleto || `Dia ${x.dia}`);
+    const isSemana = this.viewMode === 'semana';
+    const dataList = isSemana ? (d.weekly || []) : d.daily;
+    const trendFiltered = dataList.filter(x => isSemana ? true : (x.dia <= d.diaCorte && x.temDados));
+    const labels = trendFiltered.map(x => x.labelCompleto || (isSemana ? x.semanaKey : `Dia ${x.dia}`));
 
     // 1. Gráfico Eficiência da Nota (TKM vs IPN)
     destroyChart('chartEficienciaNota');
@@ -425,7 +439,7 @@ const App = {
         datasets: [
           {
             label: 'Ticket Médio (TKM R$)',
-            data: dailyFiltered.map(x => x.ticketMedio),
+            data: trendFiltered.map(x => x.ticketMedio),
             backgroundColor: 'rgba(245,158,11,0.5)',
             borderColor: 'rgba(245,158,11,0.9)',
             borderWidth: 1.5,
@@ -434,7 +448,7 @@ const App = {
           },
           {
             label: 'Itens por Nota (IPN)',
-            data: dailyFiltered.map(x => x.itensPorNota),
+            data: trendFiltered.map(x => x.itensPorNota),
             type: 'line',
             borderColor: COLORS.cyan,
             backgroundColor: 'rgba(34,211,238,0.1)',
@@ -462,7 +476,7 @@ const App = {
           },
           tooltip: {
             callbacks: {
-              title: (c) => `📅 Data: ${c[0].label}`,
+              title: (c) => `${isSemana ? '📅 Semana' : '📅 Data'}: ${c[0].label}`,
               label: (c) => c.datasetIndex === 0 ? ` Ticket Médio: ${fmt.currency(c.raw)}` : ` Itens por Nota: ${fmt.decimal(c.raw, 1)} pçs`,
             },
           },
@@ -485,7 +499,7 @@ const App = {
         datasets: [
           {
             label: 'Gasto Médio por Cliente (R$)',
-            data: dailyFiltered.map(x => x.ticketPorCliente),
+            data: trendFiltered.map(x => x.ticketPorCliente),
             backgroundColor: 'rgba(16,185,129,0.5)',
             borderColor: 'rgba(16,185,129,0.9)',
             borderWidth: 1.5,
@@ -494,7 +508,7 @@ const App = {
           },
           {
             label: 'Frequência (Cupons/Cliente)',
-            data: dailyFiltered.map(x => x.cuponsPorCliente),
+            data: trendFiltered.map(x => x.cuponsPorCliente),
             type: 'line',
             borderColor: COLORS.pink,
             backgroundColor: 'rgba(236,72,153,0.1)',
@@ -522,7 +536,7 @@ const App = {
           },
           tooltip: {
             callbacks: {
-              title: (c) => `📅 Data: ${c[0].label}`,
+              title: (c) => `${isSemana ? '📅 Semana' : '📅 Data'}: ${c[0].label}`,
               label: (c) => c.datasetIndex === 0 ? ` Gasto por Cliente: ${fmt.currency(c.raw)}` : ` Frequência: ${fmt.decimal(c.raw, 2)} cupons/cli`,
             },
           },
@@ -620,13 +634,14 @@ const App = {
   },
 
   // ============================================================
-  // Gráfico Diário (Real vs Metas)
+  // Gráfico Desempenho (Real vs Metas - Dia ou Semana)
   // ============================================================
   renderDailyChart(d) {
     destroyChart('chartDaily');
     const ctx = document.getElementById('chartDaily').getContext('2d');
-    const dailyFiltered = d.daily.filter(x => x.dia <= Math.min(d.diaCorte + 2, d.diasNoMes));
-    const labels = dailyFiltered.map(x => x.labelCompleto || `Dia ${x.dia}`);
+    const isSemana = this.viewMode === 'semana';
+    const trendFiltered = isSemana ? (d.weekly || []) : d.daily.filter(x => x.dia <= Math.min(d.diaCorte + 2, d.diasNoMes));
+    const labels = trendFiltered.map(x => x.labelCompleto || (isSemana ? x.semanaKey : `Dia ${x.dia}`));
 
     charts.chartDaily = new Chart(ctx, {
       type: 'bar',
@@ -634,16 +649,16 @@ const App = {
         labels,
         datasets: [
           {
-            label: 'Resultado Líquido Real',
-            data: dailyFiltered.map(x => x.dia <= d.diaCorte ? x.resultadoLiquido : null),
-            backgroundColor: dailyFiltered.map(x => x.dia <= d.diaCorte && x.temDados ? 'rgba(99,102,241,0.75)' : 'rgba(99,102,241,0.1)'),
-            borderColor: dailyFiltered.map(x => x.dia <= d.diaCorte && x.temDados ? 'rgba(99,102,241,0.95)' : 'rgba(99,102,241,0.2)'),
+            label: isSemana ? 'Resultado Líquido Real (Semana)' : 'Resultado Líquido Real (Dia)',
+            data: trendFiltered.map(x => (isSemana || x.dia <= d.diaCorte) ? x.resultadoLiquido : null),
+            backgroundColor: trendFiltered.map(x => (isSemana || x.dia <= d.diaCorte) && x.temDados ? 'rgba(99,102,241,0.75)' : 'rgba(99,102,241,0.1)'),
+            borderColor: trendFiltered.map(x => (isSemana || x.dia <= d.diaCorte) && x.temDados ? 'rgba(99,102,241,0.95)' : 'rgba(99,102,241,0.2)'),
             borderWidth: 1,
             order: 2,
           },
           {
-            label: 'Meta Orçada Diária',
-            data: dailyFiltered.map(x => x.metaOrcada),
+            label: isSemana ? 'Meta Orçada Semanal' : 'Meta Orçada Diária',
+            data: trendFiltered.map(x => x.metaOrcada),
             type: 'line',
             borderColor: COLORS.green,
             backgroundColor: 'transparent',
@@ -654,8 +669,8 @@ const App = {
             order: 1,
           },
           {
-            label: 'Meta Desafio Diária',
-            data: dailyFiltered.map(x => x.metaDesafio),
+            label: isSemana ? 'Meta Desafio Semanal' : 'Meta Desafio Diária',
+            data: trendFiltered.map(x => x.metaDesafio),
             type: 'line',
             borderColor: COLORS.orange,
             backgroundColor: 'transparent',
@@ -676,7 +691,7 @@ const App = {
           datalabels: { display: false },
           tooltip: {
             callbacks: {
-              title: (c) => `📅 Data: ${c[0].label}`,
+              title: (c) => `${isSemana ? '📅 Semana' : '📅 Data'}: ${c[0].label}`,
               label: (c) => ` ${c.dataset.label}: ${fmt.currency(c.raw)}`,
             },
           },
@@ -695,8 +710,9 @@ const App = {
   renderAcumuladoChart(d) {
     destroyChart('chartAcumulado');
     const ctx = document.getElementById('chartAcumulado').getContext('2d');
-    const dailyFiltered = d.daily.filter(x => x.dia <= Math.min(d.diaCorte + 2, d.diasNoMes));
-    const labels = dailyFiltered.map(x => x.labelCompleto || `Dia ${x.dia}`);
+    const isSemana = this.viewMode === 'semana';
+    const trendFiltered = isSemana ? (d.weekly || []) : d.daily.filter(x => x.dia <= Math.min(d.diaCorte + 2, d.diasNoMes));
+    const labels = trendFiltered.map(x => x.labelCompleto || (isSemana ? x.semanaKey : `Dia ${x.dia}`));
 
     charts.chartAcumulado = new Chart(ctx, {
       type: 'line',
@@ -705,17 +721,17 @@ const App = {
         datasets: [
           {
             label: 'Realizado Acumulado',
-            data: dailyFiltered.map(x => x.dia <= d.diaCorte ? x.acumReal : null),
+            data: trendFiltered.map(x => (isSemana || x.dia <= d.diaCorte) ? x.acumReal : null),
             borderColor: COLORS.blue,
             backgroundColor: COLORS.gradient(ctx, 'rgba(99,102,241,0.25)', 'rgba(99,102,241,0.01)'),
             borderWidth: 3,
             fill: true,
-            pointRadius: dailyFiltered.map(x => x.dia === d.diaCorte ? 5 : 0),
+            pointRadius: trendFiltered.map(x => (!isSemana && x.dia === d.diaCorte) ? 5 : 2),
             pointBackgroundColor: COLORS.blue,
           },
           {
             label: 'Meta Orçada Acumulada',
-            data: dailyFiltered.map(x => x.acumOrcada),
+            data: trendFiltered.map(x => x.acumOrcada),
             borderColor: COLORS.green,
             backgroundColor: 'transparent',
             borderWidth: 2,
@@ -725,7 +741,7 @@ const App = {
           },
           {
             label: 'Meta Desafio Acumulada',
-            data: dailyFiltered.map(x => x.acumDesafio),
+            data: trendFiltered.map(x => x.acumDesafio),
             borderColor: COLORS.orange,
             backgroundColor: 'transparent',
             borderWidth: 2,
@@ -744,7 +760,7 @@ const App = {
           datalabels: { display: false },
           tooltip: {
             callbacks: {
-              title: (c) => `📅 Data: ${c[0].label}`,
+              title: (c) => `${isSemana ? '📅 Semana' : '📅 Data'}: ${c[0].label}`,
               label: (c) => ` ${c.dataset.label}: ${fmt.currency(c.raw)}`,
             },
           },

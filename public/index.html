@@ -37,18 +37,24 @@
           </select>
         </div>
 
-        <!-- Seletor de Calendário (Escolha a Data Exata) -->
+        <!-- Seletor de Intervalo de Datas (De / Até) -->
         <div class="selector-box highlight">
-          <label for="datePicker">📆 Calendário (Corte Exato)</label>
-          <input type="date" id="datePicker" onchange="App.onDatePickerChange(this.value)">
+          <label for="dateStart">📅 De</label>
+          <input type="date" id="dateStart" onchange="App.onDateRangeChange()">
         </div>
 
-        <!-- Seletor Rápido de Dia de Corte (D-1 por Padrão) -->
         <div class="selector-box highlight">
-          <label for="daySelect">✂️ Dia de Corte</label>
-          <select id="daySelect" onchange="App.changeCutoffDay(this.value)">
-            <option value="">D-1 (Ontem)</option>
-          </select>
+          <label for="dateEnd">📅 Até</label>
+          <input type="date" id="dateEnd" onchange="App.onDateRangeChange()">
+        </div>
+
+        <!-- Botão Toggle ON / OFF (Visão: Dia vs Semana) -->
+        <div class="toggle-view-box">
+          <span class="toggle-view-label">📊 Visão</span>
+          <div class="toggle-switch-btn" id="toggleViewBtn" onclick="App.toggleViewMode()">
+            <span class="toggle-opt active" id="optDia">Dia</span>
+            <span class="toggle-opt" id="optSemana">Semana</span>
+          </div>
         </div>
 
         <div class="status-badge demo" id="statusBadge">
