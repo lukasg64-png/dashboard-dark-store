@@ -154,13 +154,15 @@ const App = {
     this.render();
   },
 
-  async loadData(mes, diaAte, diaDe) {
+  async loadData(mes, diaAte, diaDe, dataInicio, dataFim) {
     try {
       let url = '/api/dashboard';
       const params = [];
       if (mes) params.push(`mes=${mes}`);
       if (diaAte) params.push(`diaAte=${diaAte}`);
       if (diaDe) params.push(`diaDe=${diaDe}`);
+      if (dataInicio) params.push(`dataInicio=${dataInicio}`);
+      if (dataFim) params.push(`dataFim=${dataFim}`);
       if (this.selectedGrupo && this.selectedGrupo !== 'TODOS') params.push(`grupo=${encodeURIComponent(this.selectedGrupo)}`);
       if (this.selectedLinha && this.selectedLinha !== 'TODOS') params.push(`linha=${encodeURIComponent(this.selectedLinha)}`);
       if (this.selectedSubgrupo && this.selectedSubgrupo !== 'TODOS') params.push(`subgrupo=${encodeURIComponent(this.selectedSubgrupo)}`);
@@ -175,6 +177,8 @@ const App = {
       this.currentMonth = json.data.mesAno;
       this.currentStartDay = json.data.diaDe || 1;
       this.currentCutoffDay = json.data.diaCorte;
+      this.currentDataInicio = dataInicio;
+      this.currentDataFim = dataFim;
       this.render();
     } catch (err) {
       console.error('Erro ao carregar dados:', err);
@@ -193,7 +197,7 @@ const App = {
     this.selectedSubgrupo = selSubgrupo;
 
     document.getElementById('loading').classList.remove('hidden');
-    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay);
+    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay, this.currentDataInicio, this.currentDataFim);
   },
 
   clearCategoryFilters() {
@@ -206,15 +210,38 @@ const App = {
     if (document.getElementById('filterSubgrupo')) document.getElementById('filterSubgrupo').value = 'TODOS';
 
     document.getElementById('loading').classList.remove('hidden');
-    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay);
+    this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay, this.currentDataInicio, this.currentDataFim);
   },
 
-  changeMonth(mes) {
-    if (mes && mes !== this.currentMonth) {
-      document.getElementById('loading').classList.remove('hidden');
-      this.currentCutoffDay = null;
-      this.currentStartDay = 1;
-      this.loadData(mes);
+  onPresetChange(preset) {
+    const today = new Date();
+    const todayStr = today.toISOString().split('T')[0];
+    let startStr, endStr;
+
+    if (preset === 'all') {
+      startStr = '2026-05-18'; // Início do histórico da Dark Store
+      endStr = todayStr;
+    } else if (preset === 'current_month') {
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      startStr = `${year}-${month}-01`;
+      endStr = todayStr;
+    } else if (preset === 'last_30') {
+      const d30 = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+      startStr = d30.toISOString().split('T')[0];
+      endStr = todayStr;
+    } else if (preset === 'last_7') {
+      const d7 = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+      startStr = d7.toISOString().split('T')[0];
+      endStr = todayStr;
+    }
+
+    if (startStr && endStr) {
+      const dateStartEl = document.getElementById('dateStart');
+      const dateEndEl = document.getElementById('dateEnd');
+      if (dateStartEl) dateStartEl.value = startStr;
+      if (dateEndEl) dateEndEl.value = endStr;
+      this.onDateRangeChange();
     }
   },
 
@@ -233,7 +260,7 @@ const App = {
       const dayEnd = parseInt(endParts[2]);
 
       document.getElementById('loading').classList.remove('hidden');
-      this.loadData(yearMonth, dayEnd, dayStart);
+      this.loadData(yearMonth, dayEnd, dayStart, startStr, endStr);
     }
   },
 

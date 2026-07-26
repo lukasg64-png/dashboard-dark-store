@@ -316,39 +316,52 @@ function agruparPorSemana(dailyCombined, mesAno) {
 /**
  * Monta resposta completa do dashboard
  */
-function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam = null, diaDeParam = null) {
+function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam = null, diaDeParam = null, dataInicioParam = null, dataFimParam = null) {
   const isCurrentMonth = mesAno === getCurrentMonth();
   const diaHoje = getDiaAtual();
   const diasNoMes = new Date(parseInt(mesAno.split('-')[0]), parseInt(mesAno.split('-')[1]), 0).getDate();
+
+  let dataInicio = dataInicioParam;
+  let dataFim = dataFimParam;
 
   let diaDe = diaDeParam != null && !isNaN(diaDeParam) ? Math.min(Math.max(1, diaDeParam), diasNoMes) : 1;
   let diaCorte;
   if (diaAteParam != null && !isNaN(diaAteParam)) {
     diaCorte = Math.min(Math.max(diaDe, diaAteParam), diasNoMes);
   } else if (isCurrentMonth) {
-    // PADRÃO SOLICITADO: D-1 (Ontem)
     diaCorte = Math.max(1, diaHoje - 1);
   } else {
     diaCorte = diasNoMes;
   }
 
+  // Se não vieram datas absolutas YYYY-MM-DD, gera com base no mês e diaDe/diaCorte
+  if (!dataInicio || !dataFim) {
+    const monthStr = String(mesAno).slice(0, 7);
+    const startStr = String(diaDe).padStart(2, '0');
+    const endStr = String(diaCorte).padStart(2, '0');
+    dataInicio = `${monthStr}-${startStr}`;
+    dataFim = `${monthStr}-${endStr}`;
+  }
+
   const mesAnterior = getPreviousMonth(mesAno);
 
-  // Metas do Excel no intervalo diaDe até diaCorte
-  const metasAtual = excelReader.getMetasByMonth(mesAno);
-  const metasAcum = excelReader.getMetasIntervalo(mesAno, diaDe, diaCorte);
+  // Metas do Excel no intervalo de datas
+  const metasAtual = excelReader.readAllMetas();
+  const metasAcum = excelReader.getMetasForDateRange(dataInicio, dataFim);
 
-  // KPIs mês atual (filtrados no intervalo diaDe..diaCorte)
+  // KPIs mês atual (filtrados no intervalo de datas)
   const dailyAtual = currentData?.daily || [];
   const dailyAtualAteDia = dailyAtual.filter(d => {
+    if (d.dataStr) return d.dataStr >= dataInicio && d.dataStr <= dataFim;
     const dia = parseInt(d.Dia || d.dia || 0);
     return dia >= diaDe && dia <= diaCorte;
   });
   const kpisAtual = calcularKPIs(dailyAtualAteDia);
 
-  // KPIs mês anterior (mesmo período decorrido diaDe..diaCorte no mês anterior)
+  // KPIs mês anterior (mesmo período no mês anterior)
   const dailyAnterior = previousData?.daily || [];
   const dailyAnteriorAteDia = dailyAnterior.filter(d => {
+    if (d.dataStr) return d.dataStr >= dataInicio && d.dataStr <= dataFim;
     const dia = parseInt(d.Dia || d.dia || 0);
     return dia >= diaDe && dia <= diaCorte;
   });
@@ -359,7 +372,10 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
 
   // Combinar daily com metas no intervalo selecionado
   const dailyCombinedFull = combinarDailyComMetas(dailyAtual, metasAtual, mesAno);
-  const dailyCombined = dailyCombinedFull.filter(d => d.dia >= diaDe && d.dia <= diaCorte);
+  const dailyCombined = dailyCombinedFull.filter(d => {
+    if (d.dataStr) return d.dataStr >= dataInicio && d.dataStr <= dataFim;
+    return d.dia >= diaDe && d.dia <= diaCorte;
+  });
 
   // Agrupamento semanal para alternância Dia / Semana
   const weekly = agruparPorSemana(dailyCombined, mesAno);

@@ -34,18 +34,39 @@ function readAllMetas() {
       continue;
     }
 
+    const yearStr = date.getFullYear();
+    const monthStr = String(date.getMonth() + 1).padStart(2, '0');
+    const dayStr = String(date.getDate()).padStart(2, '0');
+    const dataStr = `${yearStr}-${monthStr}-${dayStr}`;
+
     metas.push({
       data: date,
+      dataStr,
       dia: date.getDate(),
       mes: date.getMonth() + 1,
       ano: date.getFullYear(),
-      mesAno: `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`,
+      mesAno: `${yearStr}-${monthStr}`,
       metaOrcada: row[1] || 0,
       metaDesafio: row[2] || 0,
     });
   }
 
   return metas;
+}
+
+/**
+ * Retorna metas em um intervalo de datas absoluto ("YYYY-MM-DD" ate "YYYY-MM-DD")
+ */
+function getMetasForDateRange(startDateStr, endDateStr) {
+  const all = readAllMetas();
+  const filtered = all.filter(m => (!startDateStr || m.dataStr >= startDateStr) && (!endDateStr || m.dataStr <= endDateStr));
+  const totalOrcada = filtered.reduce((s, m) => s + (m.metaOrcada || 0), 0);
+  const totalDesafio = filtered.reduce((s, m) => s + (m.metaDesafio || 0), 0);
+  return {
+    metas: filtered,
+    totalOrcada,
+    totalDesafio,
+  };
 }
 
 /**
@@ -114,6 +135,7 @@ module.exports = {
   getMetasByMonth,
   getMetasAcumuladas,
   getMetasIntervalo,
+  getMetasForDateRange,
   getMesesDisponiveis,
 };
 

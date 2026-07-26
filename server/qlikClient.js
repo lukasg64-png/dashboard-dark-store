@@ -155,8 +155,21 @@ async function getHyperCubeData(app, dimensions, measures, maxRows = 500) {
   const results = allRows.map(row => {
     const obj = {};
     dimensions.forEach((d, i) => {
-      obj[d] = row[i]?.qText || '';
+      const val = row[i]?.qText || '';
+      obj[d] = val;
       obj[`${d}_num`] = row[i]?.qNum ?? null;
+
+      if (d === 'Data' && val) {
+        const parts = val.split('/');
+        if (parts.length === 3) {
+          const dayStr = parts[0].padStart(2, '0');
+          const monthStr = parts[1].padStart(2, '0');
+          const yearStr = parts[2];
+          obj.dataStr = `${yearStr}-${monthStr}-${dayStr}`;
+          obj.Dia = parseInt(dayStr);
+          obj.Dia_num = parseInt(dayStr);
+        }
+      }
     });
     measures.forEach((m, i) => {
       const idx = dimensions.length + i;
@@ -173,17 +186,26 @@ async function getHyperCubeData(app, dimensions, measures, maxRows = 500) {
   return results;
 }
 
-function getMeasuresForMonth(mesAno, diaCorte = null, filters = {}) {
-  let setFilterParts = [`[Ano-Mes]={"${mesAno}"}`];
+function getMeasuresForMonth(mesAno, diaCorte = null, filters = {}, dataInicio = null, dataFim = null) {
+  let setFilterParts = [];
 
-  if (diaCorte && diaCorte > 0) {
-    const daysArr = [];
-    for (let d = 1; d <= diaCorte; d++) {
-      const padded = String(d).padStart(2, '0');
-      daysArr.push(`"${padded}"`);
-      daysArr.push(`"${d}"`);
+  if (dataInicio && dataFim) {
+    const [y1, m1, d1] = dataInicio.split('-');
+    const [y2, m2, d2] = dataFim.split('-');
+    const dt1 = `${d1}/${m1}/${y1}`;
+    const dt2 = `${d2}/${m2}/${y2}`;
+    setFilterParts.push(`[Data]={">=${dt1} <=${dt2}"}`);
+  } else if (mesAno && mesAno !== 'TODOS') {
+    setFilterParts.push(`[Ano-Mes]={"${mesAno}"}`);
+    if (diaCorte && diaCorte > 0) {
+      const daysArr = [];
+      for (let d = 1; d <= diaCorte; d++) {
+        const padded = String(d).padStart(2, '0');
+        daysArr.push(`"${padded}"`);
+        daysArr.push(`"${d}"`);
+      }
+      setFilterParts.push(`Dia={${daysArr.join(',')}}`);
     }
-    setFilterParts.push(`Dia={${daysArr.join(',')}}`);
   }
 
   if (filters.grupo && filters.grupo !== 'TODOS') {
@@ -196,7 +218,7 @@ function getMeasuresForMonth(mesAno, diaCorte = null, filters = {}) {
     setFilterParts.push(`[Desc_Subgrupo]={"${filters.subgrupo}"}`);
   }
 
-  const setStr = setFilterParts.join(', ');
+  const setStr = setFilterParts.length > 0 ? setFilterParts.join(', ') : '$';
 
   return [
     { label: 'resultadoLiquido', expression: `Sum({<${setStr}>} [Valor Líquido] - [Valor Receita Recarga] + ([Valor Receita Recarga] * 4.63)/100)` },
@@ -206,18 +228,18 @@ function getMeasuresForMonth(mesAno, diaCorte = null, filters = {}) {
   ];
 }
 
-async function extractMonthData(app, mesAno, diaCorte = null, filters = {}) {
-  const measures = getMeasuresForMonth(mesAno, diaCorte, filters);
+async function extractMonthData(app, mesAno, diaCorte = null, filters = {}, dataInicio = null, dataFim = null) {
+  const measures = getMeasuresForMonth(mesAno, diaCorte, filters, dataInicio, dataFim);
   const filterDesc = [
-    diaCorte ? `Dia <= ${diaCorte}` : '',
+    dataInicio && dataFim ? `Data: ${dataInicio} até ${dataFim}` : (diaCorte ? `Dia <= ${diaCorte}` : ''),
     filters.grupo && filters.grupo !== 'TODOS' ? `Grupo: ${filters.grupo}` : '',
     filters.linha && filters.linha !== 'TODOS' ? `Linha: ${filters.linha}` : '',
     filters.subgrupo && filters.subgrupo !== 'TODOS' ? `Subgrupo: ${filters.subgrupo}` : '',
   ].filter(Boolean).join(' | ');
 
-  console.log(`[QlikClient] 📊 Extraindo dados do Qlik via Set Analysis para ${mesAno} ${filterDesc ? `[${filterDesc}]` : ''}...`);
+  console.log(`[QlikClient] 📊 Extraindo dados do Qlik via Set Analysis ${filterDesc ? `[${filterDesc}]` : ''}...`);
 
-  const dailyData = await getHyperCubeData(app, ['Dia'], measures);
+  const dailyData = await getHyperCubeData(app, ['Data'], measures, 1000);
   const channelData = await getHyperCubeData(app, ['Canal'], measures);
   const groupData = await getHyperCubeData(app, ['Desc_Grupo'], measures, 1000);
   const lineData = await getHyperCubeData(app, ['Desc_Linha'], measures, 1000);
