@@ -30,18 +30,18 @@ let qlikError = null;
 // =========================================================
 // Tenta carregar dados do Qlik na inicialização e em background
 // =========================================================
-async function loadQlikData(mesAno, diaCorte = null, filters = {}) {
+async function loadQlikData(mesAno, diaCorte = null, filters = {}, dataInicio = null, dataFim = null) {
   try {
-    console.log(`[Server] 🔄 Buscando dados do Qlik para ${mesAno} (até dia ${diaCorte || 'Fim'}) e mês anterior em sessão única...`);
+    console.log(`[Server] 🔄 Buscando dados do Qlik para ${dataInicio && dataFim ? `${dataInicio} até ${dataFim}` : mesAno}...`);
     const mesAnterior = dataService.getPreviousMonth(mesAno);
 
-    const { currentData, previousData } = await qlikClient.fetchBothMonthsData(mesAno, mesAnterior, diaCorte, filters);
+    const { currentData, previousData } = await qlikClient.fetchBothMonthsData(mesAno, mesAnterior, diaCorte, filters, dataInicio, dataFim);
 
     const hasActiveFilters = (filters.grupo && filters.grupo !== 'TODOS') ||
                              (filters.linha && filters.linha !== 'TODOS') ||
                              (filters.subgrupo && filters.subgrupo !== 'TODOS');
 
-    if (!hasActiveFilters && !diaCorte) {
+    if (!hasActiveFilters && !diaCorte && !dataInicio) {
       lastQlikData = currentData;
       lastQlikPrevData = previousData;
       dataService.updateCache(currentData, previousData, mesAno);
@@ -58,13 +58,13 @@ async function loadQlikData(mesAno, diaCorte = null, filters = {}) {
     qlikConnected = true;
     qlikError = null;
 
-    console.log(`[Server] ✅ Dados Qlik de ambos os meses (até dia ${diaCorte || 'Fim'}) carregados com sucesso!`);
+    console.log(`[Server] ✅ Dados Qlik carregados com sucesso!`);
     return { currentData, previousData };
   } catch (err) {
     qlikConnected = false;
     qlikError = err.message;
     console.error(`[Server] ❌ Erro ao conectar ao Qlik: ${err.message}`);
-    console.error(`[Server] ℹ️  Dashboard rodará com dados de demonstração ou cache local. Configure a autenticação no .env`);
+    console.error(`[Server] ℹ️  Dashboard rodará com dados de demonstração ou cache local.`);
     return null;
   }
 }
@@ -197,7 +197,7 @@ app.get('/api/dashboard', async (req, res) => {
 
     // Se a conexão estive ativa ou o cache expirou, busca no Qlik
     if (qlikConnected || !dataService.isCacheValid(mesAno)) {
-      const result = await loadQlikData(mesAno, diaAte, filters);
+      const result = await loadQlikData(mesAno, diaAte, filters, dataInicio, dataFim);
       if (result) {
         currentData = result.currentData;
         previousData = result.previousData;

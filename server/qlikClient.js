@@ -256,15 +256,15 @@ async function extractMonthData(app, mesAno, diaCorte = null, filters = {}, data
   };
 }
 
-async function fetchBothMonthsData(currentMesAno, prevMesAno, diaCorte = null, filters = {}) {
+async function fetchBothMonthsData(currentMesAno, prevMesAno, diaCorte = null, filters = {}, dataInicio = null, dataFim = null) {
   let session, app;
 
   try {
     ({ session, app } = await connect());
     await applySelections(app);
 
-    const currentData = await extractMonthData(app, currentMesAno, diaCorte, filters);
-    const previousData = await extractMonthData(app, prevMesAno, diaCorte, filters);
+    const currentData = await extractMonthData(app, currentMesAno, diaCorte, filters, dataInicio, dataFim);
+    const previousData = await extractMonthData(app, prevMesAno, diaCorte, filters, dataInicio, dataFim);
     
     // Se não houver filtros, extrai a lista completa de opções de filtros
     let filterOptions = null;

@@ -125,9 +125,28 @@ const App = {
   viewMode: 'dia', // 'dia' ou 'semana'
 
   async init() {
-    await this.loadData();
-    // Verifica atualizações a cada 1 hora (sincronização diária agendada para 07:45 no servidor)
-    setInterval(() => this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay), 60 * 60 * 1000);
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const d1Day = Math.max(1, today.getDate() - 1);
+    const d1Str = String(d1Day).padStart(2, '0');
+
+    const defaultStart = `${year}-${month}-01`;
+    const defaultEnd = `${year}-${month}-${d1Str}`;
+
+    const dateStartEl = document.getElementById('dateStart');
+    const dateEndEl = document.getElementById('dateEnd');
+    if (dateStartEl && !dateStartEl.value) dateStartEl.value = defaultStart;
+    if (dateEndEl && !dateEndEl.value) dateEndEl.value = defaultEnd;
+
+    await this.loadData(null, d1Day, 1, defaultStart, defaultEnd);
+
+    // Verifica atualizações a cada 1 hora
+    setInterval(() => {
+      const s = document.getElementById('dateStart')?.value || defaultStart;
+      const e = document.getElementById('dateEnd')?.value || defaultEnd;
+      this.loadData(null, null, null, s, e);
+    }, 60 * 60 * 1000);
   },
 
   async forceRefresh() {
@@ -284,10 +303,11 @@ const App = {
     const dateStart = document.getElementById('dateStart');
     const dateEnd = document.getElementById('dateEnd');
     if (dateStart && dateEnd) {
-      const startDayFormatted = String(d.diaDe || 1).padStart(2, '0');
-      const endDayFormatted = String(d.diaCorte).padStart(2, '0');
-      dateStart.value = `${d.mesAno}-${startDayFormatted}`;
-      dateEnd.value = `${d.mesAno}-${endDayFormatted}`;
+      if (d.dataInicio) dateStart.value = d.dataInicio;
+      else dateStart.value = `${d.mesAno}-${String(d.diaDe || 1).padStart(2, '0')}`;
+
+      if (d.dataFim) dateEnd.value = d.dataFim;
+      else dateEnd.value = `${d.mesAno}-${String(d.diaCorte).padStart(2, '0')}`;
     }
 
     const optDia = document.getElementById('optDia');
