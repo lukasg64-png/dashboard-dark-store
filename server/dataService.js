@@ -323,15 +323,29 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
 
   let dataInicio = dataInicioParam;
   let dataFim = dataFimParam;
+  let diaDe, diaCorte;
 
-  let diaDe = diaDeParam != null && !isNaN(diaDeParam) ? Math.min(Math.max(1, diaDeParam), diasNoMes) : 1;
-  let diaCorte;
-  if (diaAteParam != null && !isNaN(diaAteParam)) {
-    diaCorte = Math.min(Math.max(diaDe, diaAteParam), diasNoMes);
-  } else if (isCurrentMonth) {
-    diaCorte = Math.max(1, diaHoje - 1);
-  } else {
-    diaCorte = diasNoMes;
+  if (dataInicio && dataFim) {
+    const startParts = dataInicio.split('-');
+    const endParts = dataFim.split('-');
+    if (startParts.length === 3 && endParts.length === 3) {
+      diaDe = parseInt(startParts[2]);
+      diaCorte = parseInt(endParts[2]);
+      mesAno = `${endParts[0]}-${endParts[1]}`;
+    }
+  }
+
+  if (diaDe == null) {
+    diaDe = diaDeParam != null && !isNaN(diaDeParam) ? Math.min(Math.max(1, diaDeParam), diasNoMes) : 1;
+  }
+  if (diaCorte == null) {
+    if (diaAteParam != null && !isNaN(diaAteParam)) {
+      diaCorte = Math.min(Math.max(diaDe, diaAteParam), diasNoMes);
+    } else if (isCurrentMonth) {
+      diaCorte = Math.max(1, diaHoje - 1);
+    } else {
+      diaCorte = diasNoMes;
+    }
   }
 
   // Se não vieram datas absolutas YYYY-MM-DD, gera com base no mês e diaDe/diaCorte
@@ -511,6 +525,8 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
     diaDe,
     diaCorte,
     diaHoje,
+    dataInicio,
+    dataFim,
     isD1Default: isCurrentMonth && (diaCorte === Math.max(1, diaHoje - 1)) && diaDe === 1,
     diasNoMes,
     mesesDisponiveis,
