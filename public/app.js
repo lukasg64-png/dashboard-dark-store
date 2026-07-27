@@ -354,6 +354,7 @@ const App = {
     this.renderKPIs(d);
     this.renderMoMTable(d);
     this.renderCustomerEfficiency(d);
+    this.renderClientSegmentation(d);
     this.renderDailyChart(d);
     this.renderAcumuladoChart(d);
     this.renderChannels(d);
@@ -692,6 +693,61 @@ const App = {
         },
       },
     });
+  },
+
+  // ============================================================
+  // Segmentação da Base de Clientes em 4 Grupos
+  // ============================================================
+  renderClientSegmentation(d) {
+    const seg = d.segmentacaoClientes;
+    if (!seg) return;
+
+    this.animateValue('segRetidosCount', seg.retidos.count, fmt.number);
+    this.animateValue('segNovosCount', seg.novos.count, fmt.number);
+    this.animateValue('segChurnCount', seg.churn.count, fmt.number);
+    this.animateValue('segReativadosCount', seg.reativados.count, fmt.number);
+
+    const elRet = document.getElementById('segRetidosSub');
+    if (elRet) elRet.textContent = `RL: ${fmt.currency(seg.retidos.rl)} (${fmt.decimal(seg.retidos.pctRL, 1)}% do total)`;
+
+    const elNov = document.getElementById('segNovosSub');
+    if (elNov) elNov.textContent = `RL: ${fmt.currency(seg.novos.rl)} (${fmt.decimal(seg.novos.pctRL, 1)}% do total)`;
+
+    const elChu = document.getElementById('segChurnSub');
+    if (elChu) elChu.textContent = `Perda M-1: ${fmt.currency(seg.churn.rl)} (${fmt.decimal(seg.churn.pctRL, 1)}% do M-1)`;
+
+    const elRea = document.getElementById('segReativadosSub');
+    if (elRea) elRea.textContent = `RL: ${fmt.currency(seg.reativados.rl)} (${fmt.decimal(seg.reativados.pctRL, 1)}% do total)`;
+
+    const tbody = document.getElementById('tableClientGroupsBody');
+    if (!tbody) return;
+
+    const groups = [
+      { name: '🔄 1. Clientes Retidos (Recorrentes)', data: seg.retidos, badge: 'positive', status: 'Alta Retenção', desc: 'Compraram em M-1 e continuam ativos no mês atual' },
+      { name: '✨ 2. Clientes Novos (Primeira Compra)', data: seg.novos, badge: 'positive', status: 'Novas Aquisições', desc: 'Primeira compra registrada no mês atual' },
+      { name: '⚠️ 3. Churn (Ausentes do M-1)', data: seg.churn, badge: 'negative', status: 'Risco de Evasão', desc: 'Compraram no mês anterior, mas zerados no mês atual' },
+      { name: '⚡ 4. Clientes Reativados (Resgatados)', data: seg.reativados, badge: 'neutral', status: 'Base Resgatada', desc: 'Retornaram à loja após inatividade pré-M-1' },
+    ];
+
+    tbody.innerHTML = groups.map(g => {
+      const gastoMedio = g.data.count > 0 ? g.data.rl / g.data.count : 0;
+      return `
+        <tr>
+          <td class="bold">
+            ${g.name}
+            <div style="font-size:0.72rem;color:var(--text-muted);font-weight:400;margin-top:2px;">${g.desc}</div>
+          </td>
+          <td class="right bold">${fmt.number(g.data.count)}</td>
+          <td class="right">${fmt.decimal(g.data.pctBase, 1)}%</td>
+          <td class="right bold">${fmt.currency(g.data.rl)}</td>
+          <td class="right">${fmt.decimal(g.data.pctRL, 1)}%</td>
+          <td class="right">${fmt.currency(gastoMedio)}</td>
+          <td class="center">
+            <span class="mom-badge ${g.badge}">${g.status}</span>
+          </td>
+        </tr>
+      `;
+    }).join('');
   },
 
   // ============================================================

@@ -7,10 +7,10 @@
         "dataStr": "2026-07-27",
         "Dia": 27,
         "Dia_num": 27,
-        "resultadoLiquido": 9442.219999999992,
-        "quantidade": 269,
-        "cupons": 66,
-        "clientes": 36
+        "resultadoLiquido": 13834.699999999986,
+        "quantidade": 329,
+        "cupons": 91,
+        "clientes": 54
       },
       {
         "Data": "26/07/2026",
@@ -18,7 +18,7 @@
         "dataStr": "2026-07-26",
         "Dia": 26,
         "Dia_num": 26,
-        "resultadoLiquido": 21797.009999999995,
+        "resultadoLiquido": 21797.00999999999,
         "quantidade": 825,
         "cupons": 244,
         "clientes": 154
@@ -40,7 +40,7 @@
         "dataStr": "2026-07-22",
         "Dia": 22,
         "Dia_num": 22,
-        "resultadoLiquido": 28940.339999999986,
+        "resultadoLiquido": 28940.33999999999,
         "quantidade": 998,
         "cupons": 275,
         "clientes": 193
@@ -51,7 +51,7 @@
         "dataStr": "2026-07-25",
         "Dia": 25,
         "Dia_num": 25,
-        "resultadoLiquido": 20524.04,
+        "resultadoLiquido": 20524.039999999997,
         "quantidade": 766,
         "cupons": 220,
         "clientes": 126
@@ -62,7 +62,7 @@
         "dataStr": "2026-07-23",
         "Dia": 23,
         "Dia_num": 23,
-        "resultadoLiquido": 45298.07999999997,
+        "resultadoLiquido": 45298.079999999965,
         "quantidade": 1006,
         "cupons": 292,
         "clientes": 187
@@ -84,7 +84,7 @@
         "dataStr": "2026-07-02",
         "Dia": 2,
         "Dia_num": 2,
-        "resultadoLiquido": 34720.709999999985,
+        "resultadoLiquido": 34720.70999999999,
         "quantidade": 1091,
         "cupons": 319,
         "clientes": 148
@@ -95,7 +95,7 @@
         "dataStr": "2026-07-16",
         "Dia": 16,
         "Dia_num": 16,
-        "resultadoLiquido": 43883.54999999998,
+        "resultadoLiquido": 43883.54999999999,
         "quantidade": 1008,
         "cupons": 288,
         "clientes": 160
@@ -128,7 +128,7 @@
         "dataStr": "2026-07-09",
         "Dia": 9,
         "Dia_num": 9,
-        "resultadoLiquido": 38854.25,
+        "resultadoLiquido": 38854.249999999985,
         "quantidade": 767,
         "cupons": 244,
         "clientes": 142
@@ -150,7 +150,7 @@
         "dataStr": "2026-07-07",
         "Dia": 7,
         "Dia_num": 7,
-        "resultadoLiquido": 44094.84499999996,
+        "resultadoLiquido": 44094.84499999995,
         "quantidade": 1440,
         "cupons": 342,
         "clientes": 210
@@ -161,7 +161,7 @@
         "dataStr": "2026-07-04",
         "Dia": 4,
         "Dia_num": 4,
-        "resultadoLiquido": 36412.289999999986,
+        "resultadoLiquido": 36412.28999999997,
         "quantidade": 1062,
         "cupons": 275,
         "clientes": 144
@@ -172,7 +172,7 @@
         "dataStr": "2026-07-15",
         "Dia": 15,
         "Dia_num": 15,
-        "resultadoLiquido": 31030.519999999975,
+        "resultadoLiquido": 31030.52,
         "quantidade": 1124,
         "cupons": 278,
         "clientes": 187
@@ -183,7 +183,7 @@
         "dataStr": "2026-07-01",
         "Dia": 1,
         "Dia_num": 1,
-        "resultadoLiquido": 49655.56449999997,
+        "resultadoLiquido": 49655.56449999999,
         "quantidade": 1114,
         "cupons": 302,
         "clientes": 166
@@ -194,7 +194,7 @@
         "dataStr": "2026-07-20",
         "Dia": 20,
         "Dia_num": 20,
-        "resultadoLiquido": 29384.529999999984,
+        "resultadoLiquido": 29384.529999999995,
         "quantidade": 884,
         "cupons": 290,
         "clientes": 143
@@ -205,7 +205,7 @@
         "dataStr": "2026-07-03",
         "Dia": 3,
         "Dia_num": 3,
-        "resultadoLiquido": 37492.18999999998,
+        "resultadoLiquido": 37492.18999999997,
         "quantidade": 1082,
         "cupons": 310,
         "clientes": 169
@@ -216,7 +216,7 @@
         "dataStr": "2026-07-06",
         "Dia": 6,
         "Dia_num": 6,
-        "resultadoLiquido": 46006.09999999996,
+        "resultadoLiquido": 46006.09999999997,
         "quantidade": 1259,
         "cupons": 340,
         "clientes": 166
@@ -227,7 +227,7 @@
         "dataStr": "2026-07-08",
         "Dia": 8,
         "Dia_num": 8,
-        "resultadoLiquido": 21936.505999999994,
+        "resultadoLiquido": 21936.505999999998,
         "quantidade": 701,
         "cupons": 261,
         "clientes": 179
@@ -238,7 +238,7 @@
         "dataStr": "2026-07-18",
         "Dia": 18,
         "Dia_num": 18,
-        "resultadoLiquido": 28086.279999999988,
+        "resultadoLiquido": 28086.279999999984,
         "quantidade": 842,
         "cupons": 238,
         "clientes": 136
@@ -249,7 +249,7 @@
         "dataStr": "2026-07-17",
         "Dia": 17,
         "Dia_num": 17,
-        "resultadoLiquido": 30449.00999999999,
+        "resultadoLiquido": 30449.009999999995,
         "quantidade": 896,
         "cupons": 265,
         "clientes": 158
@@ -260,7 +260,7 @@
         "dataStr": "2026-07-11",
         "Dia": 11,
         "Dia_num": 11,
-        "resultadoLiquido": 26484.699999999986,
+        "resultadoLiquido": 26484.699999999997,
         "quantidade": 889,
         "cupons": 260,
         "clientes": 149
@@ -271,7 +271,7 @@
         "dataStr": "2026-07-12",
         "Dia": 12,
         "Dia_num": 12,
-        "resultadoLiquido": 33353.17999999999,
+        "resultadoLiquido": 33353.179999999986,
         "quantidade": 883,
         "cupons": 259,
         "clientes": 144
@@ -293,7 +293,7 @@
         "dataStr": "2026-07-19",
         "Dia": 19,
         "Dia_num": 19,
-        "resultadoLiquido": 22798.129999999994,
+        "resultadoLiquido": 22798.13,
         "quantidade": 789,
         "cupons": 227,
         "clientes": 126
@@ -303,9 +303,9 @@
       {
         "Canal": "Venda Balcão",
         "Canal_num": "NaN",
-        "resultadoLiquido": 27571.210000000003,
-        "quantidade": 1217,
-        "cupons": 513,
+        "resultadoLiquido": 27605.08000000001,
+        "quantidade": 1223,
+        "cupons": 515,
         "clientes": 267
       },
       {
@@ -317,17 +317,17 @@
         "clientes": 0
       },
       {
-        "Canal": "e_Commerce",
+        "Canal": "APP",
         "Canal_num": "NaN",
-        "resultadoLiquido": 97032.17000000009,
-        "quantidade": 3305,
-        "cupons": 847,
-        "clientes": 240
+        "resultadoLiquido": 14462.139999999994,
+        "quantidade": 467,
+        "cupons": 163,
+        "clientes": 75
       },
       {
         "Canal": "Venda Caixa",
         "Canal_num": "NaN",
-        "resultadoLiquido": 6119.530000000001,
+        "resultadoLiquido": 6119.529999999999,
         "quantidade": 364,
         "cupons": 236,
         "clientes": 81
@@ -335,23 +335,31 @@
       {
         "Canal": "iFood",
         "Canal_num": "NaN",
-        "resultadoLiquido": 129180.99000000034,
-        "quantidade": 5323,
-        "cupons": 1485,
-        "clientes": 1348
+        "resultadoLiquido": 130441.09000000019,
+        "quantidade": 5381,
+        "cupons": 1501,
+        "clientes": 1361
       },
       {
-        "Canal": "APP",
+        "Canal": "Venda Tele Entrega Central",
         "Canal_num": "NaN",
-        "resultadoLiquido": 11358.77,
-        "quantidade": 385,
-        "cupons": 141,
-        "clientes": 63
+        "resultadoLiquido": 45673.26999999998,
+        "quantidade": 695,
+        "cupons": 215,
+        "clientes": 112
+      },
+      {
+        "Canal": "e_Commerce",
+        "Canal_num": "NaN",
+        "resultadoLiquido": 95758.56999999993,
+        "quantidade": 3172,
+        "cupons": 817,
+        "clientes": 225
       },
       {
         "Canal": "Venda Tele Entrega",
         "Canal_num": "NaN",
-        "resultadoLiquido": 6477.179999999999,
+        "resultadoLiquido": 6477.1799999999985,
         "quantidade": 23,
         "cupons": 10,
         "clientes": 7
@@ -359,18 +367,10 @@
       {
         "Canal": "SITE",
         "Canal_num": "NaN",
-        "resultadoLiquido": 13276.810000000001,
-        "quantidade": 190,
-        "cupons": 64,
-        "clientes": 37
-      },
-      {
-        "Canal": "Venda Tele Entrega Central",
-        "Canal_num": "NaN",
-        "resultadoLiquido": 46522.91999999999,
-        "quantidade": 691,
-        "cupons": 214,
-        "clientes": 112
+        "resultadoLiquido": 15395.199999999997,
+        "quantidade": 233,
+        "cupons": 76,
+        "clientes": 42
       },
       {
         "Canal": "Credito Facil",
@@ -383,7 +383,7 @@
       {
         "Canal": "APP Tele Entrega",
         "Canal_num": "NaN",
-        "resultadoLiquido": 362495.08000000025,
+        "resultadoLiquido": 362495.0800000001,
         "quantidade": 9840,
         "cupons": 2422,
         "clientes": 1088
@@ -401,50 +401,50 @@
       {
         "Desc_Grupo": "Perfumaria(2)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 196609.67000000045,
-        "quantidade": 6631,
-        "cupons": 2781,
-        "clientes": 1541
+        "resultadoLiquido": 197268.2900000005,
+        "quantidade": 6652,
+        "cupons": 2793,
+        "clientes": 1548
       },
       {
         "Desc_Grupo": "Medicamentos(1)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 539455.6050000001,
-        "quantidade": 10693,
-        "cupons": 4682,
-        "clientes": 2478
+        "resultadoLiquido": 542781.6749999998,
+        "quantidade": 10708,
+        "cupons": 4692,
+        "clientes": 2483
       },
       {
         "Desc_Grupo": "Conveniencia(10)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 56650.24999999995,
-        "quantidade": 3850,
-        "cupons": 1152,
-        "clientes": 717
+        "resultadoLiquido": 56823.509999999966,
+        "quantidade": 3863,
+        "cupons": 1156,
+        "clientes": 718
       },
       {
         "Desc_Grupo": "Dermo-Cosmeticos(3089)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 29905.109999999997,
-        "quantidade": 322,
-        "cupons": 256,
-        "clientes": 115
+        "resultadoLiquido": 29954.110000000004,
+        "quantidade": 323,
+        "cupons": 257,
+        "clientes": 116
       },
       {
         "Desc_Grupo": "Nutricao(3090)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 30558.22999999999,
-        "quantidade": 420,
-        "cupons": 238,
-        "clientes": 137
+        "resultadoLiquido": 30677.719999999983,
+        "quantidade": 421,
+        "cupons": 239,
+        "clientes": 138
       },
       {
         "Desc_Grupo": "Diversos(5)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 22489.759999999394,
-        "quantidade": 3279,
-        "cupons": 3297,
-        "clientes": 1224
+        "resultadoLiquido": 22555.80000000056,
+        "quantidade": 3288,
+        "cupons": 3309,
+        "clientes": 1227
       },
       {
         "Desc_Grupo": "-",
@@ -459,7 +459,7 @@
       {
         "Desc_Linha": "ACESSORIOS - INFANTIL CHUPETAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1352.02,
+        "resultadoLiquido": 1352.0200000000002,
         "quantidade": 40,
         "cupons": 38,
         "clientes": 22
@@ -467,10 +467,10 @@
       {
         "Desc_Linha": "TOALHAS UMEDECIDAS - INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 10822.759999999984,
-        "quantidade": 488,
-        "cupons": 318,
-        "clientes": 194
+        "resultadoLiquido": 10851.659999999996,
+        "quantidade": 489,
+        "cupons": 319,
+        "clientes": 195
       },
       {
         "Desc_Linha": "ESCOVAS - PENTES CABELOS",
@@ -491,7 +491,7 @@
       {
         "Desc_Linha": "OTC- ANTIFISETICOS/ANTIGASES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1610.5599999999997,
+        "resultadoLiquido": 1610.5600000000002,
         "quantidade": 104,
         "cupons": 70,
         "clientes": 45
@@ -515,7 +515,7 @@
       {
         "Desc_Linha": "CAPILAR - CREME",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 807.34,
+        "resultadoLiquido": 807.3400000000001,
         "quantidade": 33,
         "cupons": 28,
         "clientes": 17
@@ -523,7 +523,7 @@
       {
         "Desc_Linha": "VITAMINAS E SUPLEMENTOS MINERAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 16954.629999999997,
+        "resultadoLiquido": 16954.630000000005,
         "quantidade": 303,
         "cupons": 189,
         "clientes": 97
@@ -539,7 +539,7 @@
       {
         "Desc_Linha": "OTC- GINECOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2342.1099999999997,
+        "resultadoLiquido": 2342.11,
         "quantidade": 28,
         "cupons": 25,
         "clientes": 11
@@ -563,7 +563,7 @@
       {
         "Desc_Linha": "BANHO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 876.0699999999998,
+        "resultadoLiquido": 876.0699999999999,
         "quantidade": 36,
         "cupons": 29,
         "clientes": 16
@@ -571,23 +571,23 @@
       {
         "Desc_Linha": "ACESSORIOS - MAQUIAGEM",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 141.77,
-        "quantidade": 9,
-        "cupons": 9,
-        "clientes": 5
+        "resultadoLiquido": 155.89,
+        "quantidade": 10,
+        "cupons": 10,
+        "clientes": 6
       },
       {
         "Desc_Linha": "FRALDAS INFANTIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 70572.64000000012,
-        "quantidade": 840,
-        "cupons": 644,
-        "clientes": 401
+        "resultadoLiquido": 70837.34000000001,
+        "quantidade": 843,
+        "cupons": 647,
+        "clientes": 403
       },
       {
         "Desc_Linha": "MAOS E PES - ESMALTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 610.3800000000001,
+        "resultadoLiquido": 610.38,
         "quantidade": 71,
         "cupons": 44,
         "clientes": 28
@@ -595,8 +595,8 @@
       {
         "Desc_Linha": "ANTIFUNGICOS / ANTIMICOTICOS TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1468.6,
-        "quantidade": 57,
+        "resultadoLiquido": 1405.3299999999997,
+        "quantidade": 56,
         "cupons": 48,
         "clientes": 27
       },
@@ -619,15 +619,15 @@
       {
         "Desc_Linha": "TROMBOLITICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4576.58,
-        "quantidade": 54,
-        "cupons": 46,
+        "resultadoLiquido": 4648.38,
+        "quantidade": 56,
+        "cupons": 47,
         "clientes": 23
       },
       {
         "Desc_Linha": "FRALDAS INFANTIS ROUPA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3068.99,
+        "resultadoLiquido": 3068.9900000000002,
         "quantidade": 28,
         "cupons": 26,
         "clientes": 20
@@ -651,7 +651,7 @@
       {
         "Desc_Linha": "ANTIPARASITARIO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1846.19,
+        "resultadoLiquido": 1846.1899999999998,
         "quantidade": 80,
         "cupons": 45,
         "clientes": 25
@@ -667,10 +667,10 @@
       {
         "Desc_Linha": "ANTIDIABETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 159734.34000000003,
-        "quantidade": 226,
-        "cupons": 148,
-        "clientes": 130
+        "resultadoLiquido": 162733.34,
+        "quantidade": 225,
+        "cupons": 149,
+        "clientes": 131
       },
       {
         "Desc_Linha": "ANTI-PARKINSONIANOS",
@@ -691,7 +691,7 @@
       {
         "Desc_Linha": "KIT - CAPILAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5490.580000000002,
+        "resultadoLiquido": 5490.58,
         "quantidade": 191,
         "cupons": 160,
         "clientes": 110
@@ -699,7 +699,7 @@
       {
         "Desc_Linha": "CAPILAR - SHAMPOO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2845.4299999999994,
+        "resultadoLiquido": 2845.4300000000003,
         "quantidade": 121,
         "cupons": 83,
         "clientes": 45
@@ -707,7 +707,7 @@
       {
         "Desc_Linha": "OTC- VITAMINAS E SUPLEMENTOS MINERAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 11444.61,
+        "resultadoLiquido": 11444.609999999999,
         "quantidade": 164,
         "cupons": 119,
         "clientes": 76
@@ -723,7 +723,7 @@
       {
         "Desc_Linha": "HIGIENE INTIMA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 807.59,
+        "resultadoLiquido": 807.5899999999999,
         "quantidade": 33,
         "cupons": 31,
         "clientes": 16
@@ -739,7 +739,7 @@
       {
         "Desc_Linha": "CAPILAR - CONDICIONADOR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2145.7,
+        "resultadoLiquido": 2145.7000000000003,
         "quantidade": 72,
         "cupons": 58,
         "clientes": 31
@@ -747,7 +747,7 @@
       {
         "Desc_Linha": "ANTICONVULSIVANTES / ANTIEPILETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6134.05,
+        "resultadoLiquido": 6134.049999999999,
         "quantidade": 100,
         "cupons": 57,
         "clientes": 55
@@ -771,10 +771,10 @@
       {
         "Desc_Linha": "MEDICAMENTOS FARMACIA POPULAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7266.419999999998,
-        "quantidade": 556,
-        "cupons": 274,
-        "clientes": 161
+        "resultadoLiquido": 7302.579999999998,
+        "quantidade": 562,
+        "cupons": 278,
+        "clientes": 163
       },
       {
         "Desc_Linha": "MAOS E PES - LIXAS E PALITOS",
@@ -787,10 +787,10 @@
       {
         "Desc_Linha": "CAPILAR - CREME TRATAMENTO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 968.6800000000001,
-        "quantidade": 35,
-        "cupons": 32,
-        "clientes": 17
+        "resultadoLiquido": 994.8000000000001,
+        "quantidade": 36,
+        "cupons": 33,
+        "clientes": 18
       },
       {
         "Desc_Linha": "CARDIOTERAPIA",
@@ -819,7 +819,7 @@
       {
         "Desc_Linha": "ANALGESICOS OPIOIDES/NARCOTICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 731.0799999999999,
+        "resultadoLiquido": 731.08,
         "quantidade": 19,
         "cupons": 17,
         "clientes": 16
@@ -827,7 +827,7 @@
       {
         "Desc_Linha": "CAPILAR - ANTICASPA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1144.5200000000002,
+        "resultadoLiquido": 1144.52,
         "quantidade": 49,
         "cupons": 32,
         "clientes": 21
@@ -851,7 +851,7 @@
       {
         "Desc_Linha": "DESCOLORANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 766.51,
+        "resultadoLiquido": 766.5100000000001,
         "quantidade": 66,
         "cupons": 33,
         "clientes": 22
@@ -859,7 +859,7 @@
       {
         "Desc_Linha": "ANTI-INFLAMATORIOS / ANTI-REUMAT",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4417.429999999999,
+        "resultadoLiquido": 4417.43,
         "quantidade": 140,
         "cupons": 133,
         "clientes": 83
@@ -891,10 +891,10 @@
       {
         "Desc_Linha": "TESTES DIAGNOSTICOS E APARELHOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7968.84,
-        "quantidade": 94,
-        "cupons": 82,
-        "clientes": 45
+        "resultadoLiquido": 7975.740000000001,
+        "quantidade": 95,
+        "cupons": 83,
+        "clientes": 46
       },
       {
         "Desc_Linha": "HIGIENE ORAL - ESCOVA DENTAL",
@@ -907,7 +907,7 @@
       {
         "Desc_Linha": "BOMBONIERE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1064.52,
+        "resultadoLiquido": 1064.5199999999998,
         "quantidade": 228,
         "cupons": 103,
         "clientes": 75
@@ -939,7 +939,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - CREME E GEL DENTAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2678.8200000000006,
+        "resultadoLiquido": 2678.82,
         "quantidade": 305,
         "cupons": 172,
         "clientes": 110
@@ -947,23 +947,23 @@
       {
         "Desc_Linha": "CHOCOLATES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5640.880000000002,
-        "quantidade": 811,
-        "cupons": 286,
-        "clientes": 214
+        "resultadoLiquido": 5646.870000000001,
+        "quantidade": 812,
+        "cupons": 287,
+        "clientes": 215
       },
       {
         "Desc_Linha": "DESODORANTE - AERO MASCULINO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3727.1600000000003,
-        "quantidade": 283,
-        "cupons": 135,
-        "clientes": 90
+        "resultadoLiquido": 3742.0600000000004,
+        "quantidade": 284,
+        "cupons": 136,
+        "clientes": 91
       },
       {
         "Desc_Linha": "CURATIVOS - PRIMEIROS CUIDADOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3590.76,
+        "resultadoLiquido": 3590.7600000000007,
         "quantidade": 439,
         "cupons": 169,
         "clientes": 95
@@ -971,15 +971,15 @@
       {
         "Desc_Linha": "CONTRACEPTIVOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 21255.319999999996,
-        "quantidade": 353,
-        "cupons": 307,
-        "clientes": 182
+        "resultadoLiquido": 21277.529999999995,
+        "quantidade": 357,
+        "cupons": 310,
+        "clientes": 184
       },
       {
         "Desc_Linha": "DISFUNCAO ERETIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3465.6300000000015,
+        "resultadoLiquido": 3465.630000000001,
         "quantidade": 218,
         "cupons": 122,
         "clientes": 69
@@ -987,7 +987,7 @@
       {
         "Desc_Linha": "OTC- ANTIALERGICOS/ANTI-HISTAMINICO SIST",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3072.37,
+        "resultadoLiquido": 3072.3700000000003,
         "quantidade": 143,
         "cupons": 107,
         "clientes": 59
@@ -995,7 +995,7 @@
       {
         "Desc_Linha": "ANTISSEPTICO - DESINFECTANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 228.01000000000002,
+        "resultadoLiquido": 228.01,
         "quantidade": 26,
         "cupons": 17,
         "clientes": 9
@@ -1011,10 +1011,10 @@
       {
         "Desc_Linha": "DESODORANTE - AERO FEMININO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3357.5599999999995,
-        "quantidade": 277,
-        "cupons": 134,
-        "clientes": 90
+        "resultadoLiquido": 3458.3500000000004,
+        "quantidade": 284,
+        "cupons": 137,
+        "clientes": 92
       },
       {
         "Desc_Linha": "ANTIGRIPAIS / ANTITUSSIGENOS",
@@ -1027,16 +1027,16 @@
       {
         "Desc_Linha": "KIT - SABONETE BARRAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1327.93,
-        "quantidade": 70,
-        "cupons": 54,
-        "clientes": 32
+        "resultadoLiquido": 1377.73,
+        "quantidade": 72,
+        "cupons": 56,
+        "clientes": 33
       },
       {
         "Desc_Linha": "ANTIBIOTICOS SISTEMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6829.159999999999,
-        "quantidade": 139,
+        "resultadoLiquido": 6742.5199999999995,
+        "quantidade": 135,
         "cupons": 104,
         "clientes": 101
       },
@@ -1051,7 +1051,7 @@
       {
         "Desc_Linha": "ANTI-NEOPLASICOS/ONCOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 901.11,
+        "resultadoLiquido": 901.1100000000001,
         "quantidade": 6,
         "cupons": 5,
         "clientes": 3
@@ -1083,7 +1083,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - FIO E FITA DENTAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 403.98999999999995,
+        "resultadoLiquido": 403.99,
         "quantidade": 22,
         "cupons": 22,
         "clientes": 17
@@ -1155,10 +1155,10 @@
       {
         "Desc_Linha": "ANTILIPEMICOS / REDUTORES COLESTEROL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 12309.829999999998,
-        "quantidade": 205,
-        "cupons": 128,
-        "clientes": 72
+        "resultadoLiquido": 12333.729999999998,
+        "quantidade": 206,
+        "cupons": 129,
+        "clientes": 73
       },
       {
         "Desc_Linha": "SABONETE - LIQUIDO REFIL",
@@ -1219,7 +1219,7 @@
       {
         "Desc_Linha": "ACESSORIOS - MAQUIAGEM - PINCEIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 167.60999999999999,
+        "resultadoLiquido": 167.61,
         "quantidade": 16,
         "cupons": 16,
         "clientes": 15
@@ -1227,7 +1227,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS - INCONTINENCIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6147.4,
+        "resultadoLiquido": 6147.399999999999,
         "quantidade": 174,
         "cupons": 60,
         "clientes": 32
@@ -1251,7 +1251,7 @@
       {
         "Desc_Linha": "BARBA - CARGA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1001.3199999999999,
+        "resultadoLiquido": 1001.3199999999998,
         "quantidade": 24,
         "cupons": 23,
         "clientes": 14
@@ -1259,10 +1259,10 @@
       {
         "Desc_Linha": "ACESSORIOS - INFANTIL BICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 478.58000000000004,
-        "quantidade": 11,
-        "cupons": 10,
-        "clientes": 5
+        "resultadoLiquido": 537.8,
+        "quantidade": 12,
+        "cupons": 11,
+        "clientes": 6
       },
       {
         "Desc_Linha": "REPELENTES",
@@ -1275,7 +1275,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - INFANTIL CREME E GEL DENT",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 442.06999999999994,
+        "resultadoLiquido": 442.07,
         "quantidade": 39,
         "cupons": 25,
         "clientes": 14
@@ -1283,9 +1283,9 @@
       {
         "Desc_Linha": "ENERGETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1390.3799999999999,
-        "quantidade": 119,
-        "cupons": 72,
+        "resultadoLiquido": 1412.18,
+        "quantidade": 121,
+        "cupons": 74,
         "clientes": 46
       },
       {
@@ -1307,7 +1307,7 @@
       {
         "Desc_Linha": "BISCOITOS/BOLACHAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 387.23999999999995,
+        "resultadoLiquido": 387.24,
         "quantidade": 63,
         "cupons": 47,
         "clientes": 33
@@ -1323,7 +1323,7 @@
       {
         "Desc_Linha": "EXPECTORANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 783.51,
+        "resultadoLiquido": 783.5100000000001,
         "quantidade": 27,
         "cupons": 25,
         "clientes": 13
@@ -1347,7 +1347,7 @@
       {
         "Desc_Linha": "CORTCOESTEROIDES TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3086.790000000001,
+        "resultadoLiquido": 3086.7900000000004,
         "quantidade": 96,
         "cupons": 70,
         "clientes": 43
@@ -1371,7 +1371,7 @@
       {
         "Desc_Linha": "ABSORVENTE - INCONTINENCIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 253.36,
+        "resultadoLiquido": 253.35999999999999,
         "quantidade": 10,
         "cupons": 6,
         "clientes": 5
@@ -1379,7 +1379,7 @@
       {
         "Desc_Linha": "OTC- ANALGESICOS/ANTITERMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 9432.370000000003,
+        "resultadoLiquido": 9432.369999999999,
         "quantidade": 555,
         "cupons": 436,
         "clientes": 275
@@ -1387,7 +1387,7 @@
       {
         "Desc_Linha": "CORTCOESTEROIDES SISTEMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3698.460000000001,
+        "resultadoLiquido": 3698.46,
         "quantidade": 161,
         "cupons": 149,
         "clientes": 97
@@ -1395,7 +1395,7 @@
       {
         "Desc_Linha": "BEBIDAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 114.28,
+        "resultadoLiquido": 114.27999999999999,
         "quantidade": 12,
         "cupons": 8,
         "clientes": 7
@@ -1411,10 +1411,10 @@
       {
         "Desc_Linha": "HORMONIOS DIVERSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7978.24,
-        "quantidade": 87,
-        "cupons": 64,
-        "clientes": 26
+        "resultadoLiquido": 8126.76,
+        "quantidade": 89,
+        "cupons": 65,
+        "clientes": 27
       },
       {
         "Desc_Linha": "OTC- ESTIMULANTES DO APETITE",
@@ -1427,7 +1427,7 @@
       {
         "Desc_Linha": "DESODORANTE - ROLL-ON FEMININO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 418.61,
+        "resultadoLiquido": 418.6100000000001,
         "quantidade": 56,
         "cupons": 45,
         "clientes": 32
@@ -1435,7 +1435,7 @@
       {
         "Desc_Linha": "TIREOIDOTERAPIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2964.27,
+        "resultadoLiquido": 2964.2699999999995,
         "quantidade": 158,
         "cupons": 75,
         "clientes": 40
@@ -1451,7 +1451,7 @@
       {
         "Desc_Linha": "OTC- HEPATOPROTETORES/COLAGOGOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1061.48,
+        "resultadoLiquido": 1061.4800000000002,
         "quantidade": 89,
         "cupons": 42,
         "clientes": 27
@@ -1459,7 +1459,7 @@
       {
         "Desc_Linha": "GINECOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2731.4700000000003,
+        "resultadoLiquido": 2731.47,
         "quantidade": 48,
         "cupons": 45,
         "clientes": 22
@@ -1475,7 +1475,7 @@
       {
         "Desc_Linha": "OTC- ANTI-INFLAMAT/ANTI-REUMAT TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1882.75,
+        "resultadoLiquido": 1882.7499999999995,
         "quantidade": 73,
         "cupons": 53,
         "clientes": 19
@@ -1491,7 +1491,7 @@
       {
         "Desc_Linha": "OTC- RELAXANTES MUSCULARES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1317.83,
+        "resultadoLiquido": 1317.8300000000002,
         "quantidade": 102,
         "cupons": 78,
         "clientes": 45
@@ -1499,7 +1499,7 @@
       {
         "Desc_Linha": "OTC- OFTALMOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4890.610000000001,
+        "resultadoLiquido": 4890.61,
         "quantidade": 97,
         "cupons": 75,
         "clientes": 36
@@ -1507,15 +1507,15 @@
       {
         "Desc_Linha": "FORMULAS INFANTIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 24838.199999999997,
-        "quantidade": 293,
-        "cupons": 175,
-        "clientes": 105
+        "resultadoLiquido": 24957.689999999988,
+        "quantidade": 294,
+        "cupons": 176,
+        "clientes": 106
       },
       {
         "Desc_Linha": "OTC- AFECCOES BUCAIS/GARGANTA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3327.9800000000005,
+        "resultadoLiquido": 3327.980000000001,
         "quantidade": 175,
         "cupons": 140,
         "clientes": 80
@@ -1531,7 +1531,7 @@
       {
         "Desc_Linha": "COLORACAO - FEMININA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3021.870000000001,
+        "resultadoLiquido": 3021.87,
         "quantidade": 146,
         "cupons": 103,
         "clientes": 58
@@ -1547,10 +1547,10 @@
       {
         "Desc_Linha": "OTC- OBSTIPACAO/CATARTICOS/LAXANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3259,
-        "quantidade": 104,
-        "cupons": 72,
-        "clientes": 41
+        "resultadoLiquido": 3302.49,
+        "quantidade": 105,
+        "cupons": 73,
+        "clientes": 42
       },
       {
         "Desc_Linha": "CICATRIZANTE/REGENERADOR PELE",
@@ -1563,8 +1563,8 @@
       {
         "Desc_Linha": "TRANQUILIZANTES / ANSIOLITICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 648.03,
-        "quantidade": 23,
+        "resultadoLiquido": 616.94,
+        "quantidade": 22,
         "cupons": 13,
         "clientes": 11
       },
@@ -1587,7 +1587,7 @@
       {
         "Desc_Linha": "OTC- ANTIACNEICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2009.98,
+        "resultadoLiquido": 2009.9799999999996,
         "quantidade": 33,
         "cupons": 31,
         "clientes": 18
@@ -1595,7 +1595,7 @@
       {
         "Desc_Linha": "PRESERVATIVOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1851.45,
+        "resultadoLiquido": 1851.4500000000003,
         "quantidade": 99,
         "cupons": 75,
         "clientes": 46
@@ -1603,7 +1603,7 @@
       {
         "Desc_Linha": "CUIDADO FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1927.7900000000002,
+        "resultadoLiquido": 1927.79,
         "quantidade": 59,
         "cupons": 56,
         "clientes": 28
@@ -1619,7 +1619,7 @@
       {
         "Desc_Linha": "OTC- ANTIGRIPAIS/ANTITUSSIGENOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 8787.085000000003,
+        "resultadoLiquido": 8787.085000000001,
         "quantidade": 650,
         "cupons": 316,
         "clientes": 190
@@ -1627,7 +1627,7 @@
       {
         "Desc_Linha": "SABONETE - BARRAS INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 400.84999999999997,
+        "resultadoLiquido": 400.8500000000001,
         "quantidade": 74,
         "cupons": 35,
         "clientes": 16
@@ -1651,7 +1651,7 @@
       {
         "Desc_Linha": "HEPATOPROTETORES / COLAGOGOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2859.97,
+        "resultadoLiquido": 2859.9699999999993,
         "quantidade": 39,
         "cupons": 24,
         "clientes": 9
@@ -1659,7 +1659,7 @@
       {
         "Desc_Linha": "DERMATOLOGICA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1973.4300000000003,
+        "resultadoLiquido": 1973.4299999999998,
         "quantidade": 90,
         "cupons": 62,
         "clientes": 38
@@ -1683,7 +1683,7 @@
       {
         "Desc_Linha": "OTC- REGULADORES INTESTINAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2128.96,
+        "resultadoLiquido": 2128.9600000000005,
         "quantidade": 26,
         "cupons": 22,
         "clientes": 14
@@ -1699,15 +1699,15 @@
       {
         "Desc_Linha": "CAPILAR - MASCARA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1060.67,
-        "quantidade": 30,
-        "cupons": 28,
-        "clientes": 20
+        "resultadoLiquido": 1118.77,
+        "quantidade": 31,
+        "cupons": 29,
+        "clientes": 21
       },
       {
         "Desc_Linha": "ANALGESICOS / ANTITERMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2970.4400000000005,
+        "resultadoLiquido": 2970.44,
         "quantidade": 121,
         "cupons": 102,
         "clientes": 63
@@ -1731,7 +1731,7 @@
       {
         "Desc_Linha": "SABONETE - LIQUIDO INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1396.48,
+        "resultadoLiquido": 1396.4799999999998,
         "quantidade": 93,
         "cupons": 61,
         "clientes": 32
@@ -1747,10 +1747,10 @@
       {
         "Desc_Linha": "PROMOCIONAL GENERICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 8959.100000000002,
-        "quantidade": 557,
-        "cupons": 338,
-        "clientes": 194
+        "resultadoLiquido": 8968,
+        "quantidade": 558,
+        "cupons": 339,
+        "clientes": 195
       },
       {
         "Desc_Linha": "OTC - TROMBOLITICOS",
@@ -1771,7 +1771,7 @@
       {
         "Desc_Linha": "GASTROPROCINETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 817.0200000000001,
+        "resultadoLiquido": 817.02,
         "quantidade": 40,
         "cupons": 21,
         "clientes": 13
@@ -1779,7 +1779,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - PROTESES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 534.21,
+        "resultadoLiquido": 534.2099999999999,
         "quantidade": 15,
         "cupons": 15,
         "clientes": 6
@@ -1795,7 +1795,7 @@
       {
         "Desc_Linha": "CAPILAR - CREME PENTEAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 392.23,
+        "resultadoLiquido": 392.2299999999999,
         "quantidade": 20,
         "cupons": 17,
         "clientes": 11
@@ -1803,7 +1803,7 @@
       {
         "Desc_Linha": "CUIDADO - INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2394.0499999999997,
+        "resultadoLiquido": 2394.05,
         "quantidade": 73,
         "cupons": 51,
         "clientes": 26
@@ -1811,7 +1811,7 @@
       {
         "Desc_Linha": "OTC- DERMATOLOGICA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1769.23,
+        "resultadoLiquido": 1769.2300000000002,
         "quantidade": 75,
         "cupons": 54,
         "clientes": 32
@@ -1819,7 +1819,7 @@
       {
         "Desc_Linha": "OTC- ANTIACIDOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1644.46,
+        "resultadoLiquido": 1644.4600000000003,
         "quantidade": 130,
         "cupons": 73,
         "clientes": 37
@@ -1835,9 +1835,9 @@
       {
         "Desc_Linha": "OTC- PEDICULOSE/ESCABIOSE TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 472.7699999999999,
-        "quantidade": 18,
-        "cupons": 11,
+        "resultadoLiquido": 517.9599999999999,
+        "quantidade": 20,
+        "cupons": 12,
         "clientes": 6
       },
       {
@@ -1859,7 +1859,7 @@
       {
         "Desc_Linha": "RELAXANTES MUSCULARES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1982.9900000000002,
+        "resultadoLiquido": 1982.99,
         "quantidade": 109,
         "cupons": 100,
         "clientes": 60
@@ -1867,7 +1867,7 @@
       {
         "Desc_Linha": "ABSORVENTE - INCONTINENCIA GERIATRICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2936.109999999999,
+        "resultadoLiquido": 2936.1099999999997,
         "quantidade": 173,
         "cupons": 40,
         "clientes": 23
@@ -1883,7 +1883,7 @@
       {
         "Desc_Linha": "MAOS E PES - ESMALTES TRATAMENTO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 447.74,
+        "resultadoLiquido": 447.7399999999999,
         "quantidade": 35,
         "cupons": 31,
         "clientes": 15
@@ -1947,10 +1947,10 @@
       {
         "Desc_Linha": "CUIDADO - PES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 411.43,
-        "quantidade": 27,
-        "cupons": 25,
-        "clientes": 20
+        "resultadoLiquido": 424.41999999999996,
+        "quantidade": 28,
+        "cupons": 26,
+        "clientes": 21
       },
       {
         "Desc_Linha": "SOLAR - BRONZEAMENTO",
@@ -1963,7 +1963,7 @@
       {
         "Desc_Linha": "ABSORVENTE - NOTURNO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1628.2299999999998,
+        "resultadoLiquido": 1628.23,
         "quantidade": 73,
         "cupons": 56,
         "clientes": 35
@@ -1979,15 +1979,15 @@
       {
         "Desc_Linha": "ANTIULCEROSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 8511.820000000002,
-        "quantidade": 79,
-        "cupons": 67,
-        "clientes": 31
+        "resultadoLiquido": 8609.33,
+        "quantidade": 80,
+        "cupons": 68,
+        "clientes": 32
       },
       {
         "Desc_Linha": "DERMO - CLAREADOR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2109.5899999999997,
+        "resultadoLiquido": 2109.59,
         "quantidade": 9,
         "cupons": 9,
         "clientes": 4
@@ -1995,7 +1995,7 @@
       {
         "Desc_Linha": "ANTIVIRAIS / ANTIBIOTICOS TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 585.16,
+        "resultadoLiquido": 585.1600000000002,
         "quantidade": 39,
         "cupons": 36,
         "clientes": 22
@@ -2019,7 +2019,7 @@
       {
         "Desc_Linha": "ANTIVERTIGINOSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 478.37,
+        "resultadoLiquido": 478.36999999999995,
         "quantidade": 20,
         "cupons": 13,
         "clientes": 10
@@ -2075,7 +2075,7 @@
       {
         "Desc_Linha": "ANTI-HIPERT/BETABLOQUEADORES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1238.4900000000002,
+        "resultadoLiquido": 1238.49,
         "quantidade": 25,
         "cupons": 21,
         "clientes": 11
@@ -2099,7 +2099,7 @@
       {
         "Desc_Linha": "NEUROLOGICOS / SISTEMA NERVOSO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2902.9,
+        "resultadoLiquido": 2902.8999999999996,
         "quantidade": 14,
         "cupons": 8,
         "clientes": 8
@@ -2123,7 +2123,7 @@
       {
         "Desc_Linha": "DERMO - HIDRATANTE FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5782.209999999999,
+        "resultadoLiquido": 5782.210000000001,
         "quantidade": 90,
         "cupons": 76,
         "clientes": 38
@@ -2131,10 +2131,10 @@
       {
         "Desc_Linha": "HIGIENE PESSOAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 489.09,
-        "quantidade": 66,
-        "cupons": 54,
-        "clientes": 39
+        "resultadoLiquido": 492.5800000000001,
+        "quantidade": 67,
+        "cupons": 55,
+        "clientes": 40
       },
       {
         "Desc_Linha": "OTC- ANTIFUNGICO/ANTIMICOTICO TOP",
@@ -2147,7 +2147,7 @@
       {
         "Desc_Linha": "ANTIVARICOSOS / ANTIHEMORROIDARIOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1441.39,
+        "resultadoLiquido": 1441.3899999999999,
         "quantidade": 19,
         "cupons": 19,
         "clientes": 8
@@ -2155,7 +2155,7 @@
       {
         "Desc_Linha": "BARBA - ESPUMA - CREME - GEL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 150.33999999999995,
+        "resultadoLiquido": 150.33999999999997,
         "quantidade": 11,
         "cupons": 11,
         "clientes": 6
@@ -2187,7 +2187,7 @@
       {
         "Desc_Linha": "ANTIEMETICOS/ NAUSEA/ ENJOO/ VOMITO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2174.2700000000004,
+        "resultadoLiquido": 2174.27,
         "quantidade": 73,
         "cupons": 64,
         "clientes": 46
@@ -2243,7 +2243,7 @@
       {
         "Desc_Linha": "CUIDADO - CORPO MASSAGEM",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 570.4599999999999,
+        "resultadoLiquido": 570.46,
         "quantidade": 11,
         "cupons": 11,
         "clientes": 7
@@ -2291,7 +2291,7 @@
       {
         "Desc_Linha": "NUTRICAO ADULTO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1460.39,
+        "resultadoLiquido": 1460.3899999999999,
         "quantidade": 7,
         "cupons": 6,
         "clientes": 1
@@ -2299,7 +2299,7 @@
       {
         "Desc_Linha": "OTC- AFECCOES BUCAIS/AFTAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 516.59,
+        "resultadoLiquido": 516.5899999999999,
         "quantidade": 10,
         "cupons": 12,
         "clientes": 2
@@ -2307,7 +2307,7 @@
       {
         "Desc_Linha": "NUTRICAO AD LIQUIDO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 283.35,
+        "resultadoLiquido": 283.34999999999997,
         "quantidade": 25,
         "cupons": 7,
         "clientes": 5
@@ -2315,7 +2315,7 @@
       {
         "Desc_Linha": "CAPILAR - FINALIZADORES MASCULINOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 207.16,
+        "resultadoLiquido": 207.16000000000003,
         "quantidade": 10,
         "cupons": 10,
         "clientes": 6
@@ -2323,7 +2323,7 @@
       {
         "Desc_Linha": "CUIDADO – LABIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1195.2899999999997,
+        "resultadoLiquido": 1195.29,
         "quantidade": 81,
         "cupons": 55,
         "clientes": 36
@@ -2331,7 +2331,7 @@
       {
         "Desc_Linha": "MAOS E PES - REMOVEDORES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 361.02000000000004,
+        "resultadoLiquido": 361.02000000000015,
         "quantidade": 33,
         "cupons": 32,
         "clientes": 15
@@ -2347,7 +2347,7 @@
       {
         "Desc_Linha": "CUIDADO - CORPO ESFOLIANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 242.88,
+        "resultadoLiquido": 242.88000000000002,
         "quantidade": 15,
         "cupons": 11,
         "clientes": 4
@@ -2355,7 +2355,7 @@
       {
         "Desc_Linha": "ANTISSEPTICO - ALCOOL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 151.74999999999997,
+        "resultadoLiquido": 151.75,
         "quantidade": 11,
         "cupons": 10,
         "clientes": 7
@@ -2363,10 +2363,10 @@
       {
         "Desc_Linha": "DERMO - SOLAR FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3106.9100000000003,
-        "quantidade": 39,
-        "cupons": 31,
-        "clientes": 16
+        "resultadoLiquido": 3155.9100000000003,
+        "quantidade": 40,
+        "cupons": 32,
+        "clientes": 17
       },
       {
         "Desc_Linha": "DERMO - AGUA TERMAL",
@@ -2387,7 +2387,7 @@
       {
         "Desc_Linha": "CUIDADO FACIAL - DEMAQUILANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 158.27,
+        "resultadoLiquido": 158.26999999999998,
         "quantidade": 7,
         "cupons": 5,
         "clientes": 4
@@ -2411,9 +2411,9 @@
       {
         "Desc_Linha": "CUIDADO - CORPO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 75.11,
-        "quantidade": 1,
-        "cupons": 1,
+        "resultadoLiquido": 94.1,
+        "quantidade": 2,
+        "cupons": 2,
         "clientes": 1
       },
       {
@@ -2427,7 +2427,7 @@
       {
         "Desc_Linha": "ACESSORIOS - INFANTIL SAUDE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 599.3600000000001,
+        "resultadoLiquido": 599.36,
         "quantidade": 25,
         "cupons": 21,
         "clientes": 13
@@ -2443,7 +2443,7 @@
       {
         "Desc_Linha": "OSTEOPOROSE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1037.4599999999998,
+        "resultadoLiquido": 1037.46,
         "quantidade": 16,
         "cupons": 13,
         "clientes": 7
@@ -2451,7 +2451,7 @@
       {
         "Desc_Linha": "CUIDADO - CORPO OLEO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 645.05,
+        "resultadoLiquido": 645.0500000000001,
         "quantidade": 44,
         "cupons": 41,
         "clientes": 33
@@ -2507,7 +2507,7 @@
       {
         "Desc_Linha": "OTC- REPOSITORES ELETROLT/REHIDRATANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 489.29999999999995,
+        "resultadoLiquido": 489.3,
         "quantidade": 32,
         "cupons": 23,
         "clientes": 12
@@ -2515,7 +2515,7 @@
       {
         "Desc_Linha": "ANTIALERGICOS/ANTI-HISTAMINICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3748.1099999999997,
+        "resultadoLiquido": 3748.11,
         "quantidade": 75,
         "cupons": 61,
         "clientes": 40
@@ -2539,7 +2539,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS - ROUPA INT UNISSEX",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5873.0599999999995,
+        "resultadoLiquido": 5873.059999999999,
         "quantidade": 80,
         "cupons": 55,
         "clientes": 32
@@ -2547,7 +2547,7 @@
       {
         "Desc_Linha": "DEPILACAO - FOLHA FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 138.14999999999998,
+        "resultadoLiquido": 138.15,
         "quantidade": 6,
         "cupons": 6,
         "clientes": 3
@@ -2603,7 +2603,7 @@
       {
         "Desc_Linha": "CORTICOIDES NASAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3559.08,
+        "resultadoLiquido": 3559.0800000000004,
         "quantidade": 67,
         "cupons": 54,
         "clientes": 29
@@ -2635,9 +2635,9 @@
       {
         "Desc_Linha": "HOME CARE – AROMATIZADORES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 458.43999999999994,
-        "quantidade": 15,
-        "cupons": 9,
+        "resultadoLiquido": 519.24,
+        "quantidade": 17,
+        "cupons": 10,
         "clientes": 9
       },
       {
@@ -2667,7 +2667,7 @@
       {
         "Desc_Linha": "MATINAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 372.65000000000003,
+        "resultadoLiquido": 372.65,
         "quantidade": 50,
         "cupons": 30,
         "clientes": 27
@@ -2675,7 +2675,7 @@
       {
         "Desc_Linha": "CAFES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 232.88,
+        "resultadoLiquido": 232.88000000000002,
         "quantidade": 14,
         "cupons": 11,
         "clientes": 10
@@ -2691,9 +2691,9 @@
       {
         "Desc_Linha": "MERCEARIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1181.6000000000001,
-        "quantidade": 170,
-        "cupons": 99,
+        "resultadoLiquido": 1188.88,
+        "quantidade": 173,
+        "cupons": 100,
         "clientes": 60
       },
       {
@@ -2739,7 +2739,7 @@
       {
         "Desc_Linha": "PET - PETISCOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 85.28999999999999,
+        "resultadoLiquido": 85.29,
         "quantidade": 9,
         "cupons": 6,
         "clientes": 4
@@ -2787,7 +2787,7 @@
       {
         "Desc_Linha": "MAMAE BEBE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 383.85,
+        "resultadoLiquido": 383.84999999999997,
         "quantidade": 10,
         "cupons": 9,
         "clientes": 4
@@ -2795,7 +2795,7 @@
       {
         "Desc_Linha": "ANTIDIARREICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 904.2699999999998,
+        "resultadoLiquido": 904.27,
         "quantidade": 38,
         "cupons": 31,
         "clientes": 17
@@ -2803,7 +2803,7 @@
       {
         "Desc_Linha": "DERMO - ANTIACNE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1451.6700000000003,
+        "resultadoLiquido": 1451.67,
         "quantidade": 16,
         "cupons": 14,
         "clientes": 4
@@ -2811,7 +2811,7 @@
       {
         "Desc_Linha": "OTC- CALMANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 491.42,
+        "resultadoLiquido": 491.41999999999996,
         "quantidade": 10,
         "cupons": 9,
         "clientes": 6
@@ -2827,7 +2827,7 @@
       {
         "Desc_Linha": "OTC- NUTRICOSMETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 696.3800000000001,
+        "resultadoLiquido": 696.38,
         "quantidade": 4,
         "cupons": 4,
         "clientes": 3
@@ -2835,7 +2835,7 @@
       {
         "Desc_Linha": "ANTIALOPECIA / ANTICALVICE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1877.8400000000001,
+        "resultadoLiquido": 1877.84,
         "quantidade": 41,
         "cupons": 23,
         "clientes": 11
@@ -2859,7 +2859,7 @@
       {
         "Desc_Linha": "DIGESTIVOS/INTOLERANCIA ENZIMAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 809.3999999999999,
+        "resultadoLiquido": 809.4000000000001,
         "quantidade": 20,
         "cupons": 10,
         "clientes": 5
@@ -2891,10 +2891,10 @@
       {
         "Desc_Linha": "SERVICOS/DESPESAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 22489.759999999394,
-        "quantidade": 3279,
-        "cupons": 3297,
-        "clientes": 1224
+        "resultadoLiquido": 22555.80000000056,
+        "quantidade": 3288,
+        "cupons": 3309,
+        "clientes": 1227
       },
       {
         "Desc_Linha": "CUIDADO FACIAL - AGUA MICELAR",
@@ -2931,7 +2931,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS – FARMACIA POPULAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2704.9599999999996,
+        "resultadoLiquido": 2704.96,
         "quantidade": 52,
         "cupons": 22,
         "clientes": 9
@@ -2947,7 +2947,7 @@
       {
         "Desc_Linha": "AGENTES IMUNOESTIMULANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 756.8800000000001,
+        "resultadoLiquido": 756.88,
         "quantidade": 4,
         "cupons": 4,
         "clientes": 4
@@ -2979,7 +2979,7 @@
       {
         "Desc_Linha": "ALIMENTO INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 438.89000000000004,
+        "resultadoLiquido": 438.89,
         "quantidade": 41,
         "cupons": 14,
         "clientes": 8
@@ -3019,7 +3019,7 @@
       {
         "Desc_Linha": "ISOTONICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 462.1800000000001,
+        "resultadoLiquido": 462.18000000000006,
         "quantidade": 51,
         "cupons": 19,
         "clientes": 16
@@ -3083,7 +3083,7 @@
       {
         "Desc_Linha": "ELETROS DE BELEZA E CUIDADO PESSOAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1396.8200000000002,
+        "resultadoLiquido": 1396.8199999999997,
         "quantidade": 12,
         "cupons": 11,
         "clientes": 4
@@ -3091,7 +3091,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - INFANTIL ENXAGUANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 52.500000000000014,
+        "resultadoLiquido": 52.5,
         "quantidade": 11,
         "cupons": 4,
         "clientes": 2
@@ -3107,15 +3107,15 @@
       {
         "Desc_Linha": "HOME CARE - LIMPEZA CASA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 635.3000000000001,
-        "quantidade": 56,
-        "cupons": 40,
-        "clientes": 31
+        "resultadoLiquido": 676.1,
+        "quantidade": 58,
+        "cupons": 41,
+        "clientes": 32
       },
       {
         "Desc_Linha": "AGUA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 487.2900000000001,
+        "resultadoLiquido": 487.29,
         "quantidade": 84,
         "cupons": 46,
         "clientes": 41
@@ -3123,7 +3123,7 @@
       {
         "Desc_Linha": "SUPLEMENTOS ALIMENTARES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2299.4300000000003,
+        "resultadoLiquido": 2299.43,
         "quantidade": 20,
         "cupons": 14,
         "clientes": 8
@@ -3147,7 +3147,7 @@
       {
         "Desc_Linha": "ELETRODOMESTICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 12172.749999999996,
+        "resultadoLiquido": 12172.749999999995,
         "quantidade": 100,
         "cupons": 95,
         "clientes": 48
@@ -3163,7 +3163,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - CORRETIVO LIQUIDO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 188.93000000000004,
+        "resultadoLiquido": 188.93,
         "quantidade": 6,
         "cupons": 6,
         "clientes": 3
@@ -3187,7 +3187,7 @@
       {
         "Desc_Linha": "DESODORANTE - AERO FEMININO PACK",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 177.05999999999997,
+        "resultadoLiquido": 177.06,
         "quantidade": 6,
         "cupons": 4,
         "clientes": 2
@@ -3211,7 +3211,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS - ROUPA INTIMA FEM",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 614.61,
+        "resultadoLiquido": 614.6099999999999,
         "quantidade": 10,
         "cupons": 9,
         "clientes": 7
@@ -3219,7 +3219,7 @@
       {
         "Desc_Linha": "COLECALCIFEROL (VIT D)",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1678.0500000000002,
+        "resultadoLiquido": 1678.05,
         "quantidade": 24,
         "cupons": 14,
         "clientes": 9
@@ -3227,18 +3227,18 @@
       {
         "Desc_Linha": "HOME CARE - TOALHAS GUARDANAPOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 143.48,
-        "quantidade": 15,
-        "cupons": 10,
-        "clientes": 6
+        "resultadoLiquido": 175.28,
+        "quantidade": 17,
+        "cupons": 11,
+        "clientes": 7
       },
       {
         "Desc_Linha": "SALGADINHOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1213.2699999999995,
-        "quantidade": 162,
-        "cupons": 85,
-        "clientes": 60
+        "resultadoLiquido": 1218.06,
+        "quantidade": 163,
+        "cupons": 86,
+        "clientes": 61
       },
       {
         "Desc_Linha": "HIGIENE ORAL - ESCOVA ELETRICA/PILHA",
@@ -3259,10 +3259,10 @@
       {
         "Desc_Linha": "HIGIENE PESSOAL – PAPEL HIGIENICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2224.0300000000007,
-        "quantidade": 161,
-        "cupons": 114,
-        "clientes": 70
+        "resultadoLiquido": 2234.02,
+        "quantidade": 162,
+        "cupons": 115,
+        "clientes": 71
       },
       {
         "Desc_Linha": "CUIDADO FACIAL - ESFOLIANTE",
@@ -3291,7 +3291,7 @@
       {
         "Desc_Linha": "MAOS E PES - ESMALTES COLECAO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 105.87999999999998,
+        "resultadoLiquido": 105.88000000000002,
         "quantidade": 20,
         "cupons": 17,
         "clientes": 11
@@ -3355,7 +3355,7 @@
       {
         "Desc_Linha": "ANTITABAGISMO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1559.9999999999998,
+        "resultadoLiquido": 1560,
         "quantidade": 25,
         "cupons": 12,
         "clientes": 3
@@ -3371,7 +3371,7 @@
       {
         "Desc_Linha": "PAES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 85.95,
+        "resultadoLiquido": 85.94999999999999,
         "quantidade": 9,
         "cupons": 7,
         "clientes": 5
@@ -3395,7 +3395,7 @@
       {
         "Desc_Linha": "OTC- ANTIVIRAIS/ANTIBIOTICOS TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 318.15999999999997,
+        "resultadoLiquido": 318.16,
         "quantidade": 9,
         "cupons": 9,
         "clientes": 5
@@ -3403,7 +3403,7 @@
       {
         "Desc_Linha": "KIT - DERMO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 548.8399999999999,
+        "resultadoLiquido": 548.84,
         "quantidade": 8,
         "cupons": 8,
         "clientes": 1
@@ -3443,7 +3443,7 @@
       {
         "Desc_Linha": "HOME CARE - LIMPEZA ROUPAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1751.2100000000003,
+        "resultadoLiquido": 1751.2099999999996,
         "quantidade": 116,
         "cupons": 53,
         "clientes": 33
@@ -3515,7 +3515,7 @@
       {
         "Desc_Linha": "BAZAR – TERMICOS HIDRATACAO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3094.97,
+        "resultadoLiquido": 3094.9700000000003,
         "quantidade": 14,
         "cupons": 14,
         "clientes": 4
@@ -3579,7 +3579,7 @@
       {
         "Desc_Linha": "BAZAR – TERMICOS LINHA MATE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3212.6600000000008,
+        "resultadoLiquido": 3212.6600000000003,
         "quantidade": 20,
         "cupons": 15,
         "clientes": 7
@@ -3587,7 +3587,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - BATOM BALA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 51.17999999999999,
+        "resultadoLiquido": 51.18,
         "quantidade": 3,
         "cupons": 3,
         "clientes": 2
@@ -3659,7 +3659,7 @@
       {
         "Desc_Linha": "OLEOS ESSENCIAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 307.09000000000003,
+        "resultadoLiquido": 307.09,
         "quantidade": 8,
         "cupons": 7,
         "clientes": 3
@@ -3821,10 +3821,10 @@
       {
         "Dia da Semana": "Seg",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 123960.45000000001,
-        "quantidade": 3432,
-        "cupons": 975,
-        "clientes": 485
+        "resultadoLiquido": 128352.93000000004,
+        "quantidade": 3492,
+        "cupons": 1000,
+        "clientes": 501
       },
       {
         "Dia da Semana": "Qua",
@@ -3837,7 +3837,7 @@
       {
         "Dia da Semana": "Qui",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 162756.59000000003,
+        "resultadoLiquido": 162756.59000000014,
         "quantidade": 3872,
         "cupons": 1143,
         "clientes": 610
@@ -3845,7 +3845,7 @@
       {
         "Dia da Semana": "Sex",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 131680.04000000012,
+        "resultadoLiquido": 131680.04000000004,
         "quantidade": 3817,
         "cupons": 1094,
         "clientes": 711
@@ -3853,7 +3853,7 @@
       {
         "Dia da Semana": "Dom",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 107763.48999999996,
+        "resultadoLiquido": 107763.49,
         "quantidade": 3309,
         "cupons": 963,
         "clientes": 543
@@ -3861,7 +3861,7 @@
       {
         "Dia da Semana": "Ter",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 106439.43500000001,
+        "resultadoLiquido": 106439.435,
         "quantidade": 3269,
         "cupons": 894,
         "clientes": 493
@@ -3869,7 +3869,7 @@
       {
         "Dia da Semana": "Sab",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 111507.31000000008,
+        "resultadoLiquido": 111507.31000000001,
         "quantidade": 3559,
         "cupons": 992,
         "clientes": 536
@@ -3879,15 +3879,15 @@
       {
         "Desc_Subgrupo": "Perfumaria(8)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 81572.76999999973,
-        "quantidade": 4129,
-        "cupons": 1792,
-        "clientes": 1018
+        "resultadoLiquido": 81927.79999999967,
+        "quantidade": 4145,
+        "cupons": 1799,
+        "clientes": 1021
       },
       {
         "Desc_Subgrupo": "Lencos e Toalhas Umedecidas(123)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 9436.869999999986,
+        "resultadoLiquido": 9436.870000000003,
         "quantidade": 424,
         "cupons": 288,
         "clientes": 178
@@ -3903,23 +3903,23 @@
       {
         "Desc_Subgrupo": "Referencia Liberado Super Onerosos(3192)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 17206.109999999997,
-        "quantidade": 261,
-        "cupons": 173,
-        "clientes": 88
+        "resultadoLiquido": 17249.599999999995,
+        "quantidade": 262,
+        "cupons": 174,
+        "clientes": 89
       },
       {
         "Desc_Subgrupo": "Referencia Onerosos(40)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 70837.97,
-        "quantidade": 1183,
-        "cupons": 892,
-        "clientes": 514
+        "resultadoLiquido": 70986.49000000002,
+        "quantidade": 1185,
+        "cupons": 893,
+        "clientes": 515
       },
       {
         "Desc_Subgrupo": "Referencia Oneroso Controlado(77)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 9893.019999999997,
+        "resultadoLiquido": 9893.019999999999,
         "quantidade": 69,
         "cupons": 51,
         "clientes": 48
@@ -3927,7 +3927,7 @@
       {
         "Desc_Subgrupo": "Referencia Liberado(25)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 15342.049999999997,
+        "resultadoLiquido": 15342.050000000001,
         "quantidade": 265,
         "cupons": 205,
         "clientes": 117
@@ -3935,18 +3935,18 @@
       {
         "Desc_Subgrupo": "Conveniencia - Bazar(3206)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 35228.87999999999,
-        "quantidade": 1624,
-        "cupons": 468,
+        "resultadoLiquido": 35362.28,
+        "quantidade": 1630,
+        "cupons": 469,
         "clientes": 296
       },
       {
         "Desc_Subgrupo": "Dermo-Cosmeticos(3151)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 28024.16,
-        "quantidade": 309,
-        "cupons": 243,
-        "clientes": 114
+        "resultadoLiquido": 28073.16,
+        "quantidade": 310,
+        "cupons": 244,
+        "clientes": 115
       },
       {
         "Desc_Subgrupo": "Referencia Super Onerosos Controlado(3177)",
@@ -3959,23 +3959,23 @@
       {
         "Desc_Subgrupo": "Fraldas(9)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 80132.9300000001,
-        "quantidade": 1072,
-        "cupons": 711,
-        "clientes": 453
+        "resultadoLiquido": 80426.53,
+        "quantidade": 1076,
+        "cupons": 715,
+        "clientes": 456
       },
       {
         "Desc_Subgrupo": "Referencia Super Onerosos(3176)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 31024.80000000001,
-        "quantidade": 689,
-        "cupons": 521,
-        "clientes": 280
+        "resultadoLiquido": 31122.310000000005,
+        "quantidade": 690,
+        "cupons": 522,
+        "clientes": 281
       },
       {
         "Desc_Subgrupo": "Liberados(7)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 7222.609999999999,
+        "resultadoLiquido": 7222.610000000001,
         "quantidade": 182,
         "cupons": 141,
         "clientes": 86
@@ -3983,8 +3983,8 @@
       {
         "Desc_Subgrupo": "Referencia(2)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 27738.89,
-        "quantidade": 515,
+        "resultadoLiquido": 27675.62,
+        "quantidade": 514,
         "cupons": 356,
         "clientes": 177
       },
@@ -4007,7 +4007,7 @@
       {
         "Desc_Subgrupo": "Similar Oneroso(3186)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3727.120000000001,
+        "resultadoLiquido": 3727.1200000000003,
         "quantidade": 276,
         "cupons": 207,
         "clientes": 110
@@ -4015,7 +4015,7 @@
       {
         "Desc_Subgrupo": "Absorventes e Lenços Substituido(81)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 7118.729999999998,
+        "resultadoLiquido": 7118.730000000002,
         "quantidade": 419,
         "cupons": 245,
         "clientes": 163
@@ -4023,23 +4023,23 @@
       {
         "Desc_Subgrupo": "Genericos Onerosos Controlados(75)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3684.67,
-        "quantidade": 83,
+        "resultadoLiquido": 3653.5800000000004,
+        "quantidade": 82,
         "cupons": 51,
         "clientes": 50
       },
       {
         "Desc_Subgrupo": "Genericos(3)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 35863.42999999994,
-        "quantidade": 1782,
-        "cupons": 989,
-        "clientes": 545
+        "resultadoLiquido": 35969.309999999954,
+        "quantidade": 1787,
+        "cupons": 992,
+        "clientes": 546
       },
       {
         "Desc_Subgrupo": "Nutricao PBMs(3221)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 5202.699999999999,
+        "resultadoLiquido": 5202.700000000001,
         "quantidade": 78,
         "cupons": 36,
         "clientes": 18
@@ -4055,10 +4055,10 @@
       {
         "Desc_Subgrupo": "Hospitalares(80)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 13949.77,
-        "quantidade": 1035,
-        "cupons": 507,
-        "clientes": 282
+        "resultadoLiquido": 13960.16,
+        "quantidade": 1037,
+        "cupons": 509,
+        "clientes": 284
       },
       {
         "Desc_Subgrupo": "Referencia Oneroso Insulina(3171)",
@@ -4071,7 +4071,7 @@
       {
         "Desc_Subgrupo": "PBMs(15)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 10517.880000000001,
+        "resultadoLiquido": 10517.88,
         "quantidade": 70,
         "cupons": 58,
         "clientes": 35
@@ -4079,15 +4079,15 @@
       {
         "Desc_Subgrupo": "Conveniencia - Pereciveis(3205)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 11686.640000000003,
-        "quantidade": 1632,
-        "cupons": 561,
-        "clientes": 368
+        "resultadoLiquido": 11704.7,
+        "quantidade": 1637,
+        "cupons": 564,
+        "clientes": 369
       },
       {
         "Desc_Subgrupo": "Referencia Liberado Onerosos(3178)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 5366.900000000001,
+        "resultadoLiquido": 5366.9,
         "quantidade": 57,
         "cupons": 45,
         "clientes": 24
@@ -4095,31 +4095,31 @@
       {
         "Desc_Subgrupo": "Anticoncepcionais Onerosos(3182)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 14940.84,
-        "quantidade": 172,
-        "cupons": 162,
+        "resultadoLiquido": 14952.119999999995,
+        "quantidade": 173,
+        "cupons": 163,
         "clientes": 100
       },
       {
         "Desc_Subgrupo": "Genericos - Otc/Mip(3175)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 7777.55,
-        "quantidade": 595,
-        "cupons": 438,
-        "clientes": 258
+        "resultadoLiquido": 7786.449999999999,
+        "quantidade": 596,
+        "cupons": 439,
+        "clientes": 259
       },
       {
         "Desc_Subgrupo": "Similar(4)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 12277.719999999998,
-        "quantidade": 719,
-        "cupons": 523,
-        "clientes": 286
+        "resultadoLiquido": 12345.119999999999,
+        "quantidade": 725,
+        "cupons": 527,
+        "clientes": 288
       },
       {
         "Desc_Subgrupo": "Perfumaria Exclusiva Premiacao(3158)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1438.19,
+        "resultadoLiquido": 1438.1900000000003,
         "quantidade": 42,
         "cupons": 33,
         "clientes": 13
@@ -4127,15 +4127,15 @@
       {
         "Desc_Subgrupo": "Genericos Onerosos(43)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 12576.740000000002,
-        "quantidade": 404,
-        "cupons": 289,
-        "clientes": 169
+        "resultadoLiquido": 12591.439999999999,
+        "quantidade": 407,
+        "cupons": 291,
+        "clientes": 170
       },
       {
         "Desc_Subgrupo": "Generico Controlado(16)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 12998.219999999998,
+        "resultadoLiquido": 12998.219999999996,
         "quantidade": 400,
         "cupons": 188,
         "clientes": 176
@@ -4143,9 +4143,9 @@
       {
         "Desc_Subgrupo": "Bebidas(3204)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3433.689999999999,
-        "quantidade": 450,
-        "cupons": 208,
+        "resultadoLiquido": 3455.489999999999,
+        "quantidade": 452,
+        "cupons": 210,
         "clientes": 141
       },
       {
@@ -4175,15 +4175,15 @@
       {
         "Desc_Subgrupo": "PBMs Controlados(22)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 160546.13999999998,
-        "quantidade": 186,
-        "cupons": 127,
-        "clientes": 122
+        "resultadoLiquido": 163545.14,
+        "quantidade": 185,
+        "cupons": 128,
+        "clientes": 123
       },
       {
         "Desc_Subgrupo": "PBM Perfumaria(3220)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1881.81,
+        "resultadoLiquido": 1881.8100000000002,
         "quantidade": 56,
         "cupons": 51,
         "clientes": 32
@@ -4199,7 +4199,7 @@
       {
         "Desc_Subgrupo": "PBMs Antibiotico Cont.(98)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1454.23,
+        "resultadoLiquido": 1454.2300000000002,
         "quantidade": 14,
         "cupons": 13,
         "clientes": 13
@@ -4207,7 +4207,7 @@
       {
         "Desc_Subgrupo": "Conveniencia Nutricional(3208)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3981.2400000000007,
+        "resultadoLiquido": 3981.2400000000002,
         "quantidade": 44,
         "cupons": 34,
         "clientes": 28
@@ -4223,10 +4223,10 @@
       {
         "Desc_Subgrupo": "Nutricao Formula(3222)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 12971.49,
-        "quantidade": 136,
-        "cupons": 103,
-        "clientes": 65
+        "resultadoLiquido": 13090.979999999998,
+        "quantidade": 137,
+        "cupons": 104,
+        "clientes": 66
       },
       {
         "Desc_Subgrupo": "Antibiotico Cont. Referencia Oneroso(3193)",
@@ -4247,15 +4247,15 @@
       {
         "Desc_Subgrupo": "Antibiotico Cont. Generico Super Oneroso(3179)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 811.0500000000001,
-        "quantidade": 18,
+        "resultadoLiquido": 784.11,
+        "quantidade": 17,
         "cupons": 14,
         "clientes": 12
       },
       {
         "Desc_Subgrupo": "Similar Avulso(18)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 708.0949999999999,
+        "resultadoLiquido": 708.095,
         "quantidade": 214,
         "cupons": 84,
         "clientes": 50
@@ -4263,7 +4263,7 @@
       {
         "Desc_Subgrupo": "Generico Super Oneroso(3181)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 5342.700000000001,
+        "resultadoLiquido": 5342.7,
         "quantidade": 128,
         "cupons": 93,
         "clientes": 64
@@ -4271,15 +4271,15 @@
       {
         "Desc_Subgrupo": "Antibiotico Cont. Generico Oneroso(72)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1781.2099999999998,
-        "quantidade": 48,
+        "resultadoLiquido": 1721.5099999999998,
+        "quantidade": 45,
         "cupons": 34,
         "clientes": 34
       },
       {
         "Desc_Subgrupo": "Dermo-Cosmeticos Nutraceuticos(3153)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1794.2100000000003,
+        "resultadoLiquido": 1794.21,
         "quantidade": 12,
         "cupons": 12,
         "clientes": 2
@@ -4287,10 +4287,10 @@
       {
         "Desc_Subgrupo": "Higiene Pessoal(3194)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 2410.8700000000003,
-        "quantidade": 177,
-        "cupons": 118,
-        "clientes": 72
+        "resultadoLiquido": 2420.8599999999997,
+        "quantidade": 178,
+        "cupons": 119,
+        "clientes": 73
       },
       {
         "Desc_Subgrupo": "PBM  Especial(3170)",
@@ -4311,7 +4311,7 @@
       {
         "Desc_Subgrupo": "Campanha(3157)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1515.4799999999998,
+        "resultadoLiquido": 1515.4799999999996,
         "quantidade": 65,
         "cupons": 51,
         "clientes": 25
@@ -4335,7 +4335,7 @@
       {
         "Desc_Subgrupo": "Antibiotico Cont. Generico(33)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 723.8499999999999,
+        "resultadoLiquido": 723.85,
         "quantidade": 27,
         "cupons": 20,
         "clientes": 20
@@ -4343,7 +4343,7 @@
       {
         "Desc_Subgrupo": "Generico Avulso(17)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 509.7400000000001,
+        "resultadoLiquido": 509.74000000000007,
         "quantidade": 96,
         "cupons": 76,
         "clientes": 58
@@ -4351,7 +4351,7 @@
       {
         "Desc_Subgrupo": "Perfumaria Exclusiva(3210)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1336.1700000000003,
+        "resultadoLiquido": 1336.17,
         "quantidade": 97,
         "cupons": 83,
         "clientes": 43
@@ -4359,7 +4359,7 @@
       {
         "Desc_Subgrupo": "Anticoncepcionais(13)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 4320.52,
+        "resultadoLiquido": 4320.5199999999995,
         "quantidade": 39,
         "cupons": 36,
         "clientes": 15
@@ -4375,7 +4375,7 @@
       {
         "Desc_Subgrupo": "Referencia Farmacia Popular(3174)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 2309.07,
+        "resultadoLiquido": 2309.0699999999997,
         "quantidade": 152,
         "cupons": 105,
         "clientes": 60
@@ -4383,10 +4383,10 @@
       {
         "Desc_Subgrupo": "Servicos Tele Entrega(24)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 22489.759999999394,
-        "quantidade": 3279,
-        "cupons": 3297,
-        "clientes": 1224
+        "resultadoLiquido": 22555.80000000056,
+        "quantidade": 3288,
+        "cupons": 3309,
+        "clientes": 1227
       },
       {
         "Desc_Subgrupo": "PBMs Combo Controlados(3212)",
@@ -4407,7 +4407,7 @@
       {
         "Desc_Subgrupo": "Fralda Exclusiva(3188)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 11281.329999999989,
+        "resultadoLiquido": 11281.329999999994,
         "quantidade": 215,
         "cupons": 136,
         "clientes": 63
@@ -4423,7 +4423,7 @@
       {
         "Desc_Subgrupo": "PBM Controlado Cupom Desconto(3203)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1129.0500000000002,
+        "resultadoLiquido": 1129.05,
         "quantidade": 7,
         "cupons": 4,
         "clientes": 4
@@ -4463,7 +4463,7 @@
       {
         "Desc_Subgrupo": "Conveniencia Exclusiva(3217)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 2290.8300000000004,
+        "resultadoLiquido": 2290.83,
         "quantidade": 97,
         "cupons": 61,
         "clientes": 41
@@ -4476,7 +4476,8 @@
         "cupons": 1,
         "clientes": 0
       }
-    ]
+    ],
+    "clients": []
   },
   "previousData": {
     "daily": [
@@ -4486,7 +4487,7 @@
         "dataStr": "2026-06-22",
         "Dia": 22,
         "Dia_num": 22,
-        "resultadoLiquido": 30496.169999999984,
+        "resultadoLiquido": 30496.16999999998,
         "quantidade": 943,
         "cupons": 261,
         "clientes": 176
@@ -4508,7 +4509,7 @@
         "dataStr": "2026-06-05",
         "Dia": 5,
         "Dia_num": 5,
-        "resultadoLiquido": 30064.039999999975,
+        "resultadoLiquido": 30064.03999999997,
         "quantidade": 1206,
         "cupons": 277,
         "clientes": 257
@@ -4552,7 +4553,7 @@
         "dataStr": "2026-06-04",
         "Dia": 4,
         "Dia_num": 4,
-        "resultadoLiquido": 29181.09999999998,
+        "resultadoLiquido": 29181.099999999988,
         "quantidade": 1083,
         "cupons": 261,
         "clientes": 241
@@ -4563,7 +4564,7 @@
         "dataStr": "2026-06-20",
         "Dia": 20,
         "Dia_num": 20,
-        "resultadoLiquido": 31950.33999999998,
+        "resultadoLiquido": 31950.339999999964,
         "quantidade": 1017,
         "cupons": 276,
         "clientes": 257
@@ -4574,7 +4575,7 @@
         "dataStr": "2026-06-18",
         "Dia": 18,
         "Dia_num": 18,
-        "resultadoLiquido": 30627.77999999998,
+        "resultadoLiquido": 30627.77999999999,
         "quantidade": 901,
         "cupons": 244,
         "clientes": 229
@@ -4585,7 +4586,7 @@
         "dataStr": "2026-06-29",
         "Dia": 29,
         "Dia_num": 29,
-        "resultadoLiquido": 33240.329999999965,
+        "resultadoLiquido": 33240.32999999996,
         "quantidade": 1169,
         "cupons": 309,
         "clientes": 160
@@ -4596,7 +4597,7 @@
         "dataStr": "2026-06-19",
         "Dia": 19,
         "Dia_num": 19,
-        "resultadoLiquido": 33980.61999999999,
+        "resultadoLiquido": 33980.61999999997,
         "quantidade": 1147,
         "cupons": 286,
         "clientes": 265
@@ -4607,7 +4608,7 @@
         "dataStr": "2026-06-11",
         "Dia": 11,
         "Dia_num": 11,
-        "resultadoLiquido": 50664.126499999984,
+        "resultadoLiquido": 50664.12649999997,
         "quantidade": 1143,
         "cupons": 292,
         "clientes": 273
@@ -4618,7 +4619,7 @@
         "dataStr": "2026-06-10",
         "Dia": 10,
         "Dia_num": 10,
-        "resultadoLiquido": 36600.969999999965,
+        "resultadoLiquido": 36600.96999999998,
         "quantidade": 969,
         "cupons": 277,
         "clientes": 263
@@ -4629,7 +4630,7 @@
         "dataStr": "2026-06-06",
         "Dia": 6,
         "Dia_num": 6,
-        "resultadoLiquido": 29660.60999999999,
+        "resultadoLiquido": 29660.609999999993,
         "quantidade": 1232,
         "cupons": 304,
         "clientes": 273
@@ -4640,7 +4641,7 @@
         "dataStr": "2026-06-15",
         "Dia": 15,
         "Dia_num": 15,
-        "resultadoLiquido": 34243.89999999999,
+        "resultadoLiquido": 34243.89999999998,
         "quantidade": 978,
         "cupons": 260,
         "clientes": 245
@@ -4651,7 +4652,7 @@
         "dataStr": "2026-06-17",
         "Dia": 17,
         "Dia_num": 17,
-        "resultadoLiquido": 26870.85999999998,
+        "resultadoLiquido": 26870.859999999993,
         "quantidade": 987,
         "cupons": 275,
         "clientes": 258
@@ -4673,7 +4674,7 @@
         "dataStr": "2026-06-24",
         "Dia": 24,
         "Dia_num": 24,
-        "resultadoLiquido": 35213.06999999995,
+        "resultadoLiquido": 35213.06999999998,
         "quantidade": 1105,
         "cupons": 292,
         "clientes": 160
@@ -4684,7 +4685,7 @@
         "dataStr": "2026-06-08",
         "Dia": 8,
         "Dia_num": 8,
-        "resultadoLiquido": 35416.22999999997,
+        "resultadoLiquido": 35416.229999999974,
         "quantidade": 1159,
         "cupons": 265,
         "clientes": 252
@@ -4695,7 +4696,7 @@
         "dataStr": "2026-06-25",
         "Dia": 25,
         "Dia_num": 25,
-        "resultadoLiquido": 38881.77999999998,
+        "resultadoLiquido": 38881.77999999997,
         "quantidade": 1015,
         "cupons": 302,
         "clientes": 190
@@ -4706,7 +4707,7 @@
         "dataStr": "2026-06-21",
         "Dia": 21,
         "Dia_num": 21,
-        "resultadoLiquido": 28108.899999999998,
+        "resultadoLiquido": 28108.899999999983,
         "quantidade": 883,
         "cupons": 228,
         "clientes": 216
@@ -4717,7 +4718,7 @@
         "dataStr": "2026-06-12",
         "Dia": 12,
         "Dia_num": 12,
-        "resultadoLiquido": 34551.19999999997,
+        "resultadoLiquido": 34551.19999999998,
         "quantidade": 958,
         "cupons": 265,
         "clientes": 250
@@ -4728,7 +4729,7 @@
         "dataStr": "2026-06-23",
         "Dia": 23,
         "Dia_num": 23,
-        "resultadoLiquido": 38544.119999999966,
+        "resultadoLiquido": 38544.11999999995,
         "quantidade": 1081,
         "cupons": 298,
         "clientes": 184
@@ -4739,7 +4740,7 @@
         "dataStr": "2026-06-02",
         "Dia": 2,
         "Dia_num": 2,
-        "resultadoLiquido": 24067.459999999992,
+        "resultadoLiquido": 24067.459999999995,
         "quantidade": 852,
         "cupons": 221,
         "clientes": 211
@@ -4761,7 +4762,7 @@
         "dataStr": "2026-06-27",
         "Dia": 27,
         "Dia_num": 27,
-        "resultadoLiquido": 29503.464499999987,
+        "resultadoLiquido": 29503.46449999999,
         "quantidade": 977,
         "cupons": 274,
         "clientes": 140
@@ -4772,7 +4773,7 @@
         "dataStr": "2026-06-30",
         "Dia": 30,
         "Dia_num": 30,
-        "resultadoLiquido": 41423.879999999954,
+        "resultadoLiquido": 41423.87999999997,
         "quantidade": 1429,
         "cupons": 391,
         "clientes": 215
@@ -4783,7 +4784,7 @@
         "dataStr": "2026-06-07",
         "Dia": 7,
         "Dia_num": 7,
-        "resultadoLiquido": 26395.369999999984,
+        "resultadoLiquido": 26395.369999999995,
         "quantidade": 939,
         "cupons": 231,
         "clientes": 220
@@ -4794,7 +4795,7 @@
         "dataStr": "2026-06-28",
         "Dia": 28,
         "Dia_num": 28,
-        "resultadoLiquido": 34955.95599999997,
+        "resultadoLiquido": 34955.955999999955,
         "quantidade": 1262,
         "cupons": 335,
         "clientes": 166
@@ -4805,7 +4806,7 @@
         "dataStr": "2026-06-09",
         "Dia": 9,
         "Dia_num": 9,
-        "resultadoLiquido": 31306.699999999986,
+        "resultadoLiquido": 31306.69999999999,
         "quantidade": 1072,
         "cupons": 230,
         "clientes": 218
@@ -4815,7 +4816,7 @@
       {
         "Canal": "Venda Balcão",
         "Canal_num": "NaN",
-        "resultadoLiquido": 30068.390000000003,
+        "resultadoLiquido": 30068.389999999992,
         "quantidade": 1050,
         "cupons": 490,
         "clientes": 229
@@ -4823,23 +4824,23 @@
       {
         "Canal": "Recarga",
         "Canal_num": "NaN",
-        "resultadoLiquido": 5.092999999999999,
+        "resultadoLiquido": 5.093,
         "quantidade": 0,
         "cupons": 1,
         "clientes": 0
       },
       {
-        "Canal": "e_Commerce",
+        "Canal": "APP",
         "Canal_num": "NaN",
-        "resultadoLiquido": 28314.499999999964,
-        "quantidade": 963,
-        "cupons": 254,
-        "clientes": 74
+        "resultadoLiquido": 20143.35999999999,
+        "quantidade": 402,
+        "cupons": 153,
+        "clientes": 101
       },
       {
         "Canal": "Venda Caixa",
         "Canal_num": "NaN",
-        "resultadoLiquido": 11651.9,
+        "resultadoLiquido": 11651.900000000001,
         "quantidade": 664,
         "cupons": 374,
         "clientes": 124
@@ -4847,18 +4848,26 @@
       {
         "Canal": "iFood",
         "Canal_num": "NaN",
-        "resultadoLiquido": 145816.09000000032,
+        "resultadoLiquido": 145816.09000000058,
         "quantidade": 6485,
         "cupons": 1619,
         "clientes": 1454
       },
       {
-        "Canal": "APP",
+        "Canal": "Venda Tele Entrega Central",
         "Canal_num": "NaN",
-        "resultadoLiquido": 20143.359999999997,
-        "quantidade": 402,
-        "cupons": 153,
-        "clientes": 101
+        "resultadoLiquido": 50454.26999999999,
+        "quantidade": 1038,
+        "cupons": 319,
+        "clientes": 245
+      },
+      {
+        "Canal": "e_Commerce",
+        "Canal_num": "NaN",
+        "resultadoLiquido": 28314.49999999998,
+        "quantidade": 963,
+        "cupons": 254,
+        "clientes": 74
       },
       {
         "Canal": "Venda Tele Entrega",
@@ -4871,18 +4880,10 @@
       {
         "Canal": "SITE",
         "Canal_num": "NaN",
-        "resultadoLiquido": 15848.599999999999,
+        "resultadoLiquido": 15848.599999999995,
         "quantidade": 233,
         "cupons": 81,
         "clientes": 65
-      },
-      {
-        "Canal": "Venda Tele Entrega Central",
-        "Canal_num": "NaN",
-        "resultadoLiquido": 50454.269999999975,
-        "quantidade": 1038,
-        "cupons": 319,
-        "clientes": 245
       },
       {
         "Canal": "Credito Facil",
@@ -4903,7 +4904,7 @@
       {
         "Canal": "SITE Tele Entrega",
         "Canal_num": "NaN",
-        "resultadoLiquido": 214866.08500000046,
+        "resultadoLiquido": 214866.08500000034,
         "quantidade": 6154,
         "cupons": 1493,
         "clientes": 1146
@@ -4913,7 +4914,7 @@
       {
         "Desc_Grupo": "Perfumaria(2)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 255747.67000000106,
+        "resultadoLiquido": 255747.67000000138,
         "quantidade": 8653,
         "cupons": 3420,
         "clientes": 2593
@@ -4921,7 +4922,7 @@
       {
         "Desc_Grupo": "Medicamentos(1)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 544313.2075,
+        "resultadoLiquido": 544313.2074999997,
         "quantidade": 11787,
         "cupons": 5061,
         "clientes": 3660
@@ -4929,7 +4930,7 @@
       {
         "Desc_Grupo": "Conveniencia(10)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 76594.31500000006,
+        "resultadoLiquido": 76594.31499999994,
         "quantidade": 6199,
         "cupons": 1415,
         "clientes": 1024
@@ -4937,7 +4938,7 @@
       {
         "Desc_Grupo": "Dermo-Cosmeticos(3089)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 29259.489999999998,
+        "resultadoLiquido": 29259.489999999994,
         "quantidade": 369,
         "cupons": 276,
         "clientes": 225
@@ -4961,7 +4962,7 @@
       {
         "Desc_Grupo": "Diversos(5)",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 27592.039999999623,
+        "resultadoLiquido": 27592.040000001525,
         "quantidade": 3842,
         "cupons": 3883,
         "clientes": 2740
@@ -4969,7 +4970,7 @@
       {
         "Desc_Grupo": "-",
         "Desc_Grupo_num": "NaN",
-        "resultadoLiquido": 5.092999999999999,
+        "resultadoLiquido": 5.093,
         "quantidade": 0,
         "cupons": 1,
         "clientes": 0
@@ -4979,7 +4980,7 @@
       {
         "Desc_Linha": "ACESSORIOS - INFANTIL CHUPETAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1620.66,
+        "resultadoLiquido": 1620.6600000000003,
         "quantidade": 54,
         "cupons": 51,
         "clientes": 47
@@ -4987,7 +4988,7 @@
       {
         "Desc_Linha": "TOALHAS UMEDECIDAS - INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 14917.609999999979,
+        "resultadoLiquido": 14917.609999999984,
         "quantidade": 720,
         "cupons": 470,
         "clientes": 394
@@ -5011,7 +5012,7 @@
       {
         "Desc_Linha": "OTC- ANTIFISETICOS/ANTIGASES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1083.5599999999997,
+        "resultadoLiquido": 1083.5600000000002,
         "quantidade": 78,
         "cupons": 53,
         "clientes": 43
@@ -5027,7 +5028,7 @@
       {
         "Desc_Linha": "CAPILAR - INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1996.37,
+        "resultadoLiquido": 1996.3700000000001,
         "quantidade": 125,
         "cupons": 85,
         "clientes": 72
@@ -5043,7 +5044,7 @@
       {
         "Desc_Linha": "VITAMINAS E SUPLEMENTOS MINERAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 25385.180000000004,
+        "resultadoLiquido": 25385.179999999993,
         "quantidade": 474,
         "cupons": 282,
         "clientes": 232
@@ -5059,7 +5060,7 @@
       {
         "Desc_Linha": "OTC- GINECOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2053.82,
+        "resultadoLiquido": 2053.8200000000006,
         "quantidade": 26,
         "cupons": 22,
         "clientes": 21
@@ -5075,7 +5076,7 @@
       {
         "Desc_Linha": "BAZAR - CABOS E CARREGADORES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 725.05,
+        "resultadoLiquido": 725.0500000000001,
         "quantidade": 12,
         "cupons": 12,
         "clientes": 10
@@ -5091,7 +5092,7 @@
       {
         "Desc_Linha": "BANHO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 973.56,
+        "resultadoLiquido": 973.5600000000001,
         "quantidade": 40,
         "cupons": 36,
         "clientes": 36
@@ -5099,7 +5100,7 @@
       {
         "Desc_Linha": "ACESSORIOS - MAQUIAGEM",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 155.65,
+        "resultadoLiquido": 155.64999999999998,
         "quantidade": 12,
         "cupons": 10,
         "clientes": 8
@@ -5107,7 +5108,7 @@
       {
         "Desc_Linha": "FRALDAS INFANTIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 93349.36000000015,
+        "resultadoLiquido": 93349.36000000009,
         "quantidade": 1185,
         "cupons": 876,
         "clientes": 704
@@ -5115,7 +5116,7 @@
       {
         "Desc_Linha": "MAOS E PES - ESMALTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 944.4500000000002,
+        "resultadoLiquido": 944.45,
         "quantidade": 128,
         "cupons": 73,
         "clientes": 64
@@ -5123,7 +5124,7 @@
       {
         "Desc_Linha": "ANTIFUNGICOS / ANTIMICOTICOS TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1595.75,
+        "resultadoLiquido": 1595.7499999999995,
         "quantidade": 64,
         "cupons": 52,
         "clientes": 43
@@ -5131,7 +5132,7 @@
       {
         "Desc_Linha": "NEBULIZADORES/INALAD/UMIDIF E ACESSORIOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1780.09,
+        "resultadoLiquido": 1780.0900000000001,
         "quantidade": 40,
         "cupons": 37,
         "clientes": 29
@@ -5139,7 +5140,7 @@
       {
         "Desc_Linha": "ANTI-HIPERTENSIVOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 10256.112500000001,
+        "resultadoLiquido": 10256.1125,
         "quantidade": 218,
         "cupons": 141,
         "clientes": 109
@@ -5147,7 +5148,7 @@
       {
         "Desc_Linha": "TROMBOLITICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 14084.119999999997,
+        "resultadoLiquido": 14084.12,
         "quantidade": 155,
         "cupons": 96,
         "clientes": 82
@@ -5155,7 +5156,7 @@
       {
         "Desc_Linha": "FRALDAS INFANTIS ROUPA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6859.76,
+        "resultadoLiquido": 6859.760000000001,
         "quantidade": 61,
         "cupons": 51,
         "clientes": 45
@@ -5211,7 +5212,7 @@
       {
         "Desc_Linha": "OTC - TESTES DIAGNOSTICOS E APARELHOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1012.28,
+        "resultadoLiquido": 1012.2800000000001,
         "quantidade": 44,
         "cupons": 40,
         "clientes": 32
@@ -5219,7 +5220,7 @@
       {
         "Desc_Linha": "KIT - CAPILAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7461.570000000005,
+        "resultadoLiquido": 7461.570000000003,
         "quantidade": 280,
         "cupons": 213,
         "clientes": 185
@@ -5227,7 +5228,7 @@
       {
         "Desc_Linha": "CAPILAR - SHAMPOO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3766,
+        "resultadoLiquido": 3765.9999999999995,
         "quantidade": 147,
         "cupons": 127,
         "clientes": 100
@@ -5235,7 +5236,7 @@
       {
         "Desc_Linha": "OTC- VITAMINAS E SUPLEMENTOS MINERAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 17107.410000000003,
+        "resultadoLiquido": 17107.409999999996,
         "quantidade": 313,
         "cupons": 182,
         "clientes": 148
@@ -5243,7 +5244,7 @@
       {
         "Desc_Linha": "ABSORVENTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1064.3,
+        "resultadoLiquido": 1064.3000000000002,
         "quantidade": 76,
         "cupons": 71,
         "clientes": 64
@@ -5267,7 +5268,7 @@
       {
         "Desc_Linha": "CAPILAR - CONDICIONADOR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2667.52,
+        "resultadoLiquido": 2667.5200000000004,
         "quantidade": 93,
         "cupons": 83,
         "clientes": 64
@@ -5275,7 +5276,7 @@
       {
         "Desc_Linha": "ANTICONVULSIVANTES / ANTIEPILETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7878.870000000001,
+        "resultadoLiquido": 7878.87,
         "quantidade": 119,
         "cupons": 52,
         "clientes": 47
@@ -5291,7 +5292,7 @@
       {
         "Desc_Linha": "MAOS E PES - CUTELARIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 470.55,
+        "resultadoLiquido": 470.55000000000007,
         "quantidade": 22,
         "cupons": 19,
         "clientes": 18
@@ -5299,7 +5300,7 @@
       {
         "Desc_Linha": "MEDICAMENTOS FARMACIA POPULAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 7591.0099999999975,
+        "resultadoLiquido": 7591.009999999998,
         "quantidade": 616,
         "cupons": 292,
         "clientes": 230
@@ -5331,7 +5332,7 @@
       {
         "Desc_Linha": "CIRURGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5039.27,
+        "resultadoLiquido": 5039.270000000001,
         "quantidade": 437,
         "cupons": 243,
         "clientes": 184
@@ -5387,7 +5388,7 @@
       {
         "Desc_Linha": "ANTI-INFLAMATORIOS / ANTI-REUMAT",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4894.630000000001,
+        "resultadoLiquido": 4894.63,
         "quantidade": 163,
         "cupons": 152,
         "clientes": 132
@@ -5403,7 +5404,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - ENXAGUANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1261.03,
+        "resultadoLiquido": 1261.0300000000002,
         "quantidade": 68,
         "cupons": 54,
         "clientes": 47
@@ -5427,7 +5428,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - ESCOVA DENTAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1823.64,
+        "resultadoLiquido": 1823.6399999999999,
         "quantidade": 97,
         "cupons": 90,
         "clientes": 75
@@ -5443,7 +5444,7 @@
       {
         "Desc_Linha": "DERMO - LIMPEZA FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2354.31,
+        "resultadoLiquido": 2354.3100000000004,
         "quantidade": 42,
         "cupons": 40,
         "clientes": 36
@@ -5459,7 +5460,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - CREME E GEL DENTAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3581.87,
+        "resultadoLiquido": 3581.8700000000013,
         "quantidade": 352,
         "cupons": 209,
         "clientes": 177
@@ -5467,7 +5468,7 @@
       {
         "Desc_Linha": "CHOCOLATES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5978.540000000003,
+        "resultadoLiquido": 5978.540000000001,
         "quantidade": 688,
         "cupons": 298,
         "clientes": 236
@@ -5475,7 +5476,7 @@
       {
         "Desc_Linha": "DESODORANTE - AERO MASCULINO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6162.08,
+        "resultadoLiquido": 6162.080000000001,
         "quantidade": 440,
         "cupons": 212,
         "clientes": 180
@@ -5491,7 +5492,7 @@
       {
         "Desc_Linha": "CONTRACEPTIVOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 22439.31,
+        "resultadoLiquido": 22439.309999999998,
         "quantidade": 394,
         "cupons": 341,
         "clientes": 281
@@ -5499,7 +5500,7 @@
       {
         "Desc_Linha": "DISFUNCAO ERETIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5049.44,
+        "resultadoLiquido": 5049.4400000000005,
         "quantidade": 255,
         "cupons": 152,
         "clientes": 121
@@ -5507,7 +5508,7 @@
       {
         "Desc_Linha": "OTC- ANTIALERGICOS/ANTI-HISTAMINICO SIST",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3827.5699999999997,
+        "resultadoLiquido": 3827.57,
         "quantidade": 167,
         "cupons": 134,
         "clientes": 115
@@ -5515,7 +5516,7 @@
       {
         "Desc_Linha": "ANTISSEPTICO - DESINFECTANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 245.82999999999998,
+        "resultadoLiquido": 245.83000000000004,
         "quantidade": 25,
         "cupons": 12,
         "clientes": 11
@@ -5531,7 +5532,7 @@
       {
         "Desc_Linha": "DESODORANTE - AERO FEMININO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4460.84,
+        "resultadoLiquido": 4460.839999999999,
         "quantidade": 303,
         "cupons": 203,
         "clientes": 181
@@ -5555,7 +5556,7 @@
       {
         "Desc_Linha": "ANTIBIOTICOS SISTEMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4424.340000000001,
+        "resultadoLiquido": 4424.34,
         "quantidade": 77,
         "cupons": 64,
         "clientes": 63
@@ -5571,7 +5572,7 @@
       {
         "Desc_Linha": "ANTI-NEOPLASICOS/ONCOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1222.0800000000002,
+        "resultadoLiquido": 1222.08,
         "quantidade": 18,
         "cupons": 14,
         "clientes": 11
@@ -5579,7 +5580,7 @@
       {
         "Desc_Linha": "SOLAR - FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 427.89000000000004,
+        "resultadoLiquido": 427.89,
         "quantidade": 9,
         "cupons": 8,
         "clientes": 7
@@ -5603,7 +5604,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - FIO E FITA DENTAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 793.94,
+        "resultadoLiquido": 793.9399999999999,
         "quantidade": 50,
         "cupons": 45,
         "clientes": 40
@@ -5611,7 +5612,7 @@
       {
         "Desc_Linha": "REFRIGERANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1027.6699999999998,
+        "resultadoLiquido": 1027.67,
         "quantidade": 119,
         "cupons": 102,
         "clientes": 86
@@ -5619,7 +5620,7 @@
       {
         "Desc_Linha": "NUTRICAO INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 8175.779999999996,
+        "resultadoLiquido": 8175.779999999999,
         "quantidade": 164,
         "cupons": 92,
         "clientes": 67
@@ -5635,7 +5636,7 @@
       {
         "Desc_Linha": "BAZAR - NECESSAIRE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 128.67,
+        "resultadoLiquido": 128.67000000000002,
         "quantidade": 5,
         "cupons": 5,
         "clientes": 3
@@ -5659,7 +5660,7 @@
       {
         "Desc_Linha": "PET - HIGIENE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1042.9999999999998,
+        "resultadoLiquido": 1043,
         "quantidade": 33,
         "cupons": 22,
         "clientes": 20
@@ -5667,7 +5668,7 @@
       {
         "Desc_Linha": "ANTILIPEMICOS / REDUTORES COLESTEROL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 14804.7,
+        "resultadoLiquido": 14804.699999999999,
         "quantidade": 245,
         "cupons": 160,
         "clientes": 130
@@ -5675,7 +5676,7 @@
       {
         "Desc_Linha": "SABONETE - LIQUIDO REFIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 382.63,
+        "resultadoLiquido": 382.62999999999994,
         "quantidade": 65,
         "cupons": 35,
         "clientes": 32
@@ -5739,7 +5740,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS - INCONTINENCIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4584.769999999999,
+        "resultadoLiquido": 4584.7699999999995,
         "quantidade": 109,
         "cupons": 50,
         "clientes": 33
@@ -5835,7 +5836,7 @@
       {
         "Desc_Linha": "EXPECTORANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 498.53,
+        "resultadoLiquido": 498.53000000000003,
         "quantidade": 13,
         "cupons": 13,
         "clientes": 11
@@ -5851,7 +5852,7 @@
       {
         "Desc_Linha": "DIURETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1434.5300000000002,
+        "resultadoLiquido": 1434.53,
         "quantidade": 56,
         "cupons": 41,
         "clientes": 33
@@ -5859,7 +5860,7 @@
       {
         "Desc_Linha": "CORTCOESTEROIDES TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2695.5499999999997,
+        "resultadoLiquido": 2695.55,
         "quantidade": 75,
         "cupons": 68,
         "clientes": 52
@@ -5891,7 +5892,7 @@
       {
         "Desc_Linha": "OTC- ANALGESICOS/ANTITERMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 9884.07,
+        "resultadoLiquido": 9884.070000000003,
         "quantidade": 658,
         "cupons": 511,
         "clientes": 418
@@ -5899,7 +5900,7 @@
       {
         "Desc_Linha": "CORTCOESTEROIDES SISTEMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3489.419999999999,
+        "resultadoLiquido": 3489.4199999999996,
         "quantidade": 166,
         "cupons": 134,
         "clientes": 107
@@ -5915,7 +5916,7 @@
       {
         "Desc_Linha": "OTC- OTOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 310.23,
+        "resultadoLiquido": 310.22999999999996,
         "quantidade": 11,
         "cupons": 11,
         "clientes": 10
@@ -5923,7 +5924,7 @@
       {
         "Desc_Linha": "HORMONIOS DIVERSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 9716.530000000002,
+        "resultadoLiquido": 9716.529999999999,
         "quantidade": 95,
         "cupons": 74,
         "clientes": 60
@@ -5939,7 +5940,7 @@
       {
         "Desc_Linha": "DESODORANTE - ROLL-ON FEMININO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 709.8400000000001,
+        "resultadoLiquido": 709.84,
         "quantidade": 84,
         "cupons": 56,
         "clientes": 53
@@ -5987,7 +5988,7 @@
       {
         "Desc_Linha": "OTC- ANTI-INFLAMAT/ANTI-REUMAT TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2641.7999999999993,
+        "resultadoLiquido": 2641.8,
         "quantidade": 89,
         "cupons": 68,
         "clientes": 57
@@ -6003,7 +6004,7 @@
       {
         "Desc_Linha": "OTC- RELAXANTES MUSCULARES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1516.6599999999999,
+        "resultadoLiquido": 1516.66,
         "quantidade": 119,
         "cupons": 100,
         "clientes": 75
@@ -6011,7 +6012,7 @@
       {
         "Desc_Linha": "OTC- OFTALMOLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4204.400000000001,
+        "resultadoLiquido": 4204.4,
         "quantidade": 85,
         "cupons": 73,
         "clientes": 61
@@ -6027,7 +6028,7 @@
       {
         "Desc_Linha": "FORMULAS INFANTIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 25405.109999999986,
+        "resultadoLiquido": 25405.10999999998,
         "quantidade": 325,
         "cupons": 205,
         "clientes": 157
@@ -6035,7 +6036,7 @@
       {
         "Desc_Linha": "OTC- AFECCOES BUCAIS/GARGANTA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3344.9200000000005,
+        "resultadoLiquido": 3344.92,
         "quantidade": 168,
         "cupons": 141,
         "clientes": 116
@@ -6043,7 +6044,7 @@
       {
         "Desc_Linha": "OTC- ANTIESPASMODICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 867.12,
+        "resultadoLiquido": 867.1199999999999,
         "quantidade": 40,
         "cupons": 36,
         "clientes": 32
@@ -6059,7 +6060,7 @@
       {
         "Desc_Linha": "OTC- UROLOGICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 946.56,
+        "resultadoLiquido": 946.5600000000001,
         "quantidade": 18,
         "cupons": 18,
         "clientes": 15
@@ -6067,7 +6068,7 @@
       {
         "Desc_Linha": "OTC- OBSTIPACAO/CATARTICOS/LAXANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4489.4800000000005,
+        "resultadoLiquido": 4489.48,
         "quantidade": 141,
         "cupons": 98,
         "clientes": 83
@@ -6075,7 +6076,7 @@
       {
         "Desc_Linha": "CICATRIZANTE/REGENERADOR PELE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 894.7099999999999,
+        "resultadoLiquido": 894.71,
         "quantidade": 12,
         "cupons": 11,
         "clientes": 9
@@ -6083,7 +6084,7 @@
       {
         "Desc_Linha": "TRANQUILIZANTES / ANSIOLITICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1932.61,
+        "resultadoLiquido": 1932.6100000000001,
         "quantidade": 50,
         "cupons": 21,
         "clientes": 18
@@ -6107,7 +6108,7 @@
       {
         "Desc_Linha": "OTC- ANTIACNEICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1686.5,
+        "resultadoLiquido": 1686.4999999999998,
         "quantidade": 29,
         "cupons": 28,
         "clientes": 23
@@ -6123,7 +6124,7 @@
       {
         "Desc_Linha": "CUIDADO FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2292.43,
+        "resultadoLiquido": 2292.4300000000003,
         "quantidade": 77,
         "cupons": 73,
         "clientes": 61
@@ -6131,7 +6132,7 @@
       {
         "Desc_Linha": "PSICOESTIMULANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 993.47,
+        "resultadoLiquido": 993.4699999999999,
         "quantidade": 15,
         "cupons": 8,
         "clientes": 8
@@ -6139,7 +6140,7 @@
       {
         "Desc_Linha": "OTC- ANTIGRIPAIS/ANTITUSSIGENOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 9856.655,
+        "resultadoLiquido": 9856.655000000002,
         "quantidade": 721,
         "cupons": 370,
         "clientes": 300
@@ -6147,7 +6148,7 @@
       {
         "Desc_Linha": "SABONETE - BARRAS INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 477.06,
+        "resultadoLiquido": 477.05999999999995,
         "quantidade": 99,
         "cupons": 57,
         "clientes": 46
@@ -6171,7 +6172,7 @@
       {
         "Desc_Linha": "HEPATOPROTETORES / COLAGOGOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1755.96,
+        "resultadoLiquido": 1755.9599999999998,
         "quantidade": 21,
         "cupons": 12,
         "clientes": 10
@@ -6179,7 +6180,7 @@
       {
         "Desc_Linha": "DERMATOLOGICA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3929.519999999999,
+        "resultadoLiquido": 3929.5200000000004,
         "quantidade": 123,
         "cupons": 84,
         "clientes": 70
@@ -6187,7 +6188,7 @@
       {
         "Desc_Linha": "COLORACAO S/ AMONIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 907.37,
+        "resultadoLiquido": 907.3700000000001,
         "quantidade": 35,
         "cupons": 31,
         "clientes": 27
@@ -6211,7 +6212,7 @@
       {
         "Desc_Linha": "CAPILAR - SPRAY/GEL/MOUSSE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 424.52,
+        "resultadoLiquido": 424.52000000000004,
         "quantidade": 13,
         "cupons": 13,
         "clientes": 13
@@ -6227,7 +6228,7 @@
       {
         "Desc_Linha": "ANALGESICOS / ANTITERMICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3526.82,
+        "resultadoLiquido": 3526.8199999999997,
         "quantidade": 137,
         "cupons": 95,
         "clientes": 83
@@ -6235,7 +6236,7 @@
       {
         "Desc_Linha": "OTC- DESCONGESTIONANTE/ANTISSEPT NASAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2724.1999999999994,
+        "resultadoLiquido": 2724.2000000000003,
         "quantidade": 79,
         "cupons": 65,
         "clientes": 48
@@ -6283,7 +6284,7 @@
       {
         "Desc_Linha": "LUBRIFICANTES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1278.97,
+        "resultadoLiquido": 1278.9700000000003,
         "quantidade": 57,
         "cupons": 50,
         "clientes": 42
@@ -6291,7 +6292,7 @@
       {
         "Desc_Linha": "GASTROPROCINETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 730.28,
+        "resultadoLiquido": 730.2800000000001,
         "quantidade": 25,
         "cupons": 17,
         "clientes": 13
@@ -6323,7 +6324,7 @@
       {
         "Desc_Linha": "CUIDADO - INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2514.0099999999993,
+        "resultadoLiquido": 2514.0099999999998,
         "quantidade": 99,
         "cupons": 63,
         "clientes": 58
@@ -6331,7 +6332,7 @@
       {
         "Desc_Linha": "OTC- DERMATOLOGICA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1449.7700000000004,
+        "resultadoLiquido": 1449.7700000000002,
         "quantidade": 65,
         "cupons": 51,
         "clientes": 45
@@ -6339,7 +6340,7 @@
       {
         "Desc_Linha": "OTC- ANTIACIDOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1899.7900000000002,
+        "resultadoLiquido": 1899.7900000000004,
         "quantidade": 208,
         "cupons": 97,
         "clientes": 71
@@ -6371,7 +6372,7 @@
       {
         "Desc_Linha": "ABSORVENTE - INTERNO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 999.0200000000001,
+        "resultadoLiquido": 999.02,
         "quantidade": 56,
         "cupons": 49,
         "clientes": 49
@@ -6395,7 +6396,7 @@
       {
         "Desc_Linha": "ABSORVENTE - INCONTINENCIA GERIATRICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3109.84,
+        "resultadoLiquido": 3109.8399999999997,
         "quantidade": 175,
         "cupons": 47,
         "clientes": 38
@@ -6411,7 +6412,7 @@
       {
         "Desc_Linha": "MAOS E PES - ESMALTES TRATAMENTO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 237.46,
+        "resultadoLiquido": 237.45999999999998,
         "quantidade": 23,
         "cupons": 21,
         "clientes": 21
@@ -6427,7 +6428,7 @@
       {
         "Desc_Linha": "ANTIACNEICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1613.9099999999999,
+        "resultadoLiquido": 1613.91,
         "quantidade": 25,
         "cupons": 20,
         "clientes": 14
@@ -6443,7 +6444,7 @@
       {
         "Desc_Linha": "HIPERPLASIA PROSTATICA BENIGNA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3555.31,
+        "resultadoLiquido": 3555.3099999999995,
         "quantidade": 27,
         "cupons": 23,
         "clientes": 16
@@ -6459,7 +6460,7 @@
       {
         "Desc_Linha": "ANTIFUNGICOS / ANTIMICOTICOS SIST",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1941.4499999999994,
+        "resultadoLiquido": 1941.4499999999991,
         "quantidade": 89,
         "cupons": 48,
         "clientes": 37
@@ -6475,7 +6476,7 @@
       {
         "Desc_Linha": "CUIDADO - PES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1017.72,
+        "resultadoLiquido": 1017.7199999999999,
         "quantidade": 57,
         "cupons": 47,
         "clientes": 37
@@ -6491,7 +6492,7 @@
       {
         "Desc_Linha": "CUIDADO - CORPO TALCO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 77.64,
+        "resultadoLiquido": 77.63999999999999,
         "quantidade": 5,
         "cupons": 5,
         "clientes": 2
@@ -6499,7 +6500,7 @@
       {
         "Desc_Linha": "ANTIULCEROSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6451.640000000001,
+        "resultadoLiquido": 6451.639999999999,
         "quantidade": 84,
         "cupons": 67,
         "clientes": 58
@@ -6507,7 +6508,7 @@
       {
         "Desc_Linha": "DERMO - CLAREADOR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 641.7,
+        "resultadoLiquido": 641.6999999999999,
         "quantidade": 4,
         "cupons": 4,
         "clientes": 4
@@ -6539,7 +6540,7 @@
       {
         "Desc_Linha": "ANTIVERTIGINOSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 253.42999999999995,
+        "resultadoLiquido": 253.43,
         "quantidade": 9,
         "cupons": 7,
         "clientes": 6
@@ -6555,7 +6556,7 @@
       {
         "Desc_Linha": "TERAPIA VASCULAR-CEREBRAL E PERIFERICA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 104.81000000000002,
+        "resultadoLiquido": 104.81,
         "quantidade": 5,
         "cupons": 5,
         "clientes": 4
@@ -6563,7 +6564,7 @@
       {
         "Desc_Linha": "OTC- ANTI-INFLAMAT/ANTI-REUMAT SIST",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 329.81000000000006,
+        "resultadoLiquido": 329.81,
         "quantidade": 13,
         "cupons": 10,
         "clientes": 9
@@ -6579,7 +6580,7 @@
       {
         "Desc_Linha": "DERMO - CAPILAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3062.7300000000005,
+        "resultadoLiquido": 3062.73,
         "quantidade": 38,
         "cupons": 31,
         "clientes": 22
@@ -6675,7 +6676,7 @@
       {
         "Desc_Linha": "BARBA - ESPUMA - CREME - GEL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 402.23,
+        "resultadoLiquido": 402.22999999999996,
         "quantidade": 21,
         "cupons": 20,
         "clientes": 12
@@ -6715,7 +6716,7 @@
       {
         "Desc_Linha": "OTC- ANTIVARICOSOS/ANTIHEMORROIDARIOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1599.4799999999998,
+        "resultadoLiquido": 1599.48,
         "quantidade": 31,
         "cupons": 25,
         "clientes": 18
@@ -6723,7 +6724,7 @@
       {
         "Desc_Linha": "SABONETE - LIQUIDO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 649.3700000000001,
+        "resultadoLiquido": 649.37,
         "quantidade": 47,
         "cupons": 41,
         "clientes": 34
@@ -6731,7 +6732,7 @@
       {
         "Desc_Linha": "DERMO - HIDRATANTE CORPO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3515.37,
+        "resultadoLiquido": 3515.3700000000003,
         "quantidade": 57,
         "cupons": 44,
         "clientes": 35
@@ -6771,7 +6772,7 @@
       {
         "Desc_Linha": "ANTIGOTOSOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 749.33,
+        "resultadoLiquido": 749.3299999999999,
         "quantidade": 26,
         "cupons": 12,
         "clientes": 8
@@ -6803,7 +6804,7 @@
       {
         "Desc_Linha": "NUTRICAO AD LIQUIDO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 239.13,
+        "resultadoLiquido": 239.12999999999997,
         "quantidade": 24,
         "cupons": 13,
         "clientes": 9
@@ -6811,7 +6812,7 @@
       {
         "Desc_Linha": "CAPILAR - FINALIZADORES MASCULINOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 362.82000000000005,
+        "resultadoLiquido": 362.81999999999994,
         "quantidade": 18,
         "cupons": 15,
         "clientes": 13
@@ -6819,7 +6820,7 @@
       {
         "Desc_Linha": "CUIDADO – LABIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1704.64,
+        "resultadoLiquido": 1704.6399999999996,
         "quantidade": 135,
         "cupons": 82,
         "clientes": 61
@@ -6827,7 +6828,7 @@
       {
         "Desc_Linha": "MAOS E PES - REMOVEDORES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 218.18,
+        "resultadoLiquido": 218.17999999999992,
         "quantidade": 24,
         "cupons": 23,
         "clientes": 20
@@ -6835,7 +6836,7 @@
       {
         "Desc_Linha": "ABSORVENTE - PROTETORES DIARIOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1345.9900000000002,
+        "resultadoLiquido": 1345.99,
         "quantidade": 68,
         "cupons": 64,
         "clientes": 57
@@ -6859,7 +6860,7 @@
       {
         "Desc_Linha": "DERMO - SOLAR FACIAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2936.3399999999997,
+        "resultadoLiquido": 2936.34,
         "quantidade": 41,
         "cupons": 37,
         "clientes": 26
@@ -6891,7 +6892,7 @@
       {
         "Desc_Linha": "CUIDADO FACIAL - DEMAQUILANTE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 207.56999999999996,
+        "resultadoLiquido": 207.57,
         "quantidade": 7,
         "cupons": 6,
         "clientes": 6
@@ -6955,7 +6956,7 @@
       {
         "Desc_Linha": "CUIDADO - CORPO OLEO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 588.05,
+        "resultadoLiquido": 588.0500000000001,
         "quantidade": 37,
         "cupons": 35,
         "clientes": 33
@@ -6971,7 +6972,7 @@
       {
         "Desc_Linha": "DERMO - MAOS E PES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 210.20999999999998,
+        "resultadoLiquido": 210.21,
         "quantidade": 6,
         "cupons": 5,
         "clientes": 4
@@ -6995,7 +6996,7 @@
       {
         "Desc_Linha": "FLORAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 216.19,
+        "resultadoLiquido": 216.19000000000003,
         "quantidade": 6,
         "cupons": 4,
         "clientes": 4
@@ -7075,7 +7076,7 @@
       {
         "Desc_Linha": "OTC- ANTIALERGICOS/ANTI-HISTAMINICO TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 646.26,
+        "resultadoLiquido": 646.2599999999999,
         "quantidade": 41,
         "cupons": 28,
         "clientes": 24
@@ -7091,7 +7092,7 @@
       {
         "Desc_Linha": "BEM ESTAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 766.06,
+        "resultadoLiquido": 766.0600000000001,
         "quantidade": 36,
         "cupons": 25,
         "clientes": 21
@@ -7115,7 +7116,7 @@
       {
         "Desc_Linha": "FITOTERAPICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 851.6500000000001,
+        "resultadoLiquido": 851.65,
         "quantidade": 29,
         "cupons": 26,
         "clientes": 20
@@ -7123,7 +7124,7 @@
       {
         "Desc_Linha": "CORTICOIDES NASAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 4061.7300000000005,
+        "resultadoLiquido": 4061.73,
         "quantidade": 79,
         "cupons": 66,
         "clientes": 56
@@ -7147,7 +7148,7 @@
       {
         "Desc_Linha": "AFECCOES BUCAIS - AFTAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 505.40000000000003,
+        "resultadoLiquido": 505.4,
         "quantidade": 16,
         "cupons": 15,
         "clientes": 9
@@ -7163,7 +7164,7 @@
       {
         "Desc_Linha": "BAZAR - ELETRONICOS E GERAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 366.59999999999997,
+        "resultadoLiquido": 366.6,
         "quantidade": 14,
         "cupons": 11,
         "clientes": 7
@@ -7203,7 +7204,7 @@
       {
         "Desc_Linha": "MERCEARIA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1573.84,
+        "resultadoLiquido": 1573.8400000000001,
         "quantidade": 217,
         "cupons": 120,
         "clientes": 90
@@ -7219,7 +7220,7 @@
       {
         "Desc_Linha": "PET - ALIMENTAR",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 591.76,
+        "resultadoLiquido": 591.7599999999998,
         "quantidade": 60,
         "cupons": 24,
         "clientes": 23
@@ -7235,7 +7236,7 @@
       {
         "Desc_Linha": "CAPILAR - FINALIZADORES FEMININOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 964.2399999999999,
+        "resultadoLiquido": 964.24,
         "quantidade": 36,
         "cupons": 35,
         "clientes": 30
@@ -7259,7 +7260,7 @@
       {
         "Desc_Linha": "DESODORANTE - CREME / GEL FEMININO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1635.12,
+        "resultadoLiquido": 1635.1200000000001,
         "quantidade": 65,
         "cupons": 56,
         "clientes": 53
@@ -7267,7 +7268,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - BASE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 896.91,
+        "resultadoLiquido": 896.9100000000001,
         "quantidade": 21,
         "cupons": 17,
         "clientes": 14
@@ -7307,7 +7308,7 @@
       {
         "Desc_Linha": "DERMO - ANTIACNE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 729.39,
+        "resultadoLiquido": 729.3899999999999,
         "quantidade": 11,
         "cupons": 11,
         "clientes": 10
@@ -7331,7 +7332,7 @@
       {
         "Desc_Linha": "OTC- NUTRICOSMETICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1562.9,
+        "resultadoLiquido": 1562.8999999999999,
         "quantidade": 10,
         "cupons": 9,
         "clientes": 7
@@ -7339,7 +7340,7 @@
       {
         "Desc_Linha": "ANTIALOPECIA / ANTICALVICE",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2999.5,
+        "resultadoLiquido": 2999.4999999999995,
         "quantidade": 44,
         "cupons": 33,
         "clientes": 26
@@ -7371,7 +7372,7 @@
       {
         "Desc_Linha": "DIGESTIVOS/INTOLERANCIA ENZIMAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 841.6399999999999,
+        "resultadoLiquido": 841.64,
         "quantidade": 20,
         "cupons": 9,
         "clientes": 8
@@ -7379,7 +7380,7 @@
       {
         "Desc_Linha": "CAPILAR - SHAMPOO A SECO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 414.07000000000005,
+        "resultadoLiquido": 414.07,
         "quantidade": 17,
         "cupons": 16,
         "clientes": 13
@@ -7395,7 +7396,7 @@
       {
         "Desc_Linha": "SERVICOS/DESPESAS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 27592.039999999623,
+        "resultadoLiquido": 27592.040000001525,
         "quantidade": 3842,
         "cupons": 3883,
         "clientes": 2740
@@ -7411,7 +7412,7 @@
       {
         "Desc_Linha": "OTC- ANTITABAGISMO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1733.8400000000001,
+        "resultadoLiquido": 1733.84,
         "quantidade": 17,
         "cupons": 10,
         "clientes": 8
@@ -7443,7 +7444,7 @@
       {
         "Desc_Linha": "HIGIENE INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 120.55999999999999,
+        "resultadoLiquido": 120.55999999999997,
         "quantidade": 8,
         "cupons": 8,
         "clientes": 8
@@ -7451,7 +7452,7 @@
       {
         "Desc_Linha": "CAPILAR - AMPOLA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 95.24999999999999,
+        "resultadoLiquido": 95.25,
         "quantidade": 6,
         "cupons": 5,
         "clientes": 4
@@ -7459,7 +7460,7 @@
       {
         "Desc_Linha": "ACESSORIO CAPILAR - COLORACAO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 115.45,
+        "resultadoLiquido": 115.44999999999999,
         "quantidade": 7,
         "cupons": 7,
         "clientes": 6
@@ -7467,7 +7468,7 @@
       {
         "Desc_Linha": "ALIMENTO INFANTIL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 341.55,
+        "resultadoLiquido": 341.54999999999995,
         "quantidade": 42,
         "cupons": 18,
         "clientes": 16
@@ -7491,7 +7492,7 @@
       {
         "Desc_Linha": "PEDICULOSE/ESCABIOSE TOP",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 231.35999999999999,
+        "resultadoLiquido": 231.35999999999996,
         "quantidade": 10,
         "cupons": 8,
         "clientes": 4
@@ -7555,7 +7556,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - ACESSORIOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 171.95999999999998,
+        "resultadoLiquido": 171.96,
         "quantidade": 6,
         "cupons": 6,
         "clientes": 4
@@ -7571,7 +7572,7 @@
       {
         "Desc_Linha": "ELETROS DE BELEZA E CUIDADO PESSOAL",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 3981.9500000000003,
+        "resultadoLiquido": 3981.95,
         "quantidade": 16,
         "cupons": 16,
         "clientes": 14
@@ -7611,7 +7612,7 @@
       {
         "Desc_Linha": "SUPLEMENTOS ALIMENTARES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1769.1899999999998,
+        "resultadoLiquido": 1769.19,
         "quantidade": 16,
         "cupons": 14,
         "clientes": 12
@@ -7627,7 +7628,7 @@
       {
         "Desc_Linha": "HOME CARE - UTENSILIOS DOMESTICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 106.63,
+        "resultadoLiquido": 106.63000000000001,
         "quantidade": 8,
         "cupons": 8,
         "clientes": 8
@@ -7635,7 +7636,7 @@
       {
         "Desc_Linha": "ELETRODOMESTICOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 12181.009999999991,
+        "resultadoLiquido": 12181.00999999999,
         "quantidade": 112,
         "cupons": 105,
         "clientes": 71
@@ -7643,7 +7644,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - BATOM LIQUIDO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 174.87,
+        "resultadoLiquido": 174.86999999999998,
         "quantidade": 10,
         "cupons": 8,
         "clientes": 7
@@ -7659,7 +7660,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - LAPIS DE OLHO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 61.45,
+        "resultadoLiquido": 61.449999999999996,
         "quantidade": 3,
         "cupons": 3,
         "clientes": 3
@@ -7691,7 +7692,7 @@
       {
         "Desc_Linha": "DESODORANTE - AERO FEMININO PACK",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1000.1699999999998,
+        "resultadoLiquido": 1000.17,
         "quantidade": 34,
         "cupons": 23,
         "clientes": 17
@@ -7715,7 +7716,7 @@
       {
         "Desc_Linha": "COLECALCIFEROL (VIT D)",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 969.0500000000001,
+        "resultadoLiquido": 969.05,
         "quantidade": 16,
         "cupons": 13,
         "clientes": 9
@@ -7731,7 +7732,7 @@
       {
         "Desc_Linha": "SALGADINHOS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 1418.11,
+        "resultadoLiquido": 1418.1100000000001,
         "quantidade": 191,
         "cupons": 116,
         "clientes": 87
@@ -7739,7 +7740,7 @@
       {
         "Desc_Linha": "HIGIENE ORAL - ESCOVA ELETRICA/PILHA",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 6416.819999999999,
+        "resultadoLiquido": 6416.82,
         "quantidade": 38,
         "cupons": 32,
         "clientes": 24
@@ -7755,7 +7756,7 @@
       {
         "Desc_Linha": "HIGIENE PESSOAL – PAPEL HIGIENICO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 2304.1200000000013,
+        "resultadoLiquido": 2304.1200000000003,
         "quantidade": 169,
         "cupons": 128,
         "clientes": 108
@@ -7787,7 +7788,7 @@
       {
         "Desc_Linha": "MAOS E PES - ESMALTES COLECAO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 247.63,
+        "resultadoLiquido": 247.62999999999997,
         "quantidade": 54,
         "cupons": 34,
         "clientes": 32
@@ -7875,7 +7876,7 @@
       {
         "Desc_Linha": "PAES",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 213.73,
+        "resultadoLiquido": 213.73000000000002,
         "quantidade": 22,
         "cupons": 21,
         "clientes": 15
@@ -7931,7 +7932,7 @@
       {
         "Desc_Linha": "MAQUIAGEM - GLOSS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 92.44,
+        "resultadoLiquido": 92.43999999999998,
         "quantidade": 4,
         "cupons": 4,
         "clientes": 4
@@ -8091,7 +8092,7 @@
       {
         "Desc_Linha": "FRALDAS GERIATRICAS - PROTETOR COLCHAO",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 229.94000000000003,
+        "resultadoLiquido": 229.94,
         "quantidade": 6,
         "cupons": 3,
         "clientes": 3
@@ -8179,7 +8180,7 @@
       {
         "Desc_Linha": "OLEOS ESSENCIAIS",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 320.96,
+        "resultadoLiquido": 320.96000000000004,
         "quantidade": 7,
         "cupons": 6,
         "clientes": 3
@@ -8307,7 +8308,7 @@
       {
         "Desc_Linha": "-",
         "Desc_Linha_num": "NaN",
-        "resultadoLiquido": 5.092999999999999,
+        "resultadoLiquido": 5.093,
         "quantidade": 0,
         "cupons": 1,
         "clientes": 0
@@ -8317,7 +8318,7 @@
       {
         "Dia da Semana": "Seg",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 158014.83000000025,
+        "resultadoLiquido": 158014.8300000003,
         "quantidade": 5215,
         "cupons": 1326,
         "clientes": 1013
@@ -8325,7 +8326,7 @@
       {
         "Dia da Semana": "Qua",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 130858.62600000032,
+        "resultadoLiquido": 130858.62600000012,
         "quantidade": 4080,
         "cupons": 1087,
         "clientes": 877
@@ -8333,7 +8334,7 @@
       {
         "Dia da Semana": "Qui",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 149354.78650000022,
+        "resultadoLiquido": 149354.78650000028,
         "quantidade": 4142,
         "cupons": 1097,
         "clientes": 904
@@ -8341,7 +8342,7 @@
       {
         "Dia da Semana": "Sex",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 131958.61250000013,
+        "resultadoLiquido": 131958.61250000028,
         "quantidade": 4397,
         "cupons": 1106,
         "clientes": 923
@@ -8357,7 +8358,7 @@
       {
         "Dia da Semana": "Ter",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 167809.03000000023,
+        "resultadoLiquido": 167809.03000000026,
         "quantidade": 5246,
         "cupons": 1385,
         "clientes": 1012
@@ -8365,7 +8366,7 @@
       {
         "Dia da Semana": "Sab",
         "Dia da Semana_num": "NaN",
-        "resultadoLiquido": 114620.77450000015,
+        "resultadoLiquido": 114620.77450000006,
         "quantidade": 4171,
         "cupons": 1077,
         "clientes": 848
@@ -8375,7 +8376,7 @@
       {
         "Desc_Subgrupo": "Perfumaria(8)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 112097.28000000023,
+        "resultadoLiquido": 112097.28000000016,
         "quantidade": 5559,
         "cupons": 2261,
         "clientes": 1761
@@ -8383,7 +8384,7 @@
       {
         "Desc_Subgrupo": "Lencos e Toalhas Umedecidas(123)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 13002.96999999998,
+        "resultadoLiquido": 13002.969999999987,
         "quantidade": 635,
         "cupons": 419,
         "clientes": 356
@@ -8391,7 +8392,7 @@
       {
         "Desc_Subgrupo": "Referencia Avulso(6)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 4403.660000000001,
+        "resultadoLiquido": 4403.66,
         "quantidade": 620,
         "cupons": 303,
         "clientes": 226
@@ -8407,7 +8408,7 @@
       {
         "Desc_Subgrupo": "Referencia Onerosos(40)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 67967.49999999999,
+        "resultadoLiquido": 67967.5,
         "quantidade": 1206,
         "cupons": 946,
         "clientes": 763
@@ -8415,7 +8416,7 @@
       {
         "Desc_Subgrupo": "Referencia Oneroso Controlado(77)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 6543.439999999999,
+        "resultadoLiquido": 6543.44,
         "quantidade": 59,
         "cupons": 47,
         "clientes": 43
@@ -8423,7 +8424,7 @@
       {
         "Desc_Subgrupo": "Referencia Liberado(25)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 16761.689999999995,
+        "resultadoLiquido": 16761.69,
         "quantidade": 312,
         "cupons": 236,
         "clientes": 194
@@ -8431,7 +8432,7 @@
       {
         "Desc_Subgrupo": "Conveniencia - Bazar(3206)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 54266.82999999995,
+        "resultadoLiquido": 54266.82999999997,
         "quantidade": 4149,
         "cupons": 688,
         "clientes": 525
@@ -8439,7 +8440,7 @@
       {
         "Desc_Subgrupo": "Dermo-Cosmeticos(3151)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 25434.429999999997,
+        "resultadoLiquido": 25434.42999999999,
         "quantidade": 345,
         "cupons": 258,
         "clientes": 209
@@ -8455,7 +8456,7 @@
       {
         "Desc_Subgrupo": "Fraldas(9)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 102897.8600000002,
+        "resultadoLiquido": 102897.86000000007,
         "quantidade": 1309,
         "cupons": 929,
         "clientes": 736
@@ -8463,7 +8464,7 @@
       {
         "Desc_Subgrupo": "Referencia Super Onerosos(3176)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 41624.17999999999,
+        "resultadoLiquido": 41624.18,
         "quantidade": 792,
         "cupons": 610,
         "clientes": 494
@@ -8479,7 +8480,7 @@
       {
         "Desc_Subgrupo": "Referencia(2)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 27805.690000000006,
+        "resultadoLiquido": 27805.689999999988,
         "quantidade": 446,
         "cupons": 351,
         "clientes": 279
@@ -8495,7 +8496,7 @@
       {
         "Desc_Subgrupo": "Referencia Controlado(5)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 9399.720000000001,
+        "resultadoLiquido": 9399.72,
         "quantidade": 85,
         "cupons": 65,
         "clientes": 64
@@ -8503,7 +8504,7 @@
       {
         "Desc_Subgrupo": "Similar Oneroso(3186)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 4198.1500000000015,
+        "resultadoLiquido": 4198.150000000001,
         "quantidade": 307,
         "cupons": 239,
         "clientes": 186
@@ -8511,7 +8512,7 @@
       {
         "Desc_Subgrupo": "Absorventes e Lenços Substituido(81)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 8049.419999999998,
+        "resultadoLiquido": 8049.42,
         "quantidade": 430,
         "cupons": 269,
         "clientes": 233
@@ -8519,7 +8520,7 @@
       {
         "Desc_Subgrupo": "Genericos Onerosos Controlados(75)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3102.1800000000003,
+        "resultadoLiquido": 3102.18,
         "quantidade": 68,
         "cupons": 38,
         "clientes": 34
@@ -8527,7 +8528,7 @@
       {
         "Desc_Subgrupo": "Genericos(3)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 43860.93999999994,
+        "resultadoLiquido": 43860.939999999944,
         "quantidade": 2020,
         "cupons": 1131,
         "clientes": 879
@@ -8551,7 +8552,7 @@
       {
         "Desc_Subgrupo": "Hospitalares(80)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 15349.629999999994,
+        "resultadoLiquido": 15349.629999999996,
         "quantidade": 1166,
         "cupons": 574,
         "clientes": 442
@@ -8567,7 +8568,7 @@
       {
         "Desc_Subgrupo": "PBMs(15)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 18463.140000000003,
+        "resultadoLiquido": 18463.14,
         "quantidade": 104,
         "cupons": 85,
         "clientes": 68
@@ -8607,7 +8608,7 @@
       {
         "Desc_Subgrupo": "Similar(4)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 13420.460000000001,
+        "resultadoLiquido": 13420.460000000003,
         "quantidade": 687,
         "cupons": 534,
         "clientes": 419
@@ -8615,7 +8616,7 @@
       {
         "Desc_Subgrupo": "Perfumaria Exclusiva Premiacao(3158)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1912.62,
+        "resultadoLiquido": 1912.6200000000001,
         "quantidade": 58,
         "cupons": 41,
         "clientes": 34
@@ -8623,7 +8624,7 @@
       {
         "Desc_Subgrupo": "Genericos Onerosos(43)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 11976.672500000002,
+        "resultadoLiquido": 11976.672500000004,
         "quantidade": 488,
         "cupons": 328,
         "clientes": 269
@@ -8631,7 +8632,7 @@
       {
         "Desc_Subgrupo": "Generico Controlado(16)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 11464.449999999999,
+        "resultadoLiquido": 11464.45,
         "quantidade": 361,
         "cupons": 156,
         "clientes": 135
@@ -8639,7 +8640,7 @@
       {
         "Desc_Subgrupo": "Bebidas(3204)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 2689.184999999999,
+        "resultadoLiquido": 2689.1849999999995,
         "quantidade": 300,
         "cupons": 196,
         "clientes": 148
@@ -8679,7 +8680,7 @@
       {
         "Desc_Subgrupo": "PBM Perfumaria(3220)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1548.98,
+        "resultadoLiquido": 1548.9800000000002,
         "quantidade": 71,
         "cupons": 63,
         "clientes": 50
@@ -8687,7 +8688,7 @@
       {
         "Desc_Subgrupo": "Antibiotico Cont. Referencia(32)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1354.8000000000002,
+        "resultadoLiquido": 1354.7999999999997,
         "quantidade": 24,
         "cupons": 24,
         "clientes": 24
@@ -8703,7 +8704,7 @@
       {
         "Desc_Subgrupo": "Conveniencia Nutricional(3208)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 4872.62,
+        "resultadoLiquido": 4872.620000000001,
         "quantidade": 68,
         "cupons": 41,
         "clientes": 35
@@ -8711,7 +8712,7 @@
       {
         "Desc_Subgrupo": "PBM Cupom Desconto(3200)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1241.6599999999999,
+        "resultadoLiquido": 1241.66,
         "quantidade": 18,
         "cupons": 12,
         "clientes": 9
@@ -8719,7 +8720,7 @@
       {
         "Desc_Subgrupo": "Nutricao Formula(3222)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 14511.659999999993,
+        "resultadoLiquido": 14511.659999999989,
         "quantidade": 156,
         "cupons": 130,
         "clientes": 99
@@ -8751,7 +8752,7 @@
       {
         "Desc_Subgrupo": "Similar Avulso(18)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1062.115,
+        "resultadoLiquido": 1062.1150000000002,
         "quantidade": 325,
         "cupons": 115,
         "clientes": 83
@@ -8759,7 +8760,7 @@
       {
         "Desc_Subgrupo": "Generico Super Oneroso(3181)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 4963.72,
+        "resultadoLiquido": 4963.719999999999,
         "quantidade": 146,
         "cupons": 105,
         "clientes": 84
@@ -8775,7 +8776,7 @@
       {
         "Desc_Subgrupo": "Dermo-Cosmeticos Nutraceuticos(3153)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3015.7700000000004,
+        "resultadoLiquido": 3015.77,
         "quantidade": 16,
         "cupons": 14,
         "clientes": 12
@@ -8783,7 +8784,7 @@
       {
         "Desc_Subgrupo": "Higiene Pessoal(3194)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 2426.120000000002,
+        "resultadoLiquido": 2426.1200000000003,
         "quantidade": 179,
         "cupons": 132,
         "clientes": 111
@@ -8799,7 +8800,7 @@
       {
         "Desc_Subgrupo": "PBM Dermocosmetico(3169)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 809.29,
+        "resultadoLiquido": 809.2900000000001,
         "quantidade": 8,
         "cupons": 8,
         "clientes": 6
@@ -8815,7 +8816,7 @@
       {
         "Desc_Subgrupo": "Nutricao Leites(3154)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 11147.899999999994,
+        "resultadoLiquido": 11147.899999999996,
         "quantidade": 200,
         "cupons": 108,
         "clientes": 82
@@ -8839,7 +8840,7 @@
       {
         "Desc_Subgrupo": "Generico Avulso(17)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 646.9399999999997,
+        "resultadoLiquido": 646.9399999999999,
         "quantidade": 117,
         "cupons": 87,
         "clientes": 70
@@ -8855,7 +8856,7 @@
       {
         "Desc_Subgrupo": "Anticoncepcionais(13)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 6273.99,
+        "resultadoLiquido": 6273.989999999999,
         "quantidade": 63,
         "cupons": 55,
         "clientes": 42
@@ -8879,7 +8880,7 @@
       {
         "Desc_Subgrupo": "Referencia Farmacia Popular(3174)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 3305.9100000000003,
+        "resultadoLiquido": 3305.9100000000008,
         "quantidade": 168,
         "cupons": 101,
         "clientes": 86
@@ -8887,7 +8888,7 @@
       {
         "Desc_Subgrupo": "Servicos Tele Entrega(24)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 27592.039999999623,
+        "resultadoLiquido": 27592.040000001525,
         "quantidade": 3842,
         "cupons": 3883,
         "clientes": 2740
@@ -8911,7 +8912,7 @@
       {
         "Desc_Subgrupo": "Fralda Exclusiva(3188)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 12149.59999999999,
+        "resultadoLiquido": 12149.599999999991,
         "quantidade": 274,
         "cupons": 159,
         "clientes": 126
@@ -8951,7 +8952,7 @@
       {
         "Desc_Subgrupo": "Hospitalar Exclusiva(3218)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 707.46,
+        "resultadoLiquido": 707.4599999999999,
         "quantidade": 36,
         "cupons": 26,
         "clientes": 20
@@ -8959,7 +8960,7 @@
       {
         "Desc_Subgrupo": "Conveniencia Exclusiva(3217)",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 1664.2900000000004,
+        "resultadoLiquido": 1664.29,
         "quantidade": 103,
         "cupons": 63,
         "clientes": 49
@@ -8975,12 +8976,13 @@
       {
         "Desc_Subgrupo": "-",
         "Desc_Subgrupo_num": "NaN",
-        "resultadoLiquido": 5.092999999999999,
+        "resultadoLiquido": 5.093,
         "quantidade": 0,
         "cupons": 1,
         "clientes": 0
       }
-    ]
+    ],
+    "clients": []
   },
-  "timestamp": "2026-07-27T15:19:47.934Z"
+  "timestamp": "2026-07-27T17:57:24.320Z"
 }

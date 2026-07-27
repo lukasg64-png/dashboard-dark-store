@@ -261,7 +261,66 @@
       </div>
     </section>
 
-    <!-- ====== BLOCO 3: DESEMPENHO DIÁRIO & ACUMULADO ====== -->
+    <!-- ====== BLOCO 3: SEGMENTAÇÃO DA BASE DE CLIENTES EM 4 GRUPOS ====== -->
+    <section class="dashboard-block" id="clientSegmentationBlock">
+      <div class="block-header">
+        <div class="block-title">
+          <span class="block-icon">👥</span>
+          <h2>Segmentação da Base de Clientes em 4 Grupos (Ciclo de Vida M-1 vs M)</h2>
+        </div>
+        <span class="block-badge" style="background:rgba(139,92,246,0.12);color:var(--accent-purple);border-color:rgba(139,92,246,0.25)">Identificação por Cliente_ID</span>
+      </div>
+      <p class="block-description">Mapeamento dos 4 grupos estratégicos da base: retenção de receita, novas aquisições, evasão (churn do mês anterior) e clientes reativados.</p>
+
+      <!-- Grid 4 Cards do Ciclo de Vida -->
+      <div class="kpi-grid secondary-kpis">
+        <div class="kpi-card compact green animate-in">
+          <div class="kpi-label">🔄 1. Clientes Retidos</div>
+          <div class="kpi-value" id="segRetidosCount">—</div>
+          <div class="kpi-sub" id="segRetidosSub">Compraram em M-1 e no Mês Atual</div>
+        </div>
+
+        <div class="kpi-card compact blue animate-in">
+          <div class="kpi-label">✨ 2. Clientes Novos</div>
+          <div class="kpi-value" id="segNovosCount">—</div>
+          <div class="kpi-sub" id="segNovosSub">Entraram no Mês Atual</div>
+        </div>
+
+        <div class="kpi-card compact red animate-in">
+          <div class="kpi-label">⚠️ 3. Churn (Inativos M-1)</div>
+          <div class="kpi-value" id="segChurnCount">—</div>
+          <div class="kpi-sub" id="segChurnSub">Compraram em M-1, ausentes no Mês Atual</div>
+        </div>
+
+        <div class="kpi-card compact purple animate-in">
+          <div class="kpi-label">⚡ 4. Reativados</div>
+          <div class="kpi-value" id="segReativadosCount">—</div>
+          <div class="kpi-sub" id="segReativadosSub">Base inativa resgatada</div>
+        </div>
+      </div>
+
+      <!-- Tabela Detalhada dos 4 Grupos -->
+      <div class="mom-table-container" style="margin-top: 20px;">
+        <table class="mom-table">
+          <thead>
+            <tr>
+              <th>Grupo de Cliente</th>
+              <th class="right">Qtd. Clientes</th>
+              <th class="right">% Share Base</th>
+              <th class="right">Faturamento (R$)</th>
+              <th class="right">% Faturamento</th>
+              <th class="right">Gasto Médio / Cliente</th>
+              <th class="center">Status de Lealdade</th>
+            </tr>
+          </thead>
+          <tbody id="tableClientGroupsBody">
+            <!-- Preenchido via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ====== BLOCO 4: DESEMPENHO DIÁRIO & ACUMULADO ====== -->
     <section class="dashboard-block">
       <div class="block-header">
         <div class="block-title">

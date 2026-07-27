@@ -257,6 +257,7 @@ async function extractMonthData(app, mesAno, diaCorte = null, filters = {}, data
   const lineData = await getHyperCubeData(app, ['Desc_Linha'], measures, 1000);
   const weekdayData = await getHyperCubeData(app, ['Dia da Semana'], measures, 100);
   const subgroupData = await getHyperCubeData(app, ['Desc_Subgrupo'], measures, 1000);
+  const clientData = await getHyperCubeData(app, ['Cliente_ID'], measures, 5000);
 
   return {
     daily: dailyData,
@@ -265,6 +266,7 @@ async function extractMonthData(app, mesAno, diaCorte = null, filters = {}, data
     lines: lineData,
     weekdays: weekdayData,
     subgroups: subgroupData,
+    clients: clientData,
   };
 }
 
