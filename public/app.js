@@ -472,6 +472,23 @@ const App = {
     document.getElementById('kpiProjecaoSub').textContent = `Projeção calculada para ${d.diasNoMes} dias`;
     document.getElementById('kpiMediaDiaSub').textContent = `Média real em ${k.diasComDados} dias`;
 
+    // Crescimento MoM no Resultado Líquido (% e Nominal R$)
+    const gRL = d.crescimento?.resultadoLiquido || {};
+    const rlDiff = (gRL.atual || 0) - (gRL.anterior || 0);
+    const rlVar = gRL.variacao;
+    const elRLMoM = document.getElementById('kpiRLMoMBadge');
+    if (elRLMoM) {
+      if (rlVar != null) {
+        const isPos = rlVar > 0;
+        const arrow = isPos ? '↑' : '↓';
+        const sign = isPos ? '+' : '';
+        elRLMoM.textContent = `${arrow} ${sign}${fmt.decimal(rlVar, 1)}% (${sign}${fmt.currency(rlDiff)})`;
+        elRLMoM.className = `desvio-badge ${isPos ? 'positive' : 'negative'}`;
+      } else {
+        elRLMoM.textContent = '—';
+      }
+    }
+
     const pctO = k.pctOrcada || 0;
     const pctD = k.pctDesafio || 0;
     document.getElementById('pctOrcLabel').textContent = fmt.pct(pctO);
