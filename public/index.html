@@ -237,8 +237,11 @@
       <div class="chart-grid-2col" style="margin-top: 20px;">
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Evolução da Eficiência da Nota</h3>
-            <p>Ticket Médio em R$ (Barras) vs. Média de Itens por Nota (Linha)</p>
+            <div class="chart-card-header-text">
+              <h3>Evolução da Eficiência da Nota</h3>
+              <p>Ticket Médio em R$ (Barras) vs. Média de Itens por Nota (Linha)</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartEficienciaNota', 'Evolução da Eficiência da Nota')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartEficienciaNota"></canvas>
@@ -247,8 +250,11 @@
 
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Evolução do Valor & Frequência do Cliente</h3>
-            <p>Gasto por Cliente em R$ (Barras) vs. Cupons por Cliente (Linha)</p>
+            <div class="chart-card-header-text">
+              <h3>Evolução do Valor & Frequência do Cliente</h3>
+              <p>Gasto por Cliente em R$ (Barras) vs. Cupons por Cliente (Linha)</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartValorCliente', 'Evolução do Valor & Frequência do Cliente')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartValorCliente"></canvas>
@@ -270,8 +276,11 @@
       <div class="chart-grid-2col">
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Resultado Líquido Diário (Datas do Mês)</h3>
-            <p>Faturamento real por dia vs. Meta Orçada e Meta Desafio</p>
+            <div class="chart-card-header-text">
+              <h3>Resultado Líquido Diário / Semanal</h3>
+              <p>Faturamento real vs. Meta Orçada e Meta Desafio no período selecionado</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartDaily', 'Resultado Líquido Diário / Semanal')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartDaily"></canvas>
@@ -280,8 +289,11 @@
 
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Curva de Atingimento Acumulado</h3>
-            <p>Trajetória do faturamento acumulado vs. metas do mês</p>
+            <div class="chart-card-header-text">
+              <h3>Curva de Atingimento Acumulado</h3>
+              <p>Trajetória do faturamento acumulado vs. metas do período</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartAcumulado', 'Curva de Atingimento Acumulado')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartAcumulado"></canvas>
@@ -303,8 +315,11 @@
       <div class="block-content-stack">
         <div class="chart-card bar-card" style="margin-bottom: 24px;">
           <div class="chart-card-header">
-            <h3>Participação por Canal de Venda (%) — Comparativo de Share (Mês Atual vs. Mês Anterior)</h3>
-            <p>Representatividade percentual (% Part.) de cada canal no mês atual vs. mesmo período do mês anterior, com variação em pontos percentuais (p.p.)</p>
+            <div class="chart-card-header-text">
+              <h3>Participação por Canal de Venda (%) — Comparativo de Share (Mês Atual vs. Mês Anterior)</h3>
+              <p>Representatividade percentual (% Part.) de cada canal no período vs. mês anterior</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartChannelBar', 'Participação por Canal de Venda (%)')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper" style="height: 320px;">
             <canvas id="chartChannelBar"></canvas>
@@ -313,8 +328,10 @@
 
         <div class="table-container full-width-table">
           <div class="chart-card-header">
-            <h3>Detalhamento por Canal (Comparativo M-1 — Mesmo Período Decorrido)</h3>
-            <p id="channelTableSubtitle">Métricas consolidadas de faturamento, cupons, clientes, ticket médio e evolução de share comparadas com o mesmo período do mês anterior</p>
+            <div class="chart-card-header-text">
+              <h3>Detalhamento por Canal (Comparativo M-1 — Mesmo Período Decorrido)</h3>
+              <p id="channelTableSubtitle">Métricas consolidadas de faturamento, cupons, clientes, ticket médio e evolução de share comparadas com o mesmo período do mês anterior</p>
+            </div>
           </div>
           <div class="table-responsive">
             <table class="data-table channel-mom-table">
@@ -364,8 +381,11 @@
       <div class="chart-grid-2col">
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Faturamento por Dia da Semana</h3>
-            <p>Resultado Líquido acumulado por dia (Domingo a Sábado)</p>
+            <div class="chart-card-header-text">
+              <h3>Faturamento por Dia da Semana</h3>
+              <p>Resultado Líquido acumulado por dia (Domingo a Sábado)</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartWeekdayRL', 'Faturamento por Dia da Semana')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartWeekdayRL"></canvas>
@@ -374,8 +394,11 @@
 
         <div class="chart-card">
           <div class="chart-card-header">
-            <h3>Volume Operacional por Dia da Semana</h3>
-            <p>Total de Cupons emitidos vs. Clientes Únicos atendidos</p>
+            <div class="chart-card-header-text">
+              <h3>Volume Operacional por Dia da Semana</h3>
+              <p>Total de Cupons emitidos vs. Clientes Únicos atendidos</p>
+            </div>
+            <button class="btn-expand-chart" onclick="App.openFullscreenChart('chartWeekdayOps', 'Volume Operacional por Dia da Semana')">⛶ Expandir</button>
           </div>
           <div class="chart-wrapper">
             <canvas id="chartWeekdayOps"></canvas>
@@ -531,6 +554,19 @@
       <p>Dados integrados via Qlik Sense Engine API & Planilhas de Metas Corporativas</p>
     </footer>
 
+  </div>
+
+  <!-- Modal para Visualização de Gráfico em Tela Cheia -->
+  <div class="chart-modal-overlay hidden" id="chartModal" onclick="if(event.target===this) App.closeFullscreenChart()">
+    <div class="chart-modal-content">
+      <div class="chart-modal-header">
+        <h3 id="chartModalTitle">📐 Visualização do Gráfico</h3>
+        <button class="btn-close-modal" onclick="App.closeFullscreenChart()">✕ Fechar (Esc)</button>
+      </div>
+      <div class="chart-modal-body">
+        <canvas id="chartModalCanvas"></canvas>
+      </div>
+    </div>
   </div>
 
   <script src="app.js"></script>

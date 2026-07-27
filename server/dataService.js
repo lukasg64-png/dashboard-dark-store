@@ -134,41 +134,104 @@ function calcularCrescimento(kpisAtual, kpisAnterior) {
 /**
  * Combina dados diários do Qlik com metas do Excel
  */
-function combinarDailyComMetas(dailyData, metas, mesAno) {
-  // Parsing de ano e mês para formatação de datas reais
+/**
+ * Combina dados diários do Qlik com metas do Excel
+ */
+function combinarDailyComMetas(dailyData, metas, mesAno, dataInicio = null, dataFim = null) {
+  const weekdaysMap = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+
+  const realMap = {};
+  for (const d of dailyData) {
+    if (d.dataStr) realMap[d.dataStr] = d;
+  }
+
+  const metaMap = {};
+  for (const m of metas) {
+    if (m.dataStr) metaMap[m.dataStr] = m;
+  }
+
+  if (dataInicio && dataFim) {
+    const start = new Date(dataInicio + 'T00:00:00');
+    const end = new Date(dataFim + 'T00:00:00');
+
+    let acumReal = 0, acumOrcada = 0, acumDesafio = 0;
+    const combined = [];
+
+    for (let dt = new Date(start); dt <= end; dt.setDate(dt.getDate() + 1)) {
+      const yearStr = dt.getFullYear();
+      const monthStr = String(dt.getMonth() + 1).padStart(2, '0');
+      const dayStr = String(dt.getDate()).padStart(2, '0');
+      const dataStr = `${yearStr}-${monthStr}-${dayStr}`;
+
+      const real = realMap[dataStr] || {};
+      const meta = metaMap[dataStr] || {};
+
+      const resultadoLiquido = real.resultadoLiquido || 0;
+      const metaOrcada = meta.metaOrcada || 0;
+      const metaDesafio = meta.metaDesafio || 0;
+
+      acumReal += resultadoLiquido;
+      acumOrcada += metaOrcada;
+      acumDesafio += metaDesafio;
+
+      const diaSemana = weekdaysMap[dt.getDay()];
+      const dataFmt = `${dayStr}/${monthStr}`;
+      const labelCompleto = `${dataFmt} (${diaSemana})`;
+
+      const cupons = real.cupons || 0;
+      const clientes = real.clientes || 0;
+      const quantidade = real.quantidade || 0;
+
+      combined.push({
+        dia: dt.getDate(),
+        dataStr,
+        dataFmt,
+        diaSemana,
+        labelCompleto,
+        resultadoLiquido,
+        quantidade,
+        cupons,
+        clientes,
+        ticketMedio: cupons > 0 ? resultadoLiquido / cupons : 0,
+        itensPorNota: cupons > 0 ? quantidade / cupons : 0,
+        itensPorCliente: clientes > 0 ? quantidade / clientes : 0,
+        cuponsPorCliente: clientes > 0 ? cupons / clientes : 0,
+        ticketPorCliente: clientes > 0 ? resultadoLiquido / clientes : 0,
+        metaOrcada,
+        metaDesafio,
+        acumReal,
+        acumOrcada,
+        acumDesafio,
+        pctOrcada: acumOrcada > 0 ? (acumReal / acumOrcada) * 100 : null,
+        pctDesafio: acumDesafio > 0 ? (acumReal / acumDesafio) * 100 : null,
+        temDados: resultadoLiquido > 0,
+      });
+    }
+
+    return combined;
+  }
+
+  // Fallback single month
   const parts = (mesAno || getCurrentMonth()).split('-');
   const year = parseInt(parts[0]) || new Date().getFullYear();
   const month = parseInt(parts[1]) || (new Date().getMonth() + 1);
-  const weekdaysMap = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
 
-  // Mapa de metas por dia
-  const metaMap = {};
-  for (const m of metas) {
-    metaMap[m.dia] = m;
-  }
+  const metaMapDay = {};
+  for (const m of metas) metaMapDay[m.dia] = m;
 
-  // Mapa de realizado por dia
-  const realMap = {};
+  const realMapDay = {};
   for (const d of dailyData) {
     const dia = parseInt(d.Dia || d['Dia_num'] || 0);
-    if (dia > 0) {
-      realMap[dia] = d;
-    }
+    if (dia > 0) realMapDay[dia] = d;
   }
 
-  // Combina: todos os dias do mês (1 até o último dia com meta ou dado)
-  const maxDia = Math.max(
-    ...Object.keys(metaMap).map(Number),
-    ...Object.keys(realMap).map(Number),
-    1
-  );
-
+  const maxDia = Math.max(...Object.keys(metaMapDay).map(Number), ...Object.keys(realMapDay).map(Number), 1);
   let acumReal = 0, acumOrcada = 0, acumDesafio = 0;
   const combined = [];
 
   for (let dia = 1; dia <= maxDia; dia++) {
-    const real = realMap[dia] || {};
-    const meta = metaMap[dia] || {};
+    const real = realMapDay[dia] || {};
+    const meta = metaMapDay[dia] || {};
 
     const resultadoLiquido = real.resultadoLiquido || 0;
     const metaOrcada = meta.metaOrcada || 0;
@@ -178,7 +241,6 @@ function combinarDailyComMetas(dailyData, metas, mesAno) {
     acumOrcada += metaOrcada;
     acumDesafio += metaDesafio;
 
-    // Formatação de data real
     const dateObj = new Date(year, month - 1, dia);
     const dayStr = String(dia).padStart(2, '0');
     const monthStr = String(month).padStart(2, '0');
@@ -249,27 +311,19 @@ function rankear(data, labelField, topN = 10) {
  * Agrupa os dados diários combinados em blocos semanais
  */
 function agruparPorSemana(dailyCombined, mesAno) {
-  const parts = (mesAno || getCurrentMonth()).split('-');
-  const year = parseInt(parts[0]) || new Date().getFullYear();
-  const month = parseInt(parts[1]) || (new Date().getMonth() + 1);
-  const monthStr = String(month).padStart(2, '0');
-
   const semanasMap = new Map();
+  let dayCounter = 0;
 
   for (const d of dailyCombined) {
-    const dia = d.dia;
-    let semIdx = Math.floor((dia - 1) / 7) + 1;
-    if (semIdx > 5) semIdx = 5;
-
-    const startDay = String((semIdx - 1) * 7 + 1).padStart(2, '0');
-    const endDay = String(Math.min(semIdx * 7, 31)).padStart(2, '0');
+    dayCounter++;
+    let semIdx = Math.floor((dayCounter - 1) / 7) + 1;
     const key = `Semana ${semIdx}`;
-    const labelCompleto = `Sem ${semIdx} (${startDay}/${monthStr} - ${endDay}/${monthStr})`;
 
     if (!semanasMap.has(key)) {
       semanasMap.set(key, {
         semanaKey: key,
-        labelCompleto,
+        startLabel: d.dataFmt || `Dia ${d.dia}`,
+        endLabel: d.dataFmt || `Dia ${d.dia}`,
         dia: semIdx,
         resultadoLiquido: 0,
         quantidade: 0,
@@ -286,13 +340,14 @@ function agruparPorSemana(dailyCombined, mesAno) {
     }
 
     const sem = semanasMap.get(key);
+    sem.endLabel = d.dataFmt || `Dia ${d.dia}`;
     sem.resultadoLiquido += d.resultadoLiquido || 0;
     sem.quantidade += d.quantidade || 0;
     sem.cupons += d.cupons || 0;
     sem.clientes += d.clientes || 0;
     sem.metaOrcada += d.metaOrcada || 0;
     sem.metaDesafio += d.metaDesafio || 0;
-    sem.acumReal = d.acumReal; // snapshot final acumulado
+    sem.acumReal = d.acumReal;
     sem.acumOrcada = d.acumOrcada;
     sem.acumDesafio = d.acumDesafio;
     sem.diasCount += 1;
@@ -304,6 +359,7 @@ function agruparPorSemana(dailyCombined, mesAno) {
     const clientes = sem.clientes || 0;
     return {
       ...sem,
+      labelCompleto: `Sem ${sem.dia} (${sem.startLabel} - ${sem.endLabel})`,
       ticketMedio: cupons > 0 ? sem.resultadoLiquido / cupons : 0,
       itensPorNota: cupons > 0 ? sem.quantidade / cupons : 0,
       itensPorCliente: clientes > 0 ? sem.quantidade / clientes : 0,
@@ -385,11 +441,7 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
   const crescimento = calcularCrescimento(kpisAtual, kpisAnterior);
 
   // Combinar daily com metas no intervalo selecionado
-  const dailyCombinedFull = combinarDailyComMetas(dailyAtual, metasAtual, mesAno);
-  const dailyCombined = dailyCombinedFull.filter(d => {
-    if (d.dataStr) return d.dataStr >= dataInicio && d.dataStr <= dataFim;
-    return d.dia >= diaDe && d.dia <= diaCorte;
-  });
+  const dailyCombined = combinarDailyComMetas(dailyAtual, metasAtual, mesAno, dataInicio, dataFim);
 
   // Agrupamento semanal para alternância Dia / Semana
   const weekly = agruparPorSemana(dailyCombined, mesAno);

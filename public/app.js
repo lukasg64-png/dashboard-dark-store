@@ -232,6 +232,86 @@ const App = {
     this.loadData(this.currentMonth, this.currentCutoffDay, this.currentStartDay, this.currentDataInicio, this.currentDataFim);
   },
 
+  modalChartInstance: null,
+
+  openFullscreenChart(chartCanvasId, title) {
+    const originalChart = charts[chartCanvasId];
+    if (!originalChart) return;
+
+    const modal = document.getElementById('chartModal');
+    const modalTitle = document.getElementById('chartModalTitle');
+    const canvas = document.getElementById('chartModalCanvas');
+    if (!modal || !canvas) return;
+
+    modalTitle.textContent = title || '📐 Gráfico em Tela Cheia';
+
+    if (this.modalChartInstance) {
+      this.modalChartInstance.destroy();
+      this.modalChartInstance = null;
+    }
+
+    modal.classList.remove('hidden');
+
+    const origConfig = originalChart.config;
+    const ctx = canvas.getContext('2d');
+
+    const clonedData = JSON.parse(JSON.stringify(origConfig.data));
+    origConfig.data.datasets.forEach((ds, i) => {
+      if (ds.backgroundColor && clonedData.datasets[i]) {
+        clonedData.datasets[i].backgroundColor = ds.backgroundColor;
+      }
+      if (ds.borderColor && clonedData.datasets[i]) {
+        clonedData.datasets[i].borderColor = ds.borderColor;
+      }
+    });
+
+    const optionsCloned = {
+      ...origConfig.options,
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        ...origConfig.options?.plugins,
+        legend: {
+          display: true,
+          position: 'top',
+          labels: { color: '#e2e8f0', font: { size: 13, weight: '600' } }
+        },
+      },
+      scales: origConfig.options?.scales ? JSON.parse(JSON.stringify(origConfig.options.scales)) : {},
+    };
+
+    if (optionsCloned.scales.x && optionsCloned.scales.x.ticks) {
+      optionsCloned.scales.x.ticks.font = { size: 12, family: "'JetBrains Mono'" };
+    }
+    if (optionsCloned.scales.y && optionsCloned.scales.y.ticks) {
+      optionsCloned.scales.y.ticks.font = { size: 12, family: "'JetBrains Mono'" };
+    }
+
+    this.modalChartInstance = new Chart(ctx, {
+      type: origConfig.type,
+      data: clonedData,
+      options: optionsCloned,
+    });
+
+    this._escHandler = (e) => {
+      if (e.key === 'Escape') this.closeFullscreenChart();
+    };
+    window.addEventListener('keydown', this._escHandler);
+  },
+
+  closeFullscreenChart() {
+    const modal = document.getElementById('chartModal');
+    if (modal) modal.classList.add('hidden');
+    if (this.modalChartInstance) {
+      this.modalChartInstance.destroy();
+      this.modalChartInstance = null;
+    }
+    if (this._escHandler) {
+      window.removeEventListener('keydown', this._escHandler);
+      this._escHandler = null;
+    }
+  },
+
   onDateRangeChange() {
     const startStr = document.getElementById('dateStart')?.value;
     const endStr = document.getElementById('dateEnd')?.value;
@@ -320,13 +400,23 @@ const App = {
     // Atualiza opções dos dropdowns de filtros de categoria
     this.updateCategoryFilterDropdowns(d);
 
-    const [y, mo] = d.mesAno.split('-');
     const monthNamesStr = ['', 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];
-    const monthFormatted = `${monthNamesStr[parseInt(mo)]}/${y}`;
-    const startDayFmt = String(d.diaDe || 1).padStart(2, '0');
-    const dayCorteFormatted = String(d.diaCorte).padStart(2, '0');
+    let startLabel, endLabel;
+    if (d.dataInicio && d.dataFim) {
+      const [y1, m1, d1] = d.dataInicio.split('-');
+      const [y2, m2, d2] = d.dataFim.split('-');
+      startLabel = `${d1}/${monthNamesStr[parseInt(m1)]}/${y1}`;
+      endLabel = `${d2}/${monthNamesStr[parseInt(m2)]}/${y2}`;
+    } else {
+      const [y, mo] = d.mesAno.split('-');
+      const monthFormatted = `${monthNamesStr[parseInt(mo)]}/${y}`;
+      const startDayFmt = String(d.diaDe || 1).padStart(2, '0');
+      const dayCorteFormatted = String(d.diaCorte).padStart(2, '0');
+      startLabel = `${startDayFmt}/${monthFormatted}`;
+      endLabel = `${dayCorteFormatted}/${monthFormatted}`;
+    }
     
-    let infoText = `Exibindo histórico de ${startDayFmt}/${monthFormatted} até ${dayCorteFormatted}/${monthFormatted} (${this.viewMode === 'semana' ? 'Visão Semanal' : 'Visão Diária'})`;
+    let infoText = `Exibindo histórico de ${startLabel} até ${endLabel} (${this.viewMode === 'semana' ? 'Visão Semanal' : 'Visão Diária'})`;
     if (d.isD1Default) {
       infoText += ` (Filtro padrão D-1 - Ontem)`;
     } else if (d.diaCorte === d.diaHoje) {
@@ -361,7 +451,10 @@ const App = {
       document.getElementById('lastUpdate').textContent = `Atualizado às ${dt.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}`;
     }
 
-    document.getElementById('mesLabel').textContent = `${monthFormatted} · Intervalo ${startDayFmt} a ${dayCorteFormatted} (Dia ${d.diaHoje} real)`;
+    const mesLabelEl = document.getElementById('mesLabel');
+    if (mesLabelEl) {
+      mesLabelEl.textContent = `${startLabel} até ${endLabel} (Dia ${d.diaHoje} real)`;
+    }
   },
 
   // ============================================================
