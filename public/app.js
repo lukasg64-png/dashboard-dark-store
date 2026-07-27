@@ -352,7 +352,7 @@ const App = {
 
     this.renderHeader(d);
     this.renderKPIs(d);
-    this.renderGrowth(d);
+    this.renderMoMTable(d);
     this.renderCustomerEfficiency(d);
     this.renderDailyChart(d);
     this.renderAcumuladoChart(d);
@@ -481,6 +481,25 @@ const App = {
     document.getElementById('pctDesLabel').textContent = fmt.pct(pctD);
     document.getElementById('pctDesBar').style.width = Math.min(pctD, 100) + '%';
     document.getElementById('pctDesBar').className = `progress-fill ${pctD >= 100 ? 'success' : pctD >= 80 ? 'warning' : 'danger'}`;
+
+    // Desvio de Metas (Fórmula: Venda Parcial / Meta Parcial - 1) — Nominal R$ & %
+    const desvioOrcNominal = (k.resultadoLiquido || 0) - (k.metaOrcada || 0);
+    const desvioOrcPct = k.metaOrcada > 0 ? (((k.resultadoLiquido || 0) / k.metaOrcada) - 1) * 100 : 0;
+    const desvioOrcSign = desvioOrcNominal >= 0 ? '+' : '';
+    const elDesvioOrc = document.getElementById('desvioOrcBadge');
+    if (elDesvioOrc) {
+      elDesvioOrc.textContent = `${desvioOrcSign}${fmt.currency(desvioOrcNominal)} (${desvioOrcSign}${fmt.decimal(desvioOrcPct, 1)}%)`;
+      elDesvioOrc.className = `desvio-badge ${desvioOrcNominal >= 0 ? 'positive' : 'negative'}`;
+    }
+
+    const desvioDesNominal = (k.resultadoLiquido || 0) - (k.metaDesafio || 0);
+    const desvioDesPct = k.metaDesafio > 0 ? (((k.resultadoLiquido || 0) / k.metaDesafio) - 1) * 100 : 0;
+    const desvioDesSign = desvioDesNominal >= 0 ? '+' : '';
+    const elDesvioDes = document.getElementById('desvioDesBadge');
+    if (elDesvioDes) {
+      elDesvioDes.textContent = `${desvioDesSign}${fmt.currency(desvioDesNominal)} (${desvioDesSign}${fmt.decimal(desvioDesPct, 1)}%)`;
+      elDesvioDes.className = `desvio-badge ${desvioDesNominal >= 0 ? 'positive' : 'negative'}`;
+    }
   },
 
   animateValue(id, value, formatter) {
@@ -509,7 +528,6 @@ const App = {
     const k = d.kpis;
     const g = d.crescimento || {};
 
-    this.animateValue('kpiClientes', k.clientes, fmt.number);
     this.animateValue('kpiGastoCliente', k.ticketPorCliente, fmt.currency);
     this.animateValue('kpiTKM', k.ticketMedio, fmt.currency);
     this.animateValue('kpiIPN', k.itensPorNota, (v) => fmt.decimal(v, 1) + ' pçs');
@@ -526,7 +544,6 @@ const App = {
       return `<span style="color:${isPos ? '#34d399' : isNeg ? '#f87171' : '#a0aec0'};font-weight:700;">${arrow} ${sign}${data.variacao.toFixed(1)}% vs M-1</span> (mesmo período)`;
     }
 
-    document.getElementById('kpiClientesSub').innerHTML = getSubText('clientes', `${fmt.decimal(k.clientes / Math.max(k.diasComDados, 1), 0)} clientes/dia`);
     document.getElementById('kpiGastoClienteSub').innerHTML = getSubText('ticketPorCliente', 'Resultado Líquido / Cliente');
     document.getElementById('kpiTKMSub').innerHTML = getSubText('ticketMedio', 'Resultado Líquido / Cupom');
     document.getElementById('kpiIPNSub').innerHTML = getSubText('itensPorNota', 'Peças / Cupom');
@@ -661,57 +678,44 @@ const App = {
   },
 
   // ============================================================
-  // Crescimento MoM (Cards + Tabela Completa do Mesmo Período)
+  // Tabela Comparativa MoM (Única fonte de verdade para comparativos)
   // ============================================================
-  renderGrowth(d) {
+  renderMoMTable(d) {
     const g = d.crescimento || {};
-    const grid = document.getElementById('growthGrid');
 
-    const metrics = [
-      { key: 'resultadoLiquido', label: 'Resultado Líquido', fmt: fmt.currencyK },
-      { key: 'clientes', label: 'Clientes Únicos', fmt: fmt.number },
-      { key: 'cupons', label: 'Cupons Emitidos', fmt: fmt.number },
-      { key: 'ticketMedio', label: 'Ticket Médio (TKM)', fmt: fmt.currency },
-      { key: 'ticketPorCliente', label: 'Gasto / Cliente', fmt: fmt.currency },
-      { key: 'itensPorNota', label: 'Itens / Nota (IPN)', fmt: (v) => fmt.decimal(v, 1) },
-    ];
+    // Atualização dos cabeçalhos
+    const mesAnteriorLabel = d.mesAnterior || '—';
+    const mesAtualLabel = d.mesAno || '—';
 
-    grid.innerHTML = metrics.map(m => {
-      const data = g[m.key] || {};
-      const variacao = data.variacao;
-      const isPos = variacao > 0;
-      const isNeg = variacao < 0;
-      const cls = isPos ? 'positive' : isNeg ? 'negative' : 'neutral';
-      const arrow = isPos ? '↑' : isNeg ? '↓' : '→';
+    let curStartLabel, curEndLabel, prevStartLabel, prevEndLabel;
+    if (d.dataInicio && d.dataFim) {
+      const [, m1, d1] = d.dataInicio.split('-');
+      const [, m2, d2] = d.dataFim.split('-');
+      curStartLabel = `${d1}/${m1}`;
+      curEndLabel = `${d2}/${m2}`;
 
-      return `
-        <div class="growth-card animate-in">
-          <div class="growth-label">${m.label}</div>
-          <div class="growth-values">
-            <span class="growth-current">${m.fmt(data.atual)}</span>
-          </div>
-          <div class="growth-values" style="margin-bottom:6px">
-            <span class="growth-previous">Anterior: ${m.fmt(data.anterior)}</span>
-          </div>
-          <span class="growth-change ${cls}">
-            ${arrow} ${variacao != null ? (isPos ? '+' : '') + fmt.decimal(variacao, 1) + '%' : 'N/A'}
-          </span>
-        </div>
-      `;
-    }).join('');
+      const [prevY, prevM] = mesAnteriorLabel.split('-');
+      prevStartLabel = `${d1}/${prevM}`;
+      prevEndLabel = `${d2}/${prevM}`;
+    } else {
+      const d1 = String(d.diaDe || 1).padStart(2, '0');
+      const d2 = String(d.diaCorte).padStart(2, '0');
+      curStartLabel = `Dia ${d1}`;
+      curEndLabel = `Dia ${d2}`;
+      prevStartLabel = `Dia ${d1}`;
+      prevEndLabel = `Dia ${d2}`;
+    }
 
-    // Atualização dos cabeçalhos e da Tabela Comparativa MoM
-    const diaFormatted = String(d.diaCorte).padStart(2, '0');
-    document.getElementById('thMesAtual').textContent = `Mês Atual (${d.mesAno} até dia ${diaFormatted})`;
-    document.getElementById('thMesAnterior').textContent = `Mês Anterior (${d.mesAnterior} até dia ${diaFormatted})`;
+    document.getElementById('thMesAtual').textContent = `Mês Atual (${mesAtualLabel}: ${curStartLabel} a ${curEndLabel})`;
+    document.getElementById('thMesAnterior').textContent = `Mês Anterior (${mesAnteriorLabel}: ${prevStartLabel} a ${prevEndLabel})`;
 
     const momRows = [
       { key: 'resultadoLiquido', label: '💰 Resultado Líquido', fmt: fmt.currency, diffFmt: fmt.currency },
       { key: 'clientes', label: '👥 Clientes Únicos', fmt: fmt.number, diffFmt: (v) => (v > 0 ? '+' : '') + fmt.number(v) },
-      { key: 'cupons', label: '🧾 Cupons Emitidos (Notas)', fmt: fmt.number, diffFmt: (v) => (v > 0 ? '+' : '') + fmt.number(v) },
-      { key: 'quantidade', label: '📦 Quantidade de Produtos (Peças)', fmt: fmt.number, diffFmt: (v) => (v > 0 ? '+' : '') + fmt.number(v) },
+      { key: 'cupons', label: '🧾 Cupons Emitidos', fmt: fmt.number, diffFmt: (v) => (v > 0 ? '+' : '') + fmt.number(v) },
+      { key: 'quantidade', label: '📦 Peças Vendidas', fmt: fmt.number, diffFmt: (v) => (v > 0 ? '+' : '') + fmt.number(v) },
       { key: 'ticketMedio', label: '🏷️ Ticket Médio (TKM)', fmt: fmt.currency, diffFmt: fmt.currency },
-      { key: 'ticketPorCliente', label: '💼 Gasto Médio por Cliente', fmt: fmt.currency, diffFmt: fmt.currency },
+      { key: 'ticketPorCliente', label: '💼 Gasto Médio / Cliente', fmt: fmt.currency, diffFmt: fmt.currency },
       { key: 'itensPorNota', label: '🛒 Itens por Nota (IPN)', fmt: (v) => fmt.decimal(v, 1) + ' pçs', diffFmt: (v) => fmt.decimal(v, 1) + ' pçs' },
       { key: 'itensPorCliente', label: '🛍️ Itens por Cliente (IPC)', fmt: (v) => fmt.decimal(v, 1) + ' pçs', diffFmt: (v) => fmt.decimal(v, 1) + ' pçs' },
       { key: 'cuponsPorCliente', label: '🔄 Frequência de Compra', fmt: (v) => fmt.decimal(v, 2) + ' cupons', diffFmt: (v) => fmt.decimal(v, 2) + ' cupons' },

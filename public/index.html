@@ -110,19 +110,21 @@
         <span class="block-badge" id="mesLabel">—</span>
       </div>
 
-      <!-- KPI Grid Principal -->
+      <!-- KPI Grid Principal (5 cards macro: RL + Metas + Projeção + Média) -->
       <div class="kpi-grid">
-        <!-- Card 1: Resultado Líquido -->
         <div class="kpi-card blue animate-in">
           <div class="kpi-label">Resultado Líquido</div>
           <div class="kpi-value" id="kpiRLValue">—</div>
           <div class="kpi-sub" id="kpiRLSub">Acumulado no período de corte</div>
         </div>
 
-        <!-- Card 2: Meta Orçada -->
         <div class="kpi-card green animate-in">
           <div class="kpi-label">Meta Orçada Acumulada</div>
           <div class="kpi-value" id="kpiMetaOrcValue">—</div>
+          <div class="kpi-desvio">
+            <span class="desvio-title">Desvio Meta (Venda/Meta - 1):</span>
+            <span class="desvio-badge positive" id="desvioOrcBadge">—</span>
+          </div>
           <div class="progress-container">
             <div class="progress-label">
               <span>Atingimento Orçado</span>
@@ -132,10 +134,13 @@
           </div>
         </div>
 
-        <!-- Card 3: Meta Desafio -->
         <div class="kpi-card orange animate-in">
           <div class="kpi-label">Meta Desafio Acumulada</div>
           <div class="kpi-value" id="kpiMetaDesValue">—</div>
+          <div class="kpi-desvio">
+            <span class="desvio-title">Desvio Desafio (Venda/Meta - 1):</span>
+            <span class="desvio-badge negative" id="desvioDesBadge">—</span>
+          </div>
           <div class="progress-container">
             <div class="progress-label">
               <span>Atingimento Desafio</span>
@@ -145,14 +150,12 @@
           </div>
         </div>
 
-        <!-- Card 4: Projeção de Fechamento -->
         <div class="kpi-card cyan animate-in">
           <div class="kpi-label">Projeção de Fechamento</div>
           <div class="kpi-value" id="kpiProjecaoValue">—</div>
           <div class="kpi-sub" id="kpiProjecaoSub">Com base na média diária</div>
         </div>
 
-        <!-- Card 5: Média Diária -->
         <div class="kpi-card purple animate-in">
           <div class="kpi-label">Média Diária de Vendas</div>
           <div class="kpi-value" id="kpiMediaDia">—</div>
@@ -160,25 +163,20 @@
         </div>
       </div>
 
-      <!-- ====== COMPARATIVO COMPLETO MOM (MESMO MÊS ANTERIOR - MESMOS DIAS) ====== -->
+      <!-- Tabela Comparativa MoM — Único local com comparativo detalhado (sem duplicar em cards) -->
       <div class="growth-container" style="margin-top: 24px;">
-        <div class="block-subtitle">🔄 Comparativo MoM — Mês Atual vs. Mês Anterior (Mesmos Dias Decorridos 01 a D-1)</div>
-        
-        <!-- Cards Rápidos de Variação MoM -->
-        <div class="growth-grid" id="growthGrid">
-          <!-- Preenchido via JS -->
-        </div>
+        <div class="block-subtitle">🔄 Comparativo MoM — Evolução do Mesmo Período (Atual vs. Mês Anterior)</div>
+        <p class="block-description">Comparação lado a lado de todos os indicadores-chave no mesmo intervalo de dias para identificar tendências de crescimento ou retração.</p>
 
-        <!-- Tabela Detalhada do Comparativo M-1 -->
         <div class="mom-table-container">
           <table class="mom-table">
             <thead>
               <tr>
-                <th>Métrica de Performance & Clientes</th>
-                <th class="right" id="thMesAtual">Mês Atual (01 a D-1)</th>
-                <th class="right" id="thMesAnterior">Mês Anterior (Mesmo Período)</th>
-                <th class="right">Diferença Absoluta</th>
-                <th class="right">Variação % (MoM)</th>
+                <th>Indicador</th>
+                <th class="right" id="thMesAtual">Mês Atual</th>
+                <th class="right" id="thMesAnterior">Mês Anterior</th>
+                <th class="right">Diferença</th>
+                <th class="right">Variação %</th>
               </tr>
             </thead>
             <tbody id="momTableBody">
@@ -189,23 +187,19 @@
       </div>
     </section>
 
-    <!-- ====== BLOCO 2: EFICIÊNCIA OPERACIONAL & COMPORTAMENTO DO CLIENTE ====== -->
+    <!-- ====== BLOCO 2: COMPORTAMENTO DO CLIENTE ====== -->
     <section class="dashboard-block">
       <div class="block-header">
         <div class="block-title">
-          <span class="block-icon">👤</span>
-          <h2>Eficiência Operacional & Perfil do Cliente</h2>
+          <span class="block-icon">🛒</span>
+          <h2>Comportamento de Compra & Eficiência do Carrinho</h2>
         </div>
-        <span class="block-badge" style="background:rgba(34,211,238,0.12);color:var(--accent-cyan);border-color:rgba(34,211,238,0.25)">Métricas por Cliente & Carrinho (Comparativo M-1)</span>
+        <span class="block-badge" style="background:rgba(34,211,238,0.12);color:var(--accent-cyan);border-color:rgba(34,211,238,0.25)">Perfil do Cliente</span>
       </div>
+      <p class="block-description">Como o cliente compra: valor médio por visita, tamanho do carrinho e frequência de retorno. Esses drivers explicam a variação do faturamento.</p>
 
-      <!-- Cards de Perfil e Eficiência do Cliente -->
+      <!-- Cards exclusivos de comportamento (SEM duplicar RL, Cupons, Clientes, TKM já mostrados acima) -->
       <div class="kpi-grid secondary-kpis">
-        <div class="kpi-card compact blue animate-in">
-          <div class="kpi-label">Clientes Únicos</div>
-          <div class="kpi-value" id="kpiClientes">—</div>
-          <div class="kpi-sub" id="kpiClientesSub">Compradores ativos</div>
-        </div>
         <div class="kpi-card compact green animate-in">
           <div class="kpi-label">Gasto Médio / Cliente</div>
           <div class="kpi-value" id="kpiGastoCliente">—</div>
@@ -233,7 +227,7 @@
         </div>
       </div>
 
-      <!-- Gráficos Duplos de Tendência de Eficiência -->
+      <!-- Gráficos de Tendência de Eficiência -->
       <div class="chart-grid-2col" style="margin-top: 20px;">
         <div class="chart-card">
           <div class="chart-card-header">

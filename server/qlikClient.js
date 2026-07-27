@@ -130,6 +130,18 @@ async function applySelections(app) {
   await fieldFilial.selectValues([{ qText: QLIK_FILIAL }]);
 }
 
+function sanitizeText(str) {
+  if (!str) return '';
+  return str
+    .replace(/Balc\?o/g, 'Balcão')
+    .replace(/Conveni\?ncia/g, 'Conveniência')
+    .replace(/Nutri\?\?o/g, 'Nutrição')
+    .replace(/Cosm\?ticos/g, 'Cosméticos')
+    .replace(/Gen\?ricos/g, 'Genéricos')
+    .replace(/Analg\?sicos/g, 'Analgésicos')
+    .replace(/Sab\?/g, 'Sáb');
+}
+
 async function getHyperCubeData(app, dimensions, measures, maxRows = 500) {
   const qDimensions = dimensions.map(d => ({ qDef: { qFieldDefs: [d] } }));
   const qMeasures = measures.map(m => ({ qDef: { qDef: m.expression }, qLabel: m.label }));
@@ -155,7 +167,7 @@ async function getHyperCubeData(app, dimensions, measures, maxRows = 500) {
   const results = allRows.map(row => {
     const obj = {};
     dimensions.forEach((d, i) => {
-      const val = row[i]?.qText || '';
+      const val = sanitizeText(row[i]?.qText || '');
       obj[d] = val;
       obj[`${d}_num`] = row[i]?.qNum ?? null;
 
@@ -264,7 +276,23 @@ async function fetchBothMonthsData(currentMesAno, prevMesAno, diaCorte = null, f
     await applySelections(app);
 
     const currentData = await extractMonthData(app, currentMesAno, diaCorte, filters, dataInicio, dataFim);
-    const previousData = await extractMonthData(app, prevMesAno, diaCorte, filters, dataInicio, dataFim);
+
+    // Calcular datas equivalentes no mês anterior para o comparativo correto
+    let prevDataInicio = null, prevDataFim = null;
+    if (dataInicio && dataFim) {
+      const startDate = new Date(dataInicio + 'T00:00:00');
+      const endDate = new Date(dataFim + 'T00:00:00');
+      const prevStart = new Date(startDate.getFullYear(), startDate.getMonth() - 1, startDate.getDate());
+      const prevEnd = new Date(endDate.getFullYear(), endDate.getMonth() - 1, endDate.getDate());
+      // Ajustar se o dia não existe no mês anterior (ex: 31 em mês de 30 dias)
+      if (prevEnd.getDate() !== endDate.getDate()) {
+        prevEnd.setDate(0); // último dia do mês anterior ao que tentamos
+      }
+      prevDataInicio = `${prevStart.getFullYear()}-${String(prevStart.getMonth() + 1).padStart(2, '0')}-${String(prevStart.getDate()).padStart(2, '0')}`;
+      prevDataFim = `${prevEnd.getFullYear()}-${String(prevEnd.getMonth() + 1).padStart(2, '0')}-${String(prevEnd.getDate()).padStart(2, '0')}`;
+      console.log(`[QlikClient] 📅 Mês anterior: buscando ${prevDataInicio} até ${prevDataFim} (equivalente a ${dataInicio} até ${dataFim})`);
+    }
+    const previousData = await extractMonthData(app, prevMesAno, diaCorte, filters, prevDataInicio, prevDataFim);
     
     // Se não houver filtros, extrai a lista completa de opções de filtros
     let filterOptions = null;

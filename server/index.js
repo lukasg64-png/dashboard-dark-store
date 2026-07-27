@@ -179,13 +179,13 @@ function generateDemoData(mesAno) {
  */
 app.get('/api/dashboard', async (req, res) => {
   try {
-    const mesAno = req.query.mes || dataService.getCurrentMonth();
+    let mesAno = req.query.mes || dataService.getCurrentMonth();
     const isCurrentMonth = mesAno === dataService.getCurrentMonth();
     const diaHoje = new Date().getDate();
-    const diaDe = req.query.diaDe ? parseInt(req.query.diaDe) : 1;
-    const diaAte = req.query.diaAte ? parseInt(req.query.diaAte) : (isCurrentMonth ? Math.max(1, diaHoje - 1) : null);
-    const dataInicio = req.query.dataInicio || null;
-    const dataFim = req.query.dataFim || null;
+    let diaDe = req.query.diaDe ? parseInt(req.query.diaDe) : 1;
+    let diaAte = req.query.diaAte ? parseInt(req.query.diaAte) : (isCurrentMonth ? Math.max(1, diaHoje - 1) : null);
+    let dataInicio = req.query.dataInicio || null;
+    let dataFim = req.query.dataFim || null;
     
     const filters = {
       grupo: req.query.grupo || 'TODOS',
@@ -220,6 +220,41 @@ app.get('/api/dashboard', async (req, res) => {
           currentData = dump.currentData;
           previousData = dump.previousData;
           usingCachedRealData = true;
+
+          // Detectar o mês real dos dados do cache e ajustar filtros
+          const dailyDates = (currentData?.daily || [])
+            .map(d => d.dataStr)
+            .filter(Boolean)
+            .sort();
+          if (dailyDates.length > 0) {
+            const cacheMesAno = dailyDates[0].substring(0, 7); // ex: "2026-06"
+            if (cacheMesAno !== mesAno) {
+              console.log(`[Server] ⚠️ Cache é de ${cacheMesAno}, mas mês solicitado é ${mesAno}. Ajustando filtros para o mês do cache.`);
+              mesAno = cacheMesAno;
+
+              // Recalcular dataInicio/dataFim com base no mês do cache
+              const [cacheY, cacheM] = cacheMesAno.split('-');
+              const origDiaDe = diaDe || 1;
+              const maxDayCache = new Date(parseInt(cacheY), parseInt(cacheM), 0).getDate();
+              const isOrigCurrentMonth = dataService.getCurrentMonth() === cacheMesAno;
+              let newDiaCorte;
+              if (diaAte) {
+                newDiaCorte = Math.min(diaAte, maxDayCache);
+              } else if (isOrigCurrentMonth) {
+                newDiaCorte = Math.max(1, new Date().getDate() - 1);
+              } else {
+                // Mês passado completo — usar último dia com dados
+                newDiaCorte = parseInt(dailyDates[dailyDates.length - 1].split('-')[2]);
+              }
+
+              dataInicio = `${cacheY}-${cacheM}-${String(origDiaDe).padStart(2, '0')}`;
+              dataFim = `${cacheY}-${cacheM}-${String(newDiaCorte).padStart(2, '0')}`;
+              diaDe = origDiaDe;
+              diaAte = newDiaCorte;
+              console.log(`[Server] 📅 Filtros ajustados: ${dataInicio} até ${dataFim}`);
+            }
+          }
+
           console.log('[Server] 📦 Dados REAIS persistidos do Qlik carregados com sucesso!');
         } catch (e) {
           console.error('[Server] ⚠️ Erro ao ler cached_real_qlik_data.json:', e.message);

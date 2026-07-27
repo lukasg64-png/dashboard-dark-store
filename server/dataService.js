@@ -428,10 +428,34 @@ function buildDashboardResponse(currentData, previousData, mesAno, diaAteParam =
   });
   const kpisAtual = calcularKPIs(dailyAtualAteDia);
 
-  // KPIs mês anterior (mesmo período no mês anterior)
+  // KPIs mês anterior (mesmo período deslocado para o mês anterior)
   const dailyAnterior = previousData?.daily || [];
+
+  // Calcular as datas equivalentes no mês anterior para filtragem correta
+  let prevDataInicio, prevDataFim;
+  if (dataInicio && dataFim) {
+    const startDate = new Date(dataInicio + 'T00:00:00');
+    const endDate = new Date(dataFim + 'T00:00:00');
+    const prevStart = new Date(startDate.getFullYear(), startDate.getMonth() - 1, startDate.getDate());
+    const prevEnd = new Date(endDate.getFullYear(), endDate.getMonth() - 1, endDate.getDate());
+    // Ajustar se o dia não existe no mês anterior (ex: 31 em mês com 30 dias)
+    const maxDayPrevMonth = new Date(prevStart.getFullYear(), prevStart.getMonth() + 1, 0).getDate();
+    if (prevEnd.getDate() !== endDate.getDate()) {
+      prevEnd.setDate(0); // último dia do mês anterior ao que tentamos
+    }
+    prevDataInicio = `${prevStart.getFullYear()}-${String(prevStart.getMonth() + 1).padStart(2, '0')}-${String(prevStart.getDate()).padStart(2, '0')}`;
+    prevDataFim = `${prevEnd.getFullYear()}-${String(prevEnd.getMonth() + 1).padStart(2, '0')}-${String(prevEnd.getDate()).padStart(2, '0')}`;
+  } else {
+    // Fallback: usar mesAnterior com mesmo diaDe/diaCorte
+    const [prevY, prevM] = mesAnterior.split('-');
+    prevDataInicio = `${prevY}-${prevM}-${String(diaDe).padStart(2, '0')}`;
+    const maxDayPrev = new Date(parseInt(prevY), parseInt(prevM), 0).getDate();
+    const prevDiaCorte = Math.min(diaCorte, maxDayPrev);
+    prevDataFim = `${prevY}-${prevM}-${String(prevDiaCorte).padStart(2, '0')}`;
+  }
+
   const dailyAnteriorAteDia = dailyAnterior.filter(d => {
-    if (d.dataStr) return d.dataStr >= dataInicio && d.dataStr <= dataFim;
+    if (d.dataStr) return d.dataStr >= prevDataInicio && d.dataStr <= prevDataFim;
     const dia = parseInt(d.Dia || d.dia || 0);
     return dia >= diaDe && dia <= diaCorte;
   });

@@ -488,6 +488,41 @@ body::before {
   color: var(--text-muted);
 }
 
+.kpi-desvio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  margin-bottom: 4px;
+  font-size: 0.75rem;
+}
+
+.desvio-title {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.desvio-badge {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: -0.2px;
+}
+
+.desvio-badge.positive {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.desvio-badge.negative {
+  color: #f87171;
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
 /* ============================================================
    Progress Bar (Meta achievement)
    ============================================================ */
@@ -923,7 +958,15 @@ body::before {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: var(--gap-md);
+  margin-bottom: var(--gap-sm);
+}
+
+.block-description {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--gap-md) 0;
+  line-height: 1.5;
+  max-width: 800px;
 }
 
 .chart-grid-2col {
